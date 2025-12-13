@@ -6,39 +6,35 @@
     <title>Mentoria Michelle Julio | Onboarding</title>
     
     <meta property="og:title" content="Mentoria Michelle Julio">
+    <meta property="og:description" content="Um caminho de cura, identidade e propósito.">
     <meta property="og:image" content="https://i.ibb.co/21HgfrMf/Logo-1.png">
     
     <script async src="https://tally.so/widgets/embed.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
     <style>
-        /* --- VARIÁVEIS --- */
+        /* --- VARIÁVEIS DE DESIGN --- */
         :root {
-            --bg-body: #FAF9F6; /* Off-white mais quente */
+            --bg-body: #FAF9F6; /* Off-white linho */
             --white: #FFFFFF;
             
-            /* Textos */
-            --text-dark: #1A1A1A; 
+            /* Cores */
+            --text-dark: #1F1F1F; 
             --text-gray: #666666;
-            
-            /* Dourado da Marca */
             --gold-main: #C0A665; 
-            --gold-gradient: linear-gradient(135deg, #C0A665 0%, #D4B976 50%, #A68C4B 100%);
+            --gold-light: #F4F1E8;
             
-            --shadow-soft: 0 20px 40px -10px rgba(192, 166, 101, 0.15); /* Sombra dourada difusa */
+            /* Efeitos */
+            --shadow-card: 0 15px 35px -5px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 20px 40px -5px rgba(192, 166, 101, 0.15);
+            --border-radius: 12px;
         }
 
-        /* RESET & ANIMAÇÃO */
+        /* RESET */
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
-        /* Animação de Entrada */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         body {
             margin: 0; padding: 0;
             width: 100%;
@@ -47,216 +43,197 @@
             color: var(--text-gray);
             line-height: 1.7;
             overflow-x: hidden;
-            animation: fadeInUp 1s ease-out; /* Aplica a animação na página toda */
+            padding-bottom: 80px;
         }
 
         /* TIPOGRAFIA */
-        h1, h2, h3 { 
-            font-family: 'Playfair Display', serif; 
-            color: var(--text-dark); 
-            font-weight: 500;
-        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--text-dark); font-weight: 500; }
+        h2 { font-size: 2.2rem; margin: 80px 0 50px; text-align: center; letter-spacing: -0.5px; position: relative; }
         
-        h2 { 
-            font-size: 2.2rem; 
-            margin: 70px 0 40px; 
-            text-align: center; 
-            letter-spacing: -0.5px;
+        /* Detalhe abaixo dos H2 */
+        h2::after {
+            content: ''; display: block; width: 40px; height: 3px;
+            background: var(--gold-main); margin: 15px auto 0; opacity: 0.5;
         }
-        
-        p { margin-bottom: 20px; font-size: 1.05rem; }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px 100px 20px;
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
         /* --- HERO --- */
         .hero { text-align: center; padding: 50px 20px 30px; }
+        .hero-logo { max-width: 350px; width: 90%; height: auto; display: block; margin: 0 auto 30px auto; }
         
-        .hero-logo {
-            max-width: 320px; 
-            width: 85%;       
-            height: auto;
-            display: block;
-            margin: 0 auto 30px auto; 
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05)); /* Leve sombra na logo */
-        }
-
         .hero-title {
-            display: inline-block;
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            
-            /* EFEITO GOLD FOIL (Ouro Metálico no Texto) */
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            display: inline-block; font-size: 2.2rem; margin-bottom: 10px;
+            background: linear-gradient(135deg, #C0A665 0%, #8A7035 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             font-weight: 700;
         }
 
-        .subtitle {
-            font-family: 'Libre Baskerville', serif;
-            font-style: italic;
-            color: var(--text-gray);
-            margin-top: 10px;
+        /* --- CARDS PADRÃO --- */
+        .card-base {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            margin-bottom: 40px;
+            border: 1px solid rgba(0,0,0,0.02);
         }
 
-        /* --- CARDS PREMIUM --- */
-        .intro-card { 
-            background: var(--white); 
-            padding: 50px 40px; 
-            border-radius: 12px; 
-            box-shadow: var(--shadow-soft); 
-            margin-bottom: 40px; 
-            text-align: center; 
-            border: 1px solid rgba(192, 166, 101, 0.1); /* Borda dourada super sutil */
+        /* SOBRE A MENTORA */
+        .about-section { text-align: center; }
+        .about-img { 
+            width: 160px; height: 160px; border-radius: 50%; object-fit: cover; 
+            border: 1px solid var(--gold-main); padding: 5px; margin-bottom: 25px; 
+        }
+
+        /* --- NOVA SESSÃO: COMO FUNCIONA (Jornada Numerada) --- */
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .journey-card {
+            background: var(--white);
+            padding: 30px 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
             transition: transform 0.3s ease;
+            text-align: center;
+            border-bottom: 3px solid transparent;
         }
-        
-        .intro-card:hover { transform: translateY(-3px); }
 
-        .highlight-text {
+        .journey-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 3px solid var(--gold-main);
+        }
+
+        /* Número grande no fundo */
+        .journey-number {
+            position: absolute;
+            top: -15px;
+            right: -10px;
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: var(--text-dark);
-            margin-bottom: 15px;
-            line-height: 1.4;
+            font-size: 5rem;
+            color: var(--gold-main);
+            opacity: 0.1;
+            font-weight: 700;
+            line-height: 1;
         }
 
-        /* FOTO DA MENTORA */
-        .about-me-img { 
-            width: 150px; height: 150px; 
-            border-radius: 50%; 
-            object-fit: cover; 
-            padding: 6px;
-            border: 1px solid var(--gold-main);
-            background: #fff;
-            margin-bottom: 25px; 
+        .journey-icon {
+            font-size: 32px; color: var(--gold-main); margin-bottom: 15px;
+            background: var(--gold-light); width: 60px; height: 60px;
+            line-height: 60px; border-radius: 50%; display: inline-block;
         }
 
-        /* GRIDS */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px; }
-        
-        .feature-card { 
-            background: var(--white); 
-            padding: 40px 30px; 
-            border-radius: 12px; 
-            box-shadow: var(--shadow-soft); 
-            text-align: center; 
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.03);
+        .journey-title {
+            font-family: 'Playfair Display', serif; font-size: 1.25rem;
+            color: var(--text-dark); margin-bottom: 10px; display: block;
         }
-        .feature-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 25px 50px -12px rgba(192, 166, 101, 0.25);
+
+        /* --- NOVA SESSÃO: CÓDIGO DE HONRA (Lista Manifesto) --- */
+        .manifesto-container {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            padding: 40px;
+            margin-bottom: 60px;
         }
-        
-        .feature-icon { 
-            font-size: 32px; 
-            color: var(--gold-main); 
-            margin-bottom: 20px; 
-            display: inline-block;
-            background: #FAF7F0; /* Fundo do ícone bem clarinho */
-            padding: 15px;
+
+        .manifesto-item {
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #EEEEEE;
+        }
+
+        .manifesto-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .manifesto-item:first-child { padding-top: 0; }
+
+        .manifesto-icon {
+            color: var(--gold-main);
+            margin-right: 20px;
+            font-size: 24px;
+            background: var(--bg-body);
+            padding: 10px;
             border-radius: 50%;
         }
-        
-        .feature-title { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 1.3rem; 
-            color: var(--text-dark); 
-            margin-bottom: 10px; 
-            display: block; 
-        }
-        .feature-desc { font-size: 0.95rem; color: var(--text-gray); }
 
-        /* CÓDIGO DE HONRA */
-        .honor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-bottom: 60px; }
-        .honor-item { 
-            background: transparent; 
-            padding: 20px; 
-            border: 1px solid rgba(192, 166, 101, 0.3); 
-            border-radius: 8px; 
-            text-align: center; 
+        .manifesto-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 500;
         }
-        .honor-item .material-icons-round { color: var(--gold-main); font-size: 28px; margin-bottom: 8px; }
-        .honor-item p { margin: 0; font-weight: 600; font-size: 0.8rem; color: var(--text-dark); text-transform: uppercase; letter-spacing: 2px; }
 
-        /* EXPECTATIVAS */
-        .comparison-box { display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 60px; }
-        .col { flex: 1; min-width: 300px; padding: 40px; border-radius: 12px; background: var(--white); box-shadow: var(--shadow-soft); }
+        /* --- EXPECTATIVAS (Clean) --- */
+        .comparison-grid { display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 60px; }
+        .comp-col { flex: 1; min-width: 300px; padding: 35px; border-radius: var(--border-radius); background: var(--white); box-shadow: var(--shadow-card); }
         
-        .col h3 { font-size: 1.3rem; margin-top: 0; display: flex; align-items: center; gap: 10px; margin-bottom: 25px; }
-        
-        .col-no h3 { color: #A1887F; }
-        .col-yes h3 { color: var(--gold-main); }
-        
-        .check-list div { 
-            margin-bottom: 15px; 
-            display: flex; align-items: flex-start; gap: 15px; 
-            font-size: 0.95rem; border-bottom: 1px solid #F5F5F5; padding-bottom: 10px;
+        .comp-title { font-size: 1.2rem; margin: 0 0 25px 0; display: flex; align-items: center; gap: 10px; font-family: 'Playfair Display', serif; }
+        .comp-bad { color: #A67C7C; }
+        .comp-good { color: var(--gold-main); }
+
+        .check-item { display: flex; gap: 12px; margin-bottom: 12px; font-size: 0.95rem; align-items: center; }
+        .check-icon { font-size: 18px; opacity: 0.7; }
+
+        /* --- PRIMEIROS PASSOS (Linha do Tempo Vertical) --- */
+        .steps-wrapper {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 60px;
         }
-        .check-list div:last-child { border-bottom: none; }
-        .icon-sm { font-size: 20px; opacity: 0.8; }
+        /* Linha conectora */
+        .steps-wrapper::before {
+            content: ''; position: absolute; left: 34px; top: 20px; bottom: 20px;
+            width: 2px; background: #E0E0E0; z-index: 0;
+        }
 
-        /* PASSOS */
-        .step-item { 
+        .step-row {
             display: flex; align-items: center; 
             background: var(--white); 
-            padding: 30px; 
-            border-radius: 12px; 
+            padding: 25px; 
+            border-radius: var(--border-radius); 
             margin-bottom: 20px; 
-            box-shadow: var(--shadow-soft);
-            transition: transform 0.2s;
+            box-shadow: var(--shadow-card);
+            position: relative; z-index: 1;
         }
-        .step-item:hover { transform: translateX(5px); }
-        .step-icon { color: var(--gold-main); margin-right: 25px; font-size: 28px; opacity: 0.9; }
-        .step-text strong { color: var(--text-dark); display: block; margin-bottom: 4px; font-family: 'Playfair Display', serif; font-size: 1.1rem; }
-
-        /* ESPIRITUALIDADE */
-        .spiritual-box { 
-            text-align: center; 
-            padding: 80px 30px; 
-            background: #111; /* Preto quase puro para super contraste com dourado */
-            color: var(--white); 
-            border-radius: 12px; 
-            margin-bottom: 60px; 
-            position: relative;
-        }
-        .spiritual-box h3 { 
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'Libre Baskerville', serif; 
-            font-style: italic; 
-            margin: 0; font-size: 1.6rem; line-height: 1.6;
+        
+        .step-circle {
+            background: var(--gold-main); color: white;
+            width: 30px; height: 30px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 20px; flex-shrink: 0;
+            font-size: 14px;
         }
 
-        /* TALLY FORM */
-        .tally-container { margin-top: 40px; background: var(--white); border-radius: 12px; box-shadow: var(--shadow-soft); overflow: hidden; border-top: 4px solid var(--gold-main); }
+        /* --- ESPIRITUALIDADE --- */
+        .quote-box { 
+            text-align: center; padding: 60px 30px; 
+            background: #1A1A1A; color: var(--white); 
+            border-radius: var(--border-radius); margin-bottom: 60px; 
+        }
+        .quote-text { 
+            font-family: 'Libre Baskerville', serif; font-style: italic; 
+            font-size: 1.5rem; line-height: 1.6; color: var(--gold-main);
+        }
+
+        /* --- TALLY --- */
+        .tally-box { margin-top: 40px; background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow-card); overflow: hidden; border-top: 4px solid var(--gold-main); }
 
         /* FOOTER */
-        .footer { text-align: center; padding-top: 60px; border-top: 1px solid #E0E0E0; margin-top: 80px; }
-        .footer-quote { font-family: 'Libre Baskerville', serif; font-size: 1.2rem; color: var(--text-dark); font-style: italic; opacity: 0.9; }
-        .signature { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 2rem; 
-            color: var(--gold-main); 
-            margin-top: 25px; 
-            font-style: italic;
-        }
+        .footer { text-align: center; padding-top: 50px; border-top: 1px solid #E5E5E5; margin-top: 80px; }
+        .signature { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold-main); margin-top: 20px; font-style: italic; }
 
-        /* Responsividade */
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
-            .hero-title { font-size: 1.8rem; }
-            .col { min-width: 100%; }
-            .container { padding: 0 20px 80px 20px; }
-            .hero-logo { max-width: 280px; } 
-            .intro-card, .feature-card { padding: 30px 20px; }
+            .hero-logo { max-width: 260px; }
+            .steps-wrapper::before { display: none; } /* Remove linha no mobile se apertar */
+            .steps-wrapper { padding-left: 0; }
         }
     </style>
 </head>
@@ -265,118 +242,128 @@
 <div class="container">
 
     <div class="hero">
-        <img src="https://i.ibb.co/21HgfrMf/Logo-1.png" alt="Michelle Julio Mentoria" class="hero-logo">
-        
-        <h1 class="hero-title">Seja Bem-vinda à Mentoria</h1>
-        <p class="subtitle">Um caminho de cura, identidade e propósito.</p>
+        <img src="https://i.ibb.co/21HgfrMf/Logo-1.png" alt="Michelle Julio" class="hero-logo">
+        <span class="hero-title">Seja Bem-vinda à Mentoria</span>
+        <p style="font-family:'Libre Baskerville',serif; font-style:italic;">Um caminho de cura, identidade e propósito.</p>
     </div>
 
-    <div class="intro-card">
-        <p class="highlight-text">
+    <div class="card-base" style="text-align:center; border-left: 4px solid var(--gold-main);">
+        <p style="font-size:1.2rem; font-family:'Playfair Display',serif; color:var(--text-dark); margin-bottom:10px;">
             Você chegou até aqui porque decidiu se olhar com verdade.
         </p>
-        <p style="margin: 0;">Este é um espaço seguro de crescimento, maturidade e transformação.</p>
+        <p style="margin:0">Este é um espaço seguro de crescimento, maturidade e transformação.</p>
     </div>
 
-    <div class="intro-card">
-        <img src="https://i.ibb.co/ZRMw67rv/michelle.png" alt="Michelle Julio" class="about-me-img">
-        <h3 style="margin-top: 0; font-size: 1.6rem;">Michelle Julio</h3>
-        <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-main); margin-bottom: 25px; font-weight: 600;">Psicanalista & Mentora</p>
-        
-        <p style="margin: 0; text-align: left; font-size: 1rem; color: #555;">
-            Dedico minha vida a guiar jornadas de profunda transformação. Minha abordagem integra a clareza da psicanálise com a força da espiritualidade, ajudando você a desenrolar os nós emocionais, fortalecer sua identidade e descobrir um propósito alinhado à sua essência.
-        </p>
+    <div class="card-base about-section">
+        <img src="https://i.ibb.co/ZRMw67rv/michelle.png" alt="Michelle Julio" class="about-img">
+        <h3 style="margin:0; font-size:1.5rem;">Michelle Julio</h3>
+        <p style="font-size:0.8rem; text-transform:uppercase; letter-spacing:2px; color:var(--gold-main); margin-bottom:20px;">Psicanalista & Mentora</p>
+        <p style="text-align:left;">Dedico minha vida a guiar jornadas de profunda transformação. Minha abordagem integra a clareza da psicanálise com a força da espiritualidade, ajudando você a fortalecer sua identidade e descobrir um propósito alinhado à sua essência.</p>
     </div>
 
     <h2>Como Funciona</h2>
-    <div class="features-grid">
-        <div class="feature-card">
-            <span class="material-icons-round feature-icon">groups</span>
-            <span class="feature-title">Encontros Guiados</span>
-            <span class="feature-desc">Sessões estruturadas para trazer direção e clareza.</span>
+    <div class="journey-grid">
+        <div class="journey-card">
+            <span class="journey-number">01</span>
+            <div class="journey-icon"><span class="material-icons-round">groups</span></div>
+            <span class="journey-title">Encontros Guiados</span>
+            <p style="font-size:0.9rem">Sessões estruturadas para trazer direção, clareza e acolhimento.</p>
         </div>
-        <div class="feature-card">
-            <span class="material-icons-round feature-icon">edit_note</span>
-            <span class="feature-title">Exercícios Práticos</span>
-            <span class="feature-desc">Escrita terapêutica e tarefas para fixar a mudança.</span>
+        <div class="journey-card">
+            <span class="journey-number">02</span>
+            <div class="journey-icon"><span class="material-icons-round">edit_note</span></div>
+            <span class="journey-title">Prática Real</span>
+            <p style="font-size:0.9rem">Escrita terapêutica e exercícios para fixar a mudança no dia a dia.</p>
         </div>
-        <div class="feature-card">
-            <span class="material-icons-round feature-icon">psychology</span>
-            <span class="feature-title">Direção Emocional</span>
-            <span class="feature-desc">Leitura profunda das emoções e raízes.</span>
+        <div class="journey-card">
+            <span class="journey-number">03</span>
+            <div class="journey-icon"><span class="material-icons-round">psychology</span></div>
+            <span class="journey-title">Direção Emocional</span>
+            <p style="font-size:0.9rem">Leitura profunda das emoções e raízes para destravar sua identidade.</p>
         </div>
-        <div class="feature-card">
-            <span class="material-icons-round feature-icon">church</span>
-            <span class="feature-title">Fé & Vida Real</span>
-            <span class="feature-desc">Espiritualidade aplicada sem religiosidade tóxica.</span>
+        <div class="journey-card">
+            <span class="journey-number">04</span>
+            <div class="journey-icon"><span class="material-icons-round">church</span></div>
+            <span class="journey-title">Fé & Vida</span>
+            <p style="font-size:0.9rem">Espiritualidade aplicada à vida real, sem religiosidade tóxica.</p>
         </div>
     </div>
 
     <h2>Código de Honra</h2>
-    <div class="honor-grid">
-        <div class="honor-item"><span class="material-icons-round">verified</span><p>Responsabilidade</p></div>
-        <div class="honor-item"><span class="material-icons-round">schedule</span><p>Pontualidade</p></div>
-        <div class="honor-item"><span class="material-icons-round">lock</span><p>Sigilo</p></div>
-        <div class="honor-item"><span class="material-icons-round">favorite</span><p>Respeito</p></div>
-        <div class="honor-item"><span class="material-icons-round">self_improvement</span><p>Presença</p></div>
+    <div class="manifesto-container">
+        <div class="manifesto-item">
+            <span class="material-icons-round manifesto-icon">verified</span>
+            <span class="manifesto-text">Responsabilidade</span>
+        </div>
+        <div class="manifesto-item">
+            <span class="material-icons-round manifesto-icon">schedule</span>
+            <span class="manifesto-text">Pontualidade</span>
+        </div>
+        <div class="manifesto-item">
+            <span class="material-icons-round manifesto-icon">lock</span>
+            <span class="manifesto-text">Sigilo Absoluto</span>
+        </div>
+        <div class="manifesto-item">
+            <span class="material-icons-round manifesto-icon">favorite</span>
+            <span class="manifesto-text">Respeito Mútuo</span>
+        </div>
+        <div class="manifesto-item">
+            <span class="material-icons-round manifesto-icon">self_improvement</span>
+            <span class="manifesto-text">Presença Emocional</span>
+        </div>
     </div>
 
-    <h2>Expectativas</h2>
-    <div class="comparison-box">
-        <div class="col col-no">
-            <h3><span class="material-icons-round" style="color: #A1887F;">block</span> Você NÃO receberá</h3>
-            <div class="check-list">
-                <div><span class="material-icons-round icon-sm">close</span> Fórmulas mágicas prontas</div>
-                <div><span class="material-icons-round icon-sm">close</span> Passividade</div>
-                <div><span class="material-icons-round icon-sm">close</span> Reforço de vitimismo</div>
-            </div>
+    <h2>O que esperar</h2>
+    <div class="comparison-grid">
+        <div class="comp-col">
+            <div class="comp-title comp-bad"><span class="material-icons-round">block</span> Você NÃO receberá</div>
+            <div class="check-item"><span class="material-icons-round check-icon">close</span> Fórmulas mágicas prontas</div>
+            <div class="check-item"><span class="material-icons-round check-icon">close</span> Passividade</div>
+            <div class="check-item"><span class="material-icons-round check-icon">close</span> Reforço de vitimismo</div>
         </div>
-        <div class="col col-yes">
-            <h3><span class="material-icons-round" style="color: var(--gold-main);">check_circle</span> Você RECEBERÁ</h3>
-            <div class="check-list">
-                <div><span class="material-icons-round icon-sm" style="color:var(--gold-main)">check</span> Direção clara</div>
-                <div><span class="material-icons-round icon-sm" style="color:var(--gold-main)">check</span> Clareza emocional</div>
-                <div><span class="material-icons-round icon-sm" style="color:var(--gold-main)">check</span> Ferramentas práticas</div>
-            </div>
+        <div class="comp-col" style="border: 2px solid var(--gold-light);">
+            <div class="comp-title comp-good"><span class="material-icons-round">check_circle</span> Você RECEBERÁ</div>
+            <div class="check-item"><span class="material-icons-round check-icon" style="color:var(--gold-main)">check</span> Direção clara</div>
+            <div class="check-item"><span class="material-icons-round check-icon" style="color:var(--gold-main)">check</span> Clareza emocional</div>
+            <div class="check-item"><span class="material-icons-round check-icon" style="color:var(--gold-main)">check</span> Ferramentas práticas</div>
         </div>
     </div>
 
     <h2>Primeiros Passos</h2>
-    <div style="margin-bottom: 50px;">
-        <div class="step-item">
-            <span class="material-icons-round step-icon">menu_book</span>
-            <div class="step-text"><strong>Caderno</strong> Tenha um lugar físico para seus registros.</div>
+    <div class="steps-wrapper">
+        <div class="step-row">
+            <div class="step-circle">1</div>
+            <div><strong>Caderno:</strong> Tenha um lugar físico para seus registros.</div>
         </div>
-        <div class="step-item">
-            <span class="material-icons-round step-icon">event_available</span>
-            <div class="step-text"><strong>Agenda</strong> Bloqueie seu horário. É sagrado.</div>
+        <div class="step-row">
+            <div class="step-circle">2</div>
+            <div><strong>Agenda:</strong> Bloqueie seu horário. É sagrado.</div>
         </div>
-        <div class="step-item">
-            <span class="material-icons-round step-icon">nightlight_round</span>
-            <div class="step-text"><strong>Ambiente</strong> Esteja sozinha e em silêncio.</div>
+        <div class="step-row">
+            <div class="step-circle">3</div>
+            <div><strong>Ambiente:</strong> Esteja sozinha e em silêncio.</div>
         </div>
     </div>
 
-    <div class="spiritual-box">
-        <span class="material-icons-round" style="font-size: 40px; margin-bottom: 15px; opacity: 0.8; color: var(--gold-main);">auto_awesome</span>
-        <h3>"Deus é a fonte.<br>A mentoria é o instrumento.<br>O processo é seu."</h3>
+    <div class="quote-box">
+        <span class="material-icons-round" style="font-size:36px; margin-bottom:15px; opacity:0.8; color:var(--gold-main);">auto_awesome</span>
+        <div class="quote-text">"Deus é a fonte.<br>A mentoria é o instrumento.<br>O processo é seu."</div>
     </div>
 
-    <div style="text-align: center; margin-bottom: 20px;">
-        <h2 style="margin: 10px 0; color: var(--text-dark);">Aplique Agora</h2>
+    <div style="text-align:center; margin-bottom:20px;">
+        <h2 style="margin:20px 0;">Aplique Agora</h2>
         <p>Preencha o formulário abaixo para iniciarmos:</p>
     </div>
 
-    <div class="tally-container">
-        <iframe data-tally-src="https://tally.so/embed/RGxe49?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Aplicação Mentoria Michelle Julio"></iframe>
+    <div class="tally-box">
+        <iframe data-tally-src="https://tally.so/embed/RGxe49?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Aplicação Mentoria"></iframe>
     </div>
 
     <div class="footer">
-        <p class="footer-quote">
+        <p style="font-family:'Libre Baskerville',serif; font-style:italic; font-size:1.1rem; color:var(--text-dark);">
             "Eu escolho me responsabilizar pela minha transformação."
         </p>
         <p>Caminhe com coragem.</p>
-        
         <div class="signature">Michelle Julio</div>
     </div>
 
