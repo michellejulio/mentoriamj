@@ -15,13 +15,19 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
     <style>
-        /* --- VARIÁVEIS --- */
+        /* --- NOVA PALETA DE CORES --- */
         :root {
-            --bg-body: #FDFBFD; 
+            --bg-body: #FDFBFD;
+            
+            /* Tons de Roxo/Lilás (Mantidos para contraste) */
             --lavanda-light: #F3E5F5;
             --lavanda-medium: #D1C4E9; 
-            --roxo-deep: #4A148C; 
-            --roxo-soft: #7E57C2; 
+            --roxo-deep: #4A148C; /* Usado agora para textos de destaque */
+            --roxo-soft: #7E57C2; /* Usado para ícones e detalhes */
+            
+            /* Novo Tom Dourado (Extraído da Logo) */
+            --gold-main: #C0A665; 
+            
             --shadow: 0 10px 30px rgba(74, 20, 140, 0.08); 
             --wa-green: #25D366; 
         }
@@ -35,13 +41,16 @@
             background-color: var(--bg-body);
             background: linear-gradient(to bottom, #FDFBFD 0%, #F3E5F5 100%);
             font-family: 'Montserrat', sans-serif;
-            color: #444;
+            color: #444; /* Cor padrão do texto */
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* TIPOGRAFIA */
-        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--roxo-deep); }
+        /* TIPOGRAFIA COM DOURADO */
+        h1, h2, h3 { 
+            font-family: 'Playfair Display', serif; 
+            color: var(--gold-main); /* Títulos agora são dourados */
+        }
         h2 { font-size: 2rem; margin: 50px 0 30px; text-align: center; }
         p { margin-bottom: 15px; font-size: 1rem; }
 
@@ -51,22 +60,21 @@
             padding: 0 20px 80px 20px;
         }
 
-        /* --- HERO SECTION COM BANNER CABEÇALHO --- */
-        /* Reduzi o padding superior para o banner ficar mais no topo */
+        /* --- HERO SECTION --- */
         .hero { text-align: center; padding: 20px 20px 20px; }
         
-        /* Estilo do novo Banner */
         .hero-logo {
-            width: 100%;          /* Ocupa toda a largura disponível */
-            max-width: 800px;     /* Trava na largura máxima do conteúdo */
-            height: auto;         /* Mantém a proporção correta */
+            width: 100%;
+            max-width: 800px;
+            height: auto;
             display: block;
-            margin: 0 auto 30px auto; /* Centralizado com margem inferior de 30px */
-            border-radius: 16px;  /* Cantos arredondados suaves para elegância */
+            margin: 0 auto 30px auto;
+            border-radius: 16px;
         }
 
         .typewriter h1 { 
-            border-bottom: 3px solid var(--lavanda-medium); 
+            /* Linha abaixo do título também dourada */
+            border-bottom: 3px solid var(--gold-main); 
             padding-bottom: 10px; 
             margin: 0 auto; 
             display: inline-block;
@@ -74,8 +82,21 @@
         }
         /* ------------------------------------ */
 
-        /* CARDS */
-        .intro-card { background: #fff; padding: 40px; border-radius: 20px; box-shadow: var(--shadow); border-left: 6px solid var(--roxo-soft); margin-bottom: 40px; text-align: center; }
+        /* CARDS (Mantendo o toque de roxo/lilás) */
+        .intro-card { 
+            background: #fff; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: var(--shadow); 
+            border-left: 6px solid var(--roxo-soft); /* Borda lateral roxa */
+            margin-bottom: 40px; 
+            text-align: center; 
+        }
+
+        /* Texto de destaque no primeiro card em Roxo Profundo */
+        .intro-card p.highlight {
+            color: var(--roxo-deep);
+        }
 
         /* FOTO DA MENTORA */
         .about-me-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid var(--lavanda-medium); box-shadow: var(--shadow); margin-bottom: 25px; }
@@ -84,12 +105,18 @@
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 60px; }
         .feature-card { background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); border: 1px solid rgba(255,255,255,0.5); text-align: center; transition: transform 0.3s; }
         .feature-card:hover { transform: translateY(-5px); }
+        
+        /* Ícones continuam roxos para contraste */
         .feature-icon { font-size: 36px; color: var(--roxo-soft); margin-bottom: 15px; display: block; }
-        .feature-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.2rem; color: var(--roxo-deep); margin-bottom: 10px; display: block; }
+        
+        /* Títulos dos cards em Dourado */
+        .feature-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.2rem; color: var(--gold-main); margin-bottom: 10px; display: block; }
         .feature-desc { font-size: 0.95rem; color: #666; }
 
         .honor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; margin-bottom: 60px; }
         .honor-item { background: rgba(255,255,255,0.6); padding: 20px; border-radius: 16px; text-align: center; border: 1px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        
+        /* Ícones do grid de honra em Roxo Profundo */
         .honor-item .material-icons-round { color: var(--roxo-deep); font-size: 32px; margin-bottom: 5px; }
         .honor-item p { margin: 0; font-weight: 600; font-size: 0.9rem; }
 
@@ -98,32 +125,50 @@
         .col-no, .col-yes { flex: 1; min-width: 300px; padding: 30px; border-radius: 20px; }
         .col-no { background: #fff0f0; border: 1px solid #ffdede; }
         .col-no h3 { color: #d32f2f; margin-top: 0; display: flex; align-items: center; gap: 10px; font-size: 1.2rem; }
+        
+        /* Coluna SIM com borda lilás */
         .col-yes { background: #fff; border: 2px solid var(--lavanda-medium); box-shadow: var(--shadow); }
-        .col-yes h3 { color: var(--roxo-deep); margin-top: 0; display: flex; align-items: center; gap: 10px; font-size: 1.2rem; }
+        
+        /* Título do SIM em Dourado */
+        .col-yes h3 { color: var(--gold-main); margin-top: 0; display: flex; align-items: center; gap: 10px; font-size: 1.2rem; }
+        
+        /* Ícones de check em roxo suave */
+        .check-icon { color: var(--roxo-soft); }
+
         .check-list div { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; }
 
         /* PASSOS */
-        .step-item { display: flex; align-items: center; background: #fff; padding: 20px; border-radius: 16px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border-left: 5px solid var(--roxo-soft); }
+        .step-item { 
+            display: flex; align-items: center; background: #fff; padding: 20px; border-radius: 16px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
+            border-left: 5px solid var(--roxo-soft); /* Borda lateral roxa */
+        }
+        /* Ícones dos passos em Roxo Profundo */
         .step-icon { color: var(--roxo-deep); margin-right: 20px; font-size: 28px; }
 
         /* ESPIRITUALIDADE */
+        /* Fundo Roxo Profundo com texto Dourado e Lilás */
         .spiritual-box { text-align: center; padding: 50px 20px; background: var(--roxo-deep); color: #fff; border-radius: 20px; margin-bottom: 60px; position: relative; overflow: hidden; }
-        .spiritual-box h3 { color: var(--lavanda-light); font-family: 'Libre Baskerville', serif; font-style: italic; margin: 0; font-size: 1.4rem; position: relative; z-index: 2; }
+        .spiritual-box h3 { color: var(--gold-main); font-family: 'Libre Baskerville', serif; font-style: italic; margin: 0; font-size: 1.4rem; position: relative; z-index: 2; }
+        .spiritual-icon { color: var(--lavanda-light); }
 
         /* TALLY FORM */
         .tally-container { margin-top: 40px; background: white; border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
+        
+        /* Ícone do formulário em roxo suave */
+        .form-icon { color: var(--roxo-soft); }
 
         /* FOOTER */
         .footer { text-align: center; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.1); margin-top: 60px; }
-        .signature { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--roxo-soft); margin-top: 20px; }
+        /* Frase de destaque no rodapé em Dourado */
+        .footer-quote { font-family: 'Libre Baskerville', serif; font-size: 1.2rem; color: var(--gold-main); font-weight: bold; font-style: italic; }
+        /* Assinatura em Dourado */
+        .signature { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold-main); margin-top: 20px; }
 
         /* Responsividade */
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
             .col-no, .col-yes { min-width: 100%; }
             .container { padding: 0 15px 80px 15px; }
-            /* No celular, o banner ocupa 100% da largura disponível */
-            .hero-logo { width: 100%; } 
         }
     </style>
 </head>
@@ -141,7 +186,7 @@
     </div>
 
     <div class="intro-card">
-        <p style="font-size: 1.2rem; color: var(--roxo-deep); font-weight: 600; margin-bottom: 10px;">
+        <p class="highlight" style="font-size: 1.2rem; font-weight: 600; margin-bottom: 10px;">
             Você chegou até aqui porque decidiu se olhar com verdade.
         </p>
         <p style="margin: 0;">Este é um espaço seguro de crescimento, maturidade e transformação.</p>
@@ -201,9 +246,9 @@
         <div class="col-yes">
             <h3><span class="material-icons-round">check_circle</span> Você RECEBERÁ:</h3>
             <div class="check-list">
-                <div><span class="material-icons-round" style="color:var(--roxo-soft)">check</span> Direção clara</div>
-                <div><span class="material-icons-round" style="color:var(--roxo-soft)">check</span> Clareza emocional</div>
-                <div><span class="material-icons-round" style="color:var(--roxo-soft)">check</span> Ferramentas práticas</div>
+                <div><span class="material-icons-round check-icon">check</span> Direção clara</div>
+                <div><span class="material-icons-round check-icon">check</span> Clareza emocional</div>
+                <div><span class="material-icons-round check-icon">check</span> Ferramentas práticas</div>
             </div>
         </div>
     </div>
@@ -225,12 +270,12 @@
     </div>
 
     <div class="spiritual-box">
-        <span class="material-icons-round" style="font-size: 40px; margin-bottom: 10px; opacity: 0.8;">auto_awesome</span>
+        <span class="material-icons-round spiritual-icon" style="font-size: 40px; margin-bottom: 10px; opacity: 0.8;">auto_awesome</span>
         <h3>"Deus é a fonte.<br>A mentoria é o instrumento.<br>O processo é seu."</h3>
     </div>
 
     <div style="text-align: center; margin-bottom: 10px;">
-        <span class="material-icons-round" style="font-size: 32px; color: var(--roxo-soft);">assignment</span>
+        <span class="material-icons-round form-icon" style="font-size: 32px;">assignment</span>
         <h2 style="margin: 10px 0;">Aplique Agora</h2>
         <p>Preencha o formulário abaixo para iniciarmos:</p>
     </div>
@@ -240,7 +285,7 @@
     </div>
 
     <div class="footer">
-        <p style="font-family: 'Libre Baskerville', serif; font-size: 1.2rem; color: var(--roxo-deep); font-weight: bold; font-style: italic;">
+        <p class="footer-quote">
             "Eu escolho me responsabilizar pela minha transformação."
         </p>
         <p>Caminhe com coragem.</p>
