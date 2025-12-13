@@ -51,17 +51,34 @@
             padding: 0 20px 80px 20px;
         }
 
-        /* HERO SECTION COM LOGO */
-        .hero { text-align: center; padding: 60px 20px 20px; }
+        /* --- HERO SECTION COM NOVO DESIGN DE LOGO --- */
+        .hero { text-align: center; padding: 50px 20px 30px; }
         
-        /* Estilo da Logo */
+        /* Container circular para a logo (O "Emblema") */
+        .logo-container {
+            width: 240px;
+            height: 240px;
+            background-color: var(--lavanda-light); /* Fundo lavanda suave */
+            border-radius: 50%; /* Formato circular */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px auto; /* Centralizar na tela */
+            box-shadow: 0 8px 25px rgba(74, 20, 140, 0.15); /* Sombra elegante */
+            border: 5px solid #fff; /* Borda branca para destacar */
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: translateY(-5px); /* Leve movimento ao passar o mouse */
+        }
+
+        /* A imagem da logo dentro do círculo */
         .hero-logo {
-            max-width: 280px; /* Tamanho grande como pedido */
-            width: 80%;       /* Responsivo em telas muito pequenas */
+            max-width: 85%; /* Ajusta o tamanho da logo para caber no círculo */
             height: auto;
-            display: block;
-            margin: 0 auto 20px auto; /* Centralizar */
-            filter: drop-shadow(0 4px 6px rgba(74, 20, 140, 0.1)); /* Sombra suave para destacar */
+            filter: drop-shadow(0 4px 6px rgba(74, 20, 140, 0.2)); /* Sombra na logo dourada */
         }
 
         .typewriter h1 { 
@@ -71,6 +88,8 @@
             display: inline-block;
             font-size: 2.2rem;
         }
+        /* ------------------------------------------- */
+
 
         /* CARDS */
         .intro-card { background: #fff; padding: 40px; border-radius: 20px; box-shadow: var(--shadow); border-left: 6px solid var(--roxo-soft); margin-bottom: 40px; text-align: center; }
@@ -120,7 +139,8 @@
             h1 { font-size: 1.8rem; }
             .col-no, .col-yes { min-width: 100%; }
             .container { padding: 0 15px 80px 15px; }
-            .hero-logo { max-width: 220px; } /* Ajuste leve para celular */
+            /* Ajuste do tamanho do emblema no celular */
+            .logo-container { width: 200px; height: 200px; }
         }
     </style>
 </head>
@@ -129,7 +149,9 @@
 <div class="container">
 
     <div class="hero">
-        <img src="https://i.ibb.co/CjfrGw2/Logo-6.png" alt="Michelle Julio Mentoria" class="hero-logo">
+        <div class="logo-container">
+            <img src="https://i.ibb.co/CjfrGw2/Logo-6.png" alt="Michelle Julio Mentoria - Logo Dourada" class="hero-logo">
+        </div>
         
         <div class="typewriter"><h1>Seja Bem-vinda à Mentoria</h1></div>
         <p style="font-family: 'Libre Baskerville', serif; font-style: italic; margin-top: 15px; color: #666;">
