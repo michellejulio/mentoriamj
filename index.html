@@ -19,11 +19,15 @@
         :root {
             --bg-body: #FAF9F6; 
             --white: #FFFFFF;
+            
+            /* Cores */
             --text-dark: #1F1F1F; 
             --text-gray: #666666;
             --gold-main: #C0A665; 
             --gold-light: #F4F1E8;
             --gold-gradient: linear-gradient(135deg, #C0A665 0%, #E3CD94 100%);
+            
+            /* Efeitos */
             --shadow-card: 0 15px 35px -5px rgba(0, 0, 0, 0.05);
             --shadow-glow: 0 0 40px rgba(192, 166, 101, 0.15); 
             --border-radius: 8px; 
@@ -41,6 +45,26 @@
         }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
+        /* BARRA DE ESCASSEZ (NOVO) */
+        .scarcity-bar {
+            background-color: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1001;
+        }
+        .scarcity-highlight {
+            color: var(--gold-main);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            margin-left: 5px;
+        }
+
         /* TIPOGRAFIA */
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--text-dark); font-weight: 500; }
         h2 { font-size: 2.2rem; margin: 80px 0 50px; text-align: center; letter-spacing: -0.5px; position: relative; }
@@ -48,7 +72,7 @@
 
         .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
-        /* --- HERO --- */
+        /* HERO */
         .hero { text-align: center; padding: 40px 20px 10px; }
         .hero-logo { max-width: 350px; width: 90%; height: auto; display: block; margin: 0 auto 20px auto; }
         
@@ -65,7 +89,7 @@
             font-weight: 600; letter-spacing: -1px;
         }
 
-        /* --- CARDS PADRÃO --- */
+        /* CARDS PADRÃO */
         .card-base {
             background: var(--white); padding: 40px; border-radius: var(--border-radius);
             box-shadow: var(--shadow-card); margin-bottom: 40px;
@@ -111,6 +135,7 @@
         .manifesto-container { background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow-card); padding: 40px; margin-bottom: 60px; border-top: 4px solid var(--gold-main); }
         .manifesto-item { display: flex; align-items: center; padding: 20px 0; border-bottom: 1px solid #F0F0F0; }
         .manifesto-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .manifesto-item:first-child { padding-top: 0; }
         .manifesto-icon { color: var(--gold-main); margin-right: 20px; font-size: 24px; background: var(--bg-body); padding: 10px; border-radius: 50%; }
         .manifesto-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--text-dark); font-weight: 500; }
 
@@ -138,11 +163,8 @@
         details[open] summary::after { content: '-'; }
         .faq-content { padding: 0 20px 20px 20px; color: var(--text-gray); font-size: 0.95rem; border-top: 1px solid #f9f9f9; padding-top: 15px; line-height: 1.6; }
 
-        /* GARANTIA (NOVO) */
-        .guarantee-box { 
-            background: #FFFEFA; border: 2px dashed var(--gold-main); border-radius: 12px;
-            padding: 40px; text-align: center; margin-bottom: 60px;
-        }
+        /* GARANTIA */
+        .guarantee-box { background: #FFFEFA; border: 2px dashed var(--gold-main); border-radius: 12px; padding: 40px; text-align: center; margin-bottom: 60px; }
         .guarantee-icon { font-size: 48px; color: var(--gold-main); margin-bottom: 15px; }
         .guarantee-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--text-dark); margin-bottom: 10px; }
 
@@ -189,6 +211,10 @@
     </style>
 </head>
 <body>
+
+<div class="scarcity-bar">
+    ⚠️ As vagas para a mentoria são <span class="scarcity-highlight">limitadas</span>. Garanta sua aplicação hoje.
+</div>
 
 <div class="container">
 
