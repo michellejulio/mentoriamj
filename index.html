@@ -244,7 +244,7 @@
             z-index: 9999;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px; /* Espaço entre botão e texto */
         }
 
         /* Balãozinho "Dúvidas?" */
@@ -255,9 +255,10 @@
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 600;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            animation: fadeIn 2s ease-in-out;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
             border: 1px solid #eee;
+            animation: slideIn 1s ease-out; /* Animação de entrada */
+            white-space: nowrap; /* Não quebrar linha */
         }
 
         .whatsapp-btn {
@@ -277,7 +278,7 @@
         .whatsapp-btn svg { width: 35px; height: 35px; fill: white; }
 
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-        @keyframes fadeIn { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
 
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
@@ -285,7 +286,8 @@
             .steps-wrapper::before { display: none; }
             .steps-wrapper { padding-left: 0; }
             .spiritual-text { font-size: 1.4rem; }
-            .whatsapp-tooltip { display: none; } /* Oculta legenda em telas mto pequenas se preferir, ou mantenha */
+            /* Garante que o tooltip apareça no mobile */
+            .whatsapp-tooltip { font-size: 0.8rem; padding: 6px 12px; }
         }
     </style>
 </head>
