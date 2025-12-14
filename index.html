@@ -11,7 +11,7 @@
     
     <script async src="https://tally.so/widgets/embed.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
     <style>
@@ -30,7 +30,7 @@
             /* Efeitos */
             --shadow-card: 0 15px 35px -5px rgba(0, 0, 0, 0.05);
             --shadow-glow: 0 0 40px rgba(192, 166, 101, 0.15); /* Brilho dourado */
-            --border-radius: 8px; /* Cantos levemente arredondados (mais moderno) */
+            --border-radius: 8px; 
         }
 
         /* RESET */
@@ -112,21 +112,21 @@
             border-color: var(--gold-main);
         }
 
-        /* NÚMERO GRANDE NO FUNDO (Agora mais visível) */
+        /* NÚMERO GRANDE NO FUNDO */
         .journey-number {
             position: absolute;
             top: -20px;
             right: -10px;
             font-family: 'Playfair Display', serif;
-            font-size: 6rem; /* Maior */
+            font-size: 6rem; 
             color: var(--gold-main);
-            opacity: 0.25; /* Mais visível (era 0.1) */
+            opacity: 0.25; 
             font-weight: 700;
             line-height: 1;
             z-index: 0;
         }
 
-        .journey-content { position: relative; z-index: 1; } /* Garante que texto fique na frente */
+        .journey-content { position: relative; z-index: 1; } 
 
         .journey-icon {
             font-size: 32px; color: var(--gold-main); margin-bottom: 15px;
@@ -211,54 +211,43 @@
             font-size: 14px;
         }
 
-        /* --- NOVA SESSÃO ESPIRITUAL (IMPACTANTE & CLEAN) --- */
+        /* --- SESSÃO ESPIRITUAL --- */
         .spiritual-card { 
             text-align: center; 
             padding: 70px 30px; 
-            background: radial-gradient(circle at center, #FFFFFF 0%, #F9F7F2 100%); /* Gradiente Luz */
-            border: 1px solid var(--gold-main); /* Borda Dourada Fina */
+            background: radial-gradient(circle at center, #FFFFFF 0%, #F9F7F2 100%);
+            border: 1px solid var(--gold-main);
             border-radius: var(--border-radius); 
             margin-bottom: 60px; 
-            box-shadow: var(--shadow-glow); /* Brilho difuso atrás */
+            box-shadow: var(--shadow-glow);
             position: relative;
         }
         
-        /* Aspas Gigantes no Fundo */
         .spiritual-card::before {
-            content: '“';
-            font-family: 'Playfair Display', serif;
-            font-size: 10rem;
-            color: var(--gold-main);
-            opacity: 0.1;
-            position: absolute;
-            top: -40px;
-            left: 20px;
-            line-height: 1;
+            content: '“'; font-family: 'Playfair Display', serif; font-size: 10rem; color: var(--gold-main); opacity: 0.1; position: absolute; top: -40px; left: 20px; line-height: 1;
         }
 
         .spiritual-text { 
-            font-family: 'Playfair Display', serif; 
-            font-style: italic; 
-            font-size: 1.8rem; /* Fonte maior */
-            line-height: 1.5; 
-            color: var(--text-dark);
-            position: relative; z-index: 2;
+            font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.8rem; line-height: 1.5; color: var(--text-dark); position: relative; z-index: 2;
         }
         
         .spiritual-icon { 
-            color: var(--gold-main); 
-            font-size: 36px; 
-            margin-bottom: 20px; 
-            display: block; 
-            margin-left: auto; margin-right: auto;
+            color: var(--gold-main); font-size: 36px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;
         }
 
         /* --- TALLY --- */
         .tally-box { margin-top: 40px; background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow-card); overflow: hidden; border-top: 4px solid var(--gold-main); }
 
-        /* FOOTER */
+        /* FOOTER E ASSINATURA */
         .footer { text-align: center; padding-top: 50px; border-top: 1px solid #E5E5E5; margin-top: 80px; }
-        .signature { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold-main); margin-top: 20px; font-style: italic; }
+        
+        /* Nova fonte para a assinatura */
+        .signature { 
+            font-family: 'Pinyon Script', cursive; /* Fonte de assinatura elegante */
+            font-size: 2.5rem; /* Tamanho maior para destaque */
+            color: var(--gold-main); 
+            margin-top: 20px; 
+        }
 
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
@@ -361,7 +350,7 @@
             <div class="check-item"><span class="material-icons-round check-icon">close</span> Passividade</div>
             <div class="check-item"><span class="material-icons-round check-icon">close</span> Reforço de vitimismo</div>
         </div>
-        <div class="comp-col" style="border: 2px solid var(--gold-light);">
+        <div class="comp-col" style="border: 2px solid var(--gold-main);">
             <div class="comp-title comp-good"><span class="material-icons-round">check_circle</span> Você RECEBERÁ</div>
             <div class="check-item"><span class="material-icons-round check-icon" style="color:var(--gold-main)">check</span> Direção clara</div>
             <div class="check-item"><span class="material-icons-round check-icon" style="color:var(--gold-main)">check</span> Clareza emocional</div>
