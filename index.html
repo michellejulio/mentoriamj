@@ -86,7 +86,7 @@
         .about-section { text-align: center; }
         .about-img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 1px solid var(--gold-main); padding: 5px; margin-bottom: 25px; }
 
-        /* --- QUIZ --- */
+        /* --- QUIZ ESTILOS --- */
         .quiz-container {
             background: var(--white);
             border-radius: var(--border-radius);
@@ -94,9 +94,16 @@
             border-top: 4px solid var(--gold-main);
             padding: 40px;
             text-align: center;
-            margin-bottom: 40px; /* Mais perto do formulário */
+            margin-bottom: 40px;
             transition: all 0.3s ease;
         }
+        
+        /* BARRA DE PROGRESSO DO QUIZ */
+        .quiz-header { margin-bottom: 25px; text-align: left; }
+        .quiz-step-text { font-size: 0.85rem; color: var(--gold-main); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+        .progress-track { width: 100%; height: 6px; background-color: #F0F0F0; border-radius: 10px; overflow: hidden; }
+        .progress-fill { height: 100%; background-color: var(--gold-main); width: 0%; transition: width 0.4s ease; }
+
         .quiz-question { font-size: 1.3rem; font-weight: 600; color: var(--text-dark); margin-bottom: 30px; font-family: 'Playfair Display', serif; }
         .quiz-options { display: flex; flex-direction: column; gap: 15px; }
         .quiz-btn {
@@ -189,7 +196,7 @@
         .spiritual-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.8rem; line-height: 1.5; color: var(--text-dark); position: relative; z-index: 2; }
         .spiritual-icon { color: var(--gold-main); font-size: 36px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; }
 
-        .tally-box { margin-top: 20px; background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow-card); overflow: hidden; border-top: 4px solid var(--gold-main); }
+        .tally-box { margin-top: 40px; background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow-card); overflow: hidden; border-top: 4px solid var(--gold-main); }
 
         .footer { text-align: center; padding-top: 50px; border-top: 1px solid #E5E5E5; margin-top: 80px; }
         .signature { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--gold-main); margin-top: 20px; margin-bottom: 20px; font-weight: 400; }
@@ -393,6 +400,13 @@
         </div>
 
         <div id="quiz-questions" style="display:none;">
+            <div class="quiz-header">
+                <div class="quiz-step-text" id="stepText">Pergunta 1 de 7</div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+            </div>
+            
             <div id="question-box">
                 </div>
         </div>
@@ -464,7 +478,7 @@
         window.addEventListener('resize', () => goToSlide(currentIndex));
     });
 
-    // QUIZ LOGICA
+    // QUIZ LOGICA + PROGRESS BAR
     const questions = [
         { q: "Quando algo dá errado, qual sua primeira reação?", options: [{ t: "Acho que Deus esqueceu de mim", s: 3 }, { t: "Me culpo excessivamente", s: 2 }, { t: "Busco uma solução prática", s: 0 }] },
         { q: "Como você se vê hoje?", options: [{ t: "Sem valor ou propósito", s: 3 }, { t: "Incapaz de mudar", s: 2 }, { t: "Em processo de evolução", s: 0 }] },
@@ -481,17 +495,27 @@
         document.getElementById('quiz-intro').style.display = 'none';
         document.getElementById('quiz-questions').style.display = 'block';
         showQuestion();
+        updateProgressBar();
     }
 
     function showQuestion() {
         const box = document.getElementById('question-box');
         const q = questions[currentQ];
-        let html = `<p class="quiz-question">${currentQ + 1}. ${q.q}</p><div class="quiz-options">`;
+        // Atualiza texto da etapa
+        document.getElementById('stepText').innerText = `PERGUNTA ${currentQ + 1} DE ${questions.length}`;
+        
+        let html = `<p class="quiz-question">${q.q}</p><div class="quiz-options">`;
         q.options.forEach((opt, idx) => {
             html += `<div class="quiz-btn" onclick="nextQ(${opt.s})"><div class="circle"></div> ${opt.t}</div>`;
         });
         html += `</div>`;
         box.innerHTML = html;
+        updateProgressBar();
+    }
+
+    function updateProgressBar() {
+        const progress = ((currentQ + 1) / questions.length) * 100;
+        document.getElementById('progressBar').style.width = `${progress}%`;
     }
 
     function nextQ(points) {
@@ -536,9 +560,7 @@
         setTimeout(() => { modal.style.opacity = '1'; document.querySelector('.modal-box').style.transform = 'translateY(0)'; }, 10);
         hasShownModal = true;
     }
-    // Desktop Exit
     document.addEventListener('mouseleave', function(e) { if (e.clientY < 0 && !hasShownModal) { showModal(); } });
-    // Mobile Scroll Back
     let lastScrollTop = 0;
     window.addEventListener('scroll', function() {
         let st = window.pageYOffset || document.documentElement.scrollTop;
