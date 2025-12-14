@@ -11,13 +11,13 @@
     
     <script async src="https://tally.so/widgets/embed.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
     <style>
         /* --- VARIÁVEIS DE DESIGN --- */
         :root {
-            --bg-body: #FAF9F6; /* Off-white linho */
+            --bg-body: #FAF9F6; 
             --white: #FFFFFF;
             
             /* Cores */
@@ -29,7 +29,7 @@
             
             /* Efeitos */
             --shadow-card: 0 15px 35px -5px rgba(0, 0, 0, 0.05);
-            --shadow-glow: 0 0 40px rgba(192, 166, 101, 0.15); /* Brilho dourado */
+            --shadow-glow: 0 0 40px rgba(192, 166, 101, 0.15); 
             --border-radius: 8px; 
         }
 
@@ -49,7 +49,7 @@
 
         /* TIPOGRAFIA */
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--text-dark); font-weight: 500; }
-        h2 { font-size: 2.2rem; margin: 80px 0 50px; text-align: center; letter-spacing: -0.5px; position: relative; }
+        h2 { font-size: 2.2rem; margin: 60px 0 40px; text-align: center; letter-spacing: -0.5px; position: relative; }
         
         /* Detalhe minimalista abaixo dos H2 */
         h2::after {
@@ -60,9 +60,19 @@
         .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
         /* --- HERO --- */
-        .hero { text-align: center; padding: 50px 20px 30px; }
-        .hero-logo { max-width: 350px; width: 90%; height: auto; display: block; margin: 0 auto 30px auto; }
+        .hero { text-align: center; padding: 40px 20px 10px; }
+        .hero-logo { max-width: 350px; width: 90%; height: auto; display: block; margin: 0 auto 20px auto; }
         
+        /* LINHA DIVISÓRIA SUTIL */
+        .gold-divider {
+            width: 100%;
+            max-width: 600px; 
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-main), transparent);
+            margin: 40px auto; 
+            opacity: 0.4; 
+        }
+
         .hero-title {
             display: inline-block; font-size: 2.2rem; margin-bottom: 10px;
             background: linear-gradient(135deg, #C0A665 0%, #8A7035 100%);
@@ -112,21 +122,14 @@
             border-color: var(--gold-main);
         }
 
-        /* NÚMERO GRANDE NO FUNDO */
         .journey-number {
-            position: absolute;
-            top: -20px;
-            right: -10px;
-            font-family: 'Playfair Display', serif;
-            font-size: 6rem; 
-            color: var(--gold-main);
-            opacity: 0.25; 
-            font-weight: 700;
-            line-height: 1;
-            z-index: 0;
+            position: absolute; top: -20px; right: -10px;
+            font-family: 'Playfair Display', serif; font-size: 6rem; 
+            color: var(--gold-main); opacity: 0.25; font-weight: 700;
+            line-height: 1; z-index: 0;
         }
 
-        .journey-content { position: relative; z-index: 1; } 
+        .journey-content { position: relative; z-index: 1; }
 
         .journey-icon {
             font-size: 32px; color: var(--gold-main); margin-bottom: 15px;
@@ -150,9 +153,7 @@
         }
 
         .manifesto-item {
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
+            display: flex; align-items: center; padding: 20px 0;
             border-bottom: 1px solid #F0F0F0;
         }
 
@@ -160,19 +161,13 @@
         .manifesto-item:first-child { padding-top: 0; }
 
         .manifesto-icon {
-            color: var(--gold-main);
-            margin-right: 20px;
-            font-size: 24px;
-            background: var(--bg-body);
-            padding: 10px;
-            border-radius: 50%;
+            color: var(--gold-main); margin-right: 20px; font-size: 24px;
+            background: var(--bg-body); padding: 10px; border-radius: 50%;
         }
 
         .manifesto-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            font-weight: 500;
+            font-family: 'Playfair Display', serif; font-size: 1.1rem;
+            color: var(--text-dark); font-weight: 500;
         }
 
         /* --- EXPECTATIVAS --- */
@@ -195,12 +190,9 @@
 
         .step-row {
             display: flex; align-items: center; 
-            background: var(--white); 
-            padding: 25px; 
-            border-radius: var(--border-radius); 
-            margin-bottom: 20px; 
-            box-shadow: var(--shadow-card);
-            position: relative; z-index: 1;
+            background: var(--white); padding: 25px; 
+            border-radius: var(--border-radius); margin-bottom: 20px; 
+            box-shadow: var(--shadow-card); position: relative; z-index: 1;
         }
         
         .step-circle {
@@ -213,14 +205,10 @@
 
         /* --- SESSÃO ESPIRITUAL --- */
         .spiritual-card { 
-            text-align: center; 
-            padding: 70px 30px; 
+            text-align: center; padding: 70px 30px; 
             background: radial-gradient(circle at center, #FFFFFF 0%, #F9F7F2 100%);
-            border: 1px solid var(--gold-main);
-            border-radius: var(--border-radius); 
-            margin-bottom: 60px; 
-            box-shadow: var(--shadow-glow);
-            position: relative;
+            border: 1px solid var(--gold-main); border-radius: var(--border-radius); 
+            margin-bottom: 60px; box-shadow: var(--shadow-glow); position: relative;
         }
         
         .spiritual-card::before {
@@ -241,12 +229,13 @@
         /* FOOTER E ASSINATURA */
         .footer { text-align: center; padding-top: 50px; border-top: 1px solid #E5E5E5; margin-top: 80px; }
         
-        /* Nova fonte para a assinatura */
+        /* Nova fonte: GREAT VIBES */
         .signature { 
-            font-family: 'Pinyon Script', cursive; /* Fonte de assinatura elegante */
-            font-size: 2.5rem; /* Tamanho maior para destaque */
+            font-family: 'Great Vibes', cursive; 
+            font-size: 3rem; /* Tamanho maior para essa fonte */
             color: var(--gold-main); 
             margin-top: 20px; 
+            font-weight: 400;
         }
 
         @media (max-width: 600px) {
@@ -264,6 +253,9 @@
 
     <div class="hero">
         <img src="https://i.ibb.co/21HgfrMf/Logo-1.png" alt="Michelle Julio" class="hero-logo">
+        
+        <div class="gold-divider"></div>
+
         <span class="hero-title">Seja Bem-vinda à Mentoria</span>
         <p style="font-family:'Libre Baskerville',serif; font-style:italic;">Um caminho de cura, identidade e propósito.</p>
     </div>
@@ -281,6 +273,8 @@
         <p style="font-size:0.8rem; text-transform:uppercase; letter-spacing:2px; color:var(--gold-main); margin-bottom:20px;">Psicanalista & Mentora</p>
         <p style="text-align:left;">Dedico minha vida a guiar jornadas de profunda transformação. Minha abordagem integra a clareza da psicanálise com a força da espiritualidade, ajudando você a fortalecer sua identidade e descobrir um propósito alinhado à sua essência.</p>
     </div>
+
+    <div class="gold-divider"></div>
 
     <h2>Como Funciona</h2>
     <div class="journey-grid">
@@ -373,6 +367,8 @@
             <div><strong>Ambiente:</strong> Esteja sozinha e em silêncio.</div>
         </div>
     </div>
+
+    <div class="gold-divider"></div>
 
     <div class="spiritual-card">
         <span class="material-icons-round spiritual-icon">auto_awesome</span>
