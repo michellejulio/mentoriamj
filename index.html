@@ -52,9 +52,14 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         /* TIPOGRAFIA */
-        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--text-dark); font-weight: 500; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--text-dark); font-weight: 500; }
         h2 { font-size: 2.2rem; margin: 80px 0 50px; text-align: center; letter-spacing: -0.5px; position: relative; }
-        h2::after { content: ''; display: block; width: 40px; height: 2px; background: var(--gold-main); margin: 20px auto 0; }
+        
+        /* Detalhe minimalista abaixo dos H2 */
+        h2::after {
+            content: ''; display: block; width: 40px; height: 2px;
+            background: var(--gold-main); margin: 20px auto 0;
+        }
 
         .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
@@ -82,72 +87,46 @@
             border: 1px solid rgba(192, 166, 101, 0.1);
         }
 
-        /* SOBRE */
+        /* SOBRE A MENTORA */
         .about-section { text-align: center; }
-        .about-img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 1px solid var(--gold-main); padding: 5px; margin-bottom: 25px; }
-
-        /* --- QUIZ ESTILOS --- */
-        .quiz-container {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-card);
-            border-top: 4px solid var(--gold-main);
-            padding: 40px;
-            text-align: center;
-            margin-bottom: 40px;
-            transition: all 0.3s ease;
+        .about-img { 
+            width: 160px; height: 160px; border-radius: 50%; object-fit: cover; 
+            border: 1px solid var(--gold-main); padding: 5px; margin-bottom: 25px; 
         }
-        
-        /* BARRA DE PROGRESSO DO QUIZ */
-        .quiz-header { margin-bottom: 25px; text-align: left; }
-        .quiz-step-text { font-size: 0.85rem; color: var(--gold-main); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
-        .progress-track { width: 100%; height: 6px; background-color: #F0F0F0; border-radius: 10px; overflow: hidden; }
-        .progress-fill { height: 100%; background-color: var(--gold-main); width: 0%; transition: width 0.4s ease; }
 
-        .quiz-question { font-size: 1.3rem; font-weight: 600; color: var(--text-dark); margin-bottom: 30px; font-family: 'Playfair Display', serif; }
-        .quiz-options { display: flex; flex-direction: column; gap: 15px; }
-        .quiz-btn {
-            background: var(--bg-body);
-            border: 1px solid #E0E0E0;
-            padding: 15px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-family: 'Manrope', sans-serif;
-            font-size: 1rem;
-            color: var(--text-gray);
-            transition: all 0.2s;
-            text-align: left;
-            display: flex; align-items: center; gap: 10px;
+        /* --- TRANSFORMAÇÃO --- */
+        .transformation-grid {
+            display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center; margin-bottom: 60px;
         }
-        .quiz-btn:hover { background: var(--gold-light); border-color: var(--gold-main); color: var(--text-dark); transform: translateX(5px); }
-        .quiz-btn .circle { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ccc; flex-shrink: 0; }
-        .quiz-btn:hover .circle { border-color: var(--gold-main); background: var(--gold-main); }
-        
-        .quiz-result { display: none; animation: fadeIn 0.8s; background: var(--gold-light); padding: 30px; border-radius: 8px; margin-top: 20px; }
-        .result-title { color: var(--gold-main); font-size: 1.6rem; margin-bottom: 10px; font-weight: 700; font-family: 'Playfair Display', serif; }
-        .result-desc { font-size: 1.05rem; color: var(--text-dark); margin-bottom: 20px; line-height: 1.6; }
-        .arrow-down { font-size: 40px; color: var(--gold-main); animation: bounce 2s infinite; display: block; margin: 0 auto; }
-        
-        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
-
-        /* OUTROS BLOCOS */
-        .transformation-grid { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center; margin-bottom: 60px; }
-        .trans-card { background: var(--white); padding: 30px; border-radius: var(--border-radius); box-shadow: var(--shadow-card); }
+        .trans-card {
+            background: var(--white); padding: 30px; border-radius: var(--border-radius); box-shadow: var(--shadow-card);
+        }
         .trans-arrow { text-align: center; color: var(--gold-main); }
         .trans-arrow .material-icons-round { font-size: 40px; transform: rotate(90deg); }
         .trans-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
         .trans-before { opacity: 0.8; border: 1px solid #eee; }
         .trans-after { border: 2px solid var(--gold-main); transform: scale(1.02); }
-        @media (min-width: 800px) { .transformation-grid { grid-template-columns: 1fr auto 1fr; } .trans-arrow .material-icons-round { transform: rotate(0deg); } }
+        @media (min-width: 800px) {
+            .transformation-grid { grid-template-columns: 1fr auto 1fr; }
+            .trans-arrow .material-icons-round { transform: rotate(0deg); }
+        }
 
-        .journey-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px; }
-        .journey-card { background: var(--white); padding: 30px 25px; border-radius: var(--border-radius); box-shadow: var(--shadow-card); position: relative; overflow: hidden; transition: transform 0.3s ease; text-align: center; border: 1px solid rgba(0,0,0,0.03); }
-        .journey-card:hover { transform: translateY(-5px); border-color: var(--gold-main); }
-        .journey-number { position: absolute; top: -20px; right: -10px; font-family: 'Playfair Display', serif; font-size: 6rem; color: var(--gold-main); opacity: 0.25; font-weight: 700; line-height: 1; z-index: 0; }
-        .journey-content { position: relative; z-index: 1; }
-        .journey-icon { font-size: 32px; color: var(--gold-main); margin-bottom: 15px; background: var(--bg-body); width: 60px; height: 60px; line-height: 60px; border-radius: 50%; display: inline-block; }
-        .journey-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--text-dark); margin-bottom: 10px; display: block; }
+        /* --- PARA QUEM É --- */
+        .target-list { list-style: none; padding: 0; }
+        .target-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid #f5f5f5; padding-bottom: 15px; }
+        .target-item:last-child { border: none; margin-bottom: 0; }
+        .target-icon { color: var(--gold-main); font-size: 24px; margin-top: 2px; }
+        .target-text strong { color: var(--text-dark); display: block; margin-bottom: 4px; font-family: 'Playfair Display', serif; font-size: 1.1rem; }
 
+        /* --- CÓDIGO DE HONRA --- */
+        .manifesto-container { background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow-card); padding: 40px; margin-bottom: 60px; border-top: 4px solid var(--gold-main); }
+        .manifesto-item { display: flex; align-items: center; padding: 20px 0; border-bottom: 1px solid #F0F0F0; }
+        .manifesto-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .manifesto-item:first-child { padding-top: 0; }
+        .manifesto-icon { color: var(--gold-main); margin-right: 20px; font-size: 24px; background: var(--bg-body); padding: 10px; border-radius: 50%; }
+        .manifesto-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--text-dark); font-weight: 500; }
+
+        /* --- DEPOIMENTOS --- */
         .carousel-container { position: relative; max-width: 800px; margin: 0 auto 60px auto; overflow: hidden; }
         .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
         .testimonial-slide { min-width: 100%; box-sizing: border-box; padding: 10px; }
@@ -159,13 +138,7 @@
         .dot { width: 10px; height: 10px; background-color: #E0E0E0; border-radius: 50%; cursor: pointer; transition: background-color 0.3s; }
         .dot.active { background-color: var(--gold-main); }
 
-        .manifesto-container { background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow-card); padding: 40px; margin-bottom: 60px; border-top: 4px solid var(--gold-main); }
-        .manifesto-item { display: flex; align-items: center; padding: 20px 0; border-bottom: 1px solid #F0F0F0; }
-        .manifesto-item:last-child { border-bottom: none; padding-bottom: 0; }
-        .manifesto-item:first-child { padding-top: 0; }
-        .manifesto-icon { color: var(--gold-main); margin-right: 20px; font-size: 24px; background: var(--bg-body); padding: 10px; border-radius: 50%; }
-        .manifesto-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--text-dark); font-weight: 500; }
-
+        /* --- O QUE ESPERAR --- */
         .comparison-grid { display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 60px; }
         .comp-col { flex: 1; min-width: 300px; padding: 35px; border-radius: var(--border-radius); background: var(--white); box-shadow: var(--shadow-card); }
         .comp-title { font-size: 1.2rem; margin: 0 0 25px 0; display: flex; align-items: center; gap: 10px; font-family: 'Playfair Display', serif; }
@@ -174,11 +147,22 @@
         .check-item { display: flex; gap: 12px; margin-bottom: 12px; font-size: 0.95rem; align-items: center; }
         .check-icon { font-size: 18px; opacity: 0.7; }
 
+        /* --- PRIMEIROS PASSOS --- */
         .steps-wrapper { position: relative; padding-left: 20px; margin-bottom: 60px; }
         .steps-wrapper::before { content: ''; position: absolute; left: 34px; top: 20px; bottom: 20px; width: 2px; background: #E0E0E0; z-index: 0; }
         .step-row { display: flex; align-items: center; background: var(--white); padding: 25px; border-radius: var(--border-radius); margin-bottom: 20px; box-shadow: var(--shadow-card); position: relative; z-index: 1; }
         .step-circle { background: var(--gold-main); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; flex-shrink: 0; font-size: 14px; }
 
+        /* --- COMO FUNCIONA --- */
+        .journey-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .journey-card { background: var(--white); padding: 30px 25px; border-radius: var(--border-radius); box-shadow: var(--shadow-card); position: relative; overflow: hidden; transition: transform 0.3s ease; text-align: center; border: 1px solid rgba(0,0,0,0.03); }
+        .journey-card:hover { transform: translateY(-5px); border-color: var(--gold-main); }
+        .journey-number { position: absolute; top: -20px; right: -10px; font-family: 'Playfair Display', serif; font-size: 6rem; color: var(--gold-main); opacity: 0.25; font-weight: 700; line-height: 1; z-index: 0; }
+        .journey-content { position: relative; z-index: 1; }
+        .journey-icon { font-size: 32px; color: var(--gold-main); margin-bottom: 15px; background: var(--bg-body); width: 60px; height: 60px; line-height: 60px; border-radius: 50%; display: inline-block; }
+        .journey-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--text-dark); margin-bottom: 10px; display: block; }
+
+        /* --- FAQ --- */
         details { background: var(--white); margin-bottom: 15px; border-radius: var(--border-radius); box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); transition: all 0.3s ease; }
         details[open] { border-color: var(--gold-main); box-shadow: var(--shadow-card); }
         summary { padding: 20px; cursor: pointer; font-weight: 600; color: var(--text-dark); list-style: none; display: flex; justify-content: space-between; align-items: center; font-family: 'Playfair Display', serif; font-size: 1.1rem; }
@@ -187,23 +171,47 @@
         details[open] summary::after { content: '-'; }
         .faq-content { padding: 0 20px 20px 20px; color: var(--text-gray); font-size: 0.95rem; border-top: 1px solid #f9f9f9; padding-top: 15px; line-height: 1.6; }
 
-        .guarantee-box { background: #FFFEFA; border: 2px dashed var(--gold-main); border-radius: 12px; padding: 40px; text-align: center; margin-bottom: 60px; }
+        /* --- QUIZ --- */
+        .quiz-container { background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow-card); border-top: 4px solid var(--gold-main); padding: 40px; text-align: center; margin-bottom: 40px; transition: all 0.3s ease; }
+        .quiz-header { margin-bottom: 25px; text-align: left; }
+        .quiz-step-text { font-size: 0.85rem; color: var(--gold-main); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+        .progress-track { width: 100%; height: 6px; background-color: #F0F0F0; border-radius: 10px; overflow: hidden; }
+        .progress-fill { height: 100%; background-color: var(--gold-main); width: 0%; transition: width 0.4s ease; }
+        .quiz-question { font-size: 1.3rem; font-weight: 600; color: var(--text-dark); margin-bottom: 30px; font-family: 'Playfair Display', serif; }
+        .quiz-options { display: flex; flex-direction: column; gap: 15px; }
+        .quiz-btn { background: var(--bg-body); border: 1px solid #E0E0E0; padding: 15px 20px; border-radius: 50px; cursor: pointer; font-family: 'Manrope', sans-serif; font-size: 1rem; color: var(--text-gray); transition: all 0.2s; text-align: left; display: flex; align-items: center; gap: 10px; }
+        .quiz-btn:hover { background: var(--gold-light); border-color: var(--gold-main); color: var(--text-dark); transform: translateX(5px); }
+        .quiz-btn .circle { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ccc; flex-shrink: 0; }
+        .quiz-btn:hover .circle { border-color: var(--gold-main); background: var(--gold-main); }
+        .quiz-result { display: none; animation: fadeIn 0.8s; background: var(--gold-light); padding: 30px; border-radius: 8px; margin-top: 20px; }
+        .result-title { color: var(--gold-main); font-size: 1.6rem; margin-bottom: 10px; font-weight: 700; font-family: 'Playfair Display', serif; }
+        .result-desc { font-size: 1.05rem; color: var(--text-dark); margin-bottom: 20px; line-height: 1.6; }
+        .arrow-down { font-size: 40px; color: var(--gold-main); animation: bounce 2s infinite; display: block; margin: 0 auto; }
+        .quiz-cta-btn { display: inline-block; background: var(--gold-main); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: transform 0.2s; border: none; cursor: pointer; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
+
+        /* --- GARANTIA --- */
+        .guarantee-box { background: #FFFEFA; border: 2px dashed var(--gold-main); border-radius: 12px; padding: 40px; text-align: center; margin-bottom: 60px; margin-top: 60px; }
         .guarantee-icon { font-size: 48px; color: var(--gold-main); margin-bottom: 15px; }
         .guarantee-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--text-dark); margin-bottom: 10px; }
 
+        /* --- ESPIRITUAL --- */
         .spiritual-card { text-align: center; padding: 70px 30px; background: radial-gradient(circle at center, #FFFFFF 0%, #F9F7F2 100%); border: 1px solid var(--gold-main); border-radius: var(--border-radius); margin-bottom: 60px; box-shadow: var(--shadow-glow); position: relative; }
         .spiritual-card::before { content: '“'; font-family: 'Playfair Display', serif; font-size: 10rem; color: var(--gold-main); opacity: 0.1; position: absolute; top: -40px; left: 20px; line-height: 1; }
         .spiritual-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.8rem; line-height: 1.5; color: var(--text-dark); position: relative; z-index: 2; }
         .spiritual-icon { color: var(--gold-main); font-size: 36px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; }
 
+        /* --- TALLY --- */
         .tally-box { margin-top: 40px; background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow-card); overflow: hidden; border-top: 4px solid var(--gold-main); }
 
+        /* --- FOOTER --- */
         .footer { text-align: center; padding-top: 50px; border-top: 1px solid #E5E5E5; margin-top: 80px; }
         .signature { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--gold-main); margin-top: 20px; margin-bottom: 20px; font-weight: 400; }
         .social-link { display: inline-flex; align-items: center; justify-content: center; color: var(--gold-main); text-decoration: none; margin-top: 10px; transition: transform 0.3s; }
         .social-link:hover { transform: scale(1.1); }
         .social-icon svg { width: 28px; height: 28px; fill: currentColor; }
 
+        /* --- WHATSAPP --- */
         .whatsapp-container { position: fixed; bottom: 25px; right: 25px; z-index: 9999; display: flex; align-items: center; gap: 15px; }
         .whatsapp-tooltip { background-color: var(--white); color: var(--text-dark); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border: 1px solid #eee; animation: slideIn 1s ease-out; white-space: nowrap; }
         .whatsapp-btn { background-color: var(--wa-green); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: transform 0.3s; animation: pulse 3s infinite; }
@@ -212,6 +220,7 @@
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
         @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
 
+        /* --- POPUP --- */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 10000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(3px); opacity: 0; transition: opacity 0.3s; }
         .modal-box { background: var(--white); width: 90%; max-width: 450px; padding: 40px 30px; border-radius: 12px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.2); transform: translateY(20px); transition: transform 0.3s; border-top: 4px solid var(--gold-main); position: relative; }
         .modal-close { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #999; }
@@ -253,6 +262,8 @@
         <p style="text-align:left;">Dedico minha vida a guiar jornadas de profunda transformação. Minha abordagem integra a clareza da psicanálise com a força da espiritualidade, ajudando você a fortalecer sua identidade e descobrir um propósito alinhado à sua essência.</p>
     </div>
 
+    <div class="gold-divider"></div>
+
     <div style="margin-bottom: 80px;">
         <h2>Sua Jornada</h2>
         <div class="transformation-grid">
@@ -276,6 +287,84 @@
                 <div class="check-item"><span class="material-icons-round check-icon" style="color:var(--gold-main)">check</span> Rompendo ciclos com ferramentas práticas.</div>
             </div>
         </div>
+    </div>
+
+    <h2>Para quem é?</h2>
+    <div class="card-base">
+        <ul class="target-list">
+            <li class="target-item">
+                <span class="material-icons-round target-icon">check_circle</span>
+                <div class="target-text"><strong>Mulheres em busca de profundidade</strong><br>Que desejam ir além da superfície e entender as raízes de suas emoções.</div>
+            </li>
+            <li class="target-item">
+                <span class="material-icons-round target-icon">check_circle</span>
+                <div class="target-text"><strong>Quem quer aliar Fé e Razão</strong><br>Para quem busca maturidade espiritual sem abrir mão da inteligência emocional.</div>
+            </li>
+            <li class="target-item">
+                <span class="material-icons-round target-icon">check_circle</span>
+                <div class="target-text"><strong>Comprometidas com a mudança</strong><br>Mulheres dispostas a se responsabilizar pelo próprio processo de cura.</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>Código de Honra</h2>
+    <div class="manifesto-container">
+        <div class="manifesto-item"><span class="material-icons-round manifesto-icon">verified</span><span class="manifesto-text">Responsabilidade</span></div>
+        <div class="manifesto-item"><span class="material-icons-round manifesto-icon">schedule</span><span class="manifesto-text">Pontualidade</span></div>
+        <div class="manifesto-item"><span class="material-icons-round manifesto-icon">lock</span><span class="manifesto-text">Sigilo Absoluto</span></div>
+        <div class="manifesto-item"><span class="material-icons-round manifesto-icon">favorite</span><span class="manifesto-text">Respeito Mútuo</span></div>
+        <div class="manifesto-item"><span class="material-icons-round manifesto-icon">self_improvement</span><span class="manifesto-text">Presença Emocional</span></div>
+    </div>
+
+    <h2>Histórias de Transformação</h2>
+    <div class="carousel-container">
+        <div class="carousel-track" id="track">
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <span class="material-icons-round quote-icon">format_quote</span>
+                    <p class="testimonial-text">"A mentoria foi um divisor de águas. Eu cheguei perdida e saí com uma clareza que nunca tive antes. A Michelle conduz com uma sabedoria e leveza incríveis."</p>
+                    <span class="testimonial-author">— Ana P., Aluna</span>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <span class="material-icons-round quote-icon">format_quote</span>
+                    <p class="testimonial-text">"Pela primeira vez consegui unir minha fé com minha saúde emocional. Parei de brigar comigo mesma e entendi meu propósito de forma clara."</p>
+                    <span class="testimonial-author">— Carla M., Aluna</span>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <span class="material-icons-round quote-icon">format_quote</span>
+                    <p class="testimonial-text">"Nunca pensei que pudesse me olhar com tanto amor. As ferramentas práticas mudaram minha rotina e minha visão de mim mesma."</p>
+                    <span class="testimonial-author">— Fernanda S., Aluna</span>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-dots" id="dots"></div>
+    </div>
+
+    <h2>O que esperar</h2>
+    <div class="comparison-grid">
+        <div class="comp-col">
+            <div class="comp-title comp-bad"><span class="material-icons-round">block</span> Você NÃO receberá</div>
+            <div class="check-item"><span class="material-icons-round check-icon">close</span> Fórmulas mágicas prontas</div>
+            <div class="check-item"><span class="material-icons-round check-icon">close</span> Passividade</div>
+            <div class="check-item"><span class="material-icons-round check-icon">close</span> Reforço de vitimismo</div>
+        </div>
+        <div class="comp-col" style="border: 2px solid var(--gold-main);">
+            <div class="comp-title comp-good"><span class="material-icons-round">check_circle</span> Você RECEBERÁ</div>
+            <div class="check-item"><span class="material-icons-round check-icon" style="color:var(--gold-main)">check</span> Direção clara</div>
+            <div class="check-item"><span class="material-icons-round check-icon" style="color:var(--gold-main)">check</span> Clareza emocional</div>
+            <div class="check-item"><span class="material-icons-round check-icon" style="color:var(--gold-main)">check</span> Ferramentas práticas</div>
+        </div>
+    </div>
+
+    <h2>Primeiros Passos</h2>
+    <div class="steps-wrapper">
+        <div class="step-row"><div class="step-circle">1</div><div><strong>Caderno:</strong> Tenha um lugar físico para seus registros.</div></div>
+        <div class="step-row"><div class="step-circle">2</div><div><strong>Agenda:</strong> Bloqueie seu horário. É sagrado.</div></div>
+        <div class="step-row"><div class="step-circle">3</div><div><strong>Ambiente:</strong> Esteja sozinha e em silêncio.</div></div>
     </div>
 
     <div class="gold-divider"></div>
@@ -316,80 +405,12 @@
         </div>
     </div>
 
-    <h2>Histórias de Transformação</h2>
-    <div class="carousel-container">
-        <div class="carousel-track" id="track">
-            <div class="testimonial-slide">
-                <div class="testimonial-card">
-                    <span class="material-icons-round quote-icon">format_quote</span>
-                    <p class="testimonial-text">"A mentoria foi um divisor de águas. Eu cheguei perdida e saí com uma clareza que nunca tive antes. A Michelle conduz com uma sabedoria e leveza incríveis."</p>
-                    <span class="testimonial-author">— Ana P., Aluna</span>
-                </div>
-            </div>
-            <div class="testimonial-slide">
-                <div class="testimonial-card">
-                    <span class="material-icons-round quote-icon">format_quote</span>
-                    <p class="testimonial-text">"Pela primeira vez consegui unir minha fé com minha saúde emocional. Parei de brigar comigo mesma e entendi meu propósito de forma clara."</p>
-                    <span class="testimonial-author">— Carla M., Aluna</span>
-                </div>
-            </div>
-            <div class="testimonial-slide">
-                <div class="testimonial-card">
-                    <span class="material-icons-round quote-icon">format_quote</span>
-                    <p class="testimonial-text">"Nunca pensei que pudesse me olhar com tanto amor. As ferramentas práticas mudaram minha rotina e minha visão de mim mesma."</p>
-                    <span class="testimonial-author">— Fernanda S., Aluna</span>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-dots" id="dots"></div>
-    </div>
-
-    <h2>Código de Honra</h2>
-    <div class="manifesto-container">
-        <div class="manifesto-item"><span class="material-icons-round manifesto-icon">verified</span><span class="manifesto-text">Responsabilidade</span></div>
-        <div class="manifesto-item"><span class="material-icons-round manifesto-icon">schedule</span><span class="manifesto-text">Pontualidade</span></div>
-        <div class="manifesto-item"><span class="material-icons-round manifesto-icon">lock</span><span class="manifesto-text">Sigilo Absoluto</span></div>
-        <div class="manifesto-item"><span class="material-icons-round manifesto-icon">favorite</span><span class="manifesto-text">Respeito Mútuo</span></div>
-        <div class="manifesto-item"><span class="material-icons-round manifesto-icon">self_improvement</span><span class="manifesto-text">Presença Emocional</span></div>
-    </div>
-
-    <h2>O que esperar</h2>
-    <div class="comparison-grid">
-        <div class="comp-col">
-            <div class="comp-title comp-bad"><span class="material-icons-round">block</span> Você NÃO receberá</div>
-            <div class="check-item"><span class="material-icons-round check-icon">close</span> Fórmulas mágicas prontas</div>
-            <div class="check-item"><span class="material-icons-round check-icon">close</span> Passividade</div>
-            <div class="check-item"><span class="material-icons-round check-icon">close</span> Reforço de vitimismo</div>
-        </div>
-        <div class="comp-col" style="border: 2px solid var(--gold-main);">
-            <div class="comp-title comp-good"><span class="material-icons-round">check_circle</span> Você RECEBERÁ</div>
-            <div class="check-item"><span class="material-icons-round check-icon" style="color:var(--gold-main)">check</span> Direção clara</div>
-            <div class="check-item"><span class="material-icons-round check-icon" style="color:var(--gold-main)">check</span> Clareza emocional</div>
-            <div class="check-item"><span class="material-icons-round check-icon" style="color:var(--gold-main)">check</span> Ferramentas práticas</div>
-        </div>
-    </div>
-
-    <h2>Primeiros Passos</h2>
-    <div class="steps-wrapper">
-        <div class="step-row"><div class="step-circle">1</div><div><strong>Caderno:</strong> Tenha um lugar físico para seus registros.</div></div>
-        <div class="step-row"><div class="step-circle">2</div><div><strong>Agenda:</strong> Bloqueie seu horário. É sagrado.</div></div>
-        <div class="step-row"><div class="step-circle">3</div><div><strong>Ambiente:</strong> Esteja sozinha e em silêncio.</div></div>
-    </div>
-
     <h2>Dúvidas Frequentes</h2>
     <div style="margin-bottom: 60px;">
         <details><summary>A mentoria é online ou presencial?</summary><div class="faq-content">A mentoria é 100% online, realizada através de videochamadas em plataforma segura.</div></details>
         <details><summary>Qual a duração do processo?</summary><div class="faq-content">O ciclo tem duração definida para garantir início, meio e fim, focando em resultados.</div></details>
         <details><summary>É terapia ou acompanhamento espiritual?</summary><div class="faq-content">É uma união dos dois. Ferramentas da psicanálise com princípios espirituais.</div></details>
     </div>
-
-    <div class="guarantee-box">
-        <span class="material-icons-round guarantee-icon">verified_user</span>
-        <div class="guarantee-title">Garantia de Satisfação</div>
-        <p style="font-size:0.95rem; color:#666;">Aplique sem medo. Se formos aprovadas para caminhar juntas, você terá 7 dias de garantia incondicional após o início.</p>
-    </div>
-
-    <div class="gold-divider"></div>
 
     <div class="quiz-container" id="quizContainer">
         <div id="quiz-intro">
@@ -402,13 +423,9 @@
         <div id="quiz-questions" style="display:none;">
             <div class="quiz-header">
                 <div class="quiz-step-text" id="stepText">Pergunta 1 de 7</div>
-                <div class="progress-track">
-                    <div class="progress-fill" id="progressBar"></div>
-                </div>
+                <div class="progress-track"><div class="progress-fill" id="progressBar"></div></div>
             </div>
-            
-            <div id="question-box">
-                </div>
+            <div id="question-box"></div>
         </div>
 
         <div id="quiz-result" class="quiz-result">
@@ -428,10 +445,22 @@
         <iframe data-tally-src="https://tally.so/embed/RGxe49?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Aplicação Mentoria"></iframe>
     </div>
 
+    <div class="guarantee-box">
+        <span class="material-icons-round guarantee-icon">verified_user</span>
+        <div class="guarantee-title">Garantia de Satisfação</div>
+        <p style="font-size:0.95rem; color:#666;">Aplique sem medo. Se formos aprovadas para caminhar juntas, você terá 7 dias de garantia incondicional após o início.</p>
+    </div>
+
+    <div class="spiritual-card">
+        <span class="material-icons-round spiritual-icon">auto_awesome</span>
+        <div class="spiritual-text">Deus é a fonte.<br>A mentoria é o instrumento.<br>O processo é seu.</div>
+    </div>
+
     <div class="footer">
         <p style="font-family:'Libre Baskerville',serif; font-style:italic; font-size:1.1rem; color:var(--text-dark);">"Eu escolho me responsabilizar pela minha transformação."</p>
         <p>Caminhe com coragem.</p>
         <div class="signature">Michelle Julio</div>
+        
         <a href="https://www.instagram.com/michellejm.psicanalista/" target="_blank" class="social-link" title="Siga no Instagram">
             <div class="social-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
         </a>
@@ -478,7 +507,7 @@
         window.addEventListener('resize', () => goToSlide(currentIndex));
     });
 
-    // QUIZ LOGICA + PROGRESS BAR
+    // QUIZ LOGICA
     const questions = [
         { q: "Quando algo dá errado, qual sua primeira reação?", options: [{ t: "Acho que Deus esqueceu de mim", s: 3 }, { t: "Me culpo excessivamente", s: 2 }, { t: "Busco uma solução prática", s: 0 }] },
         { q: "Como você se vê hoje?", options: [{ t: "Sem valor ou propósito", s: 3 }, { t: "Incapaz de mudar", s: 2 }, { t: "Em processo de evolução", s: 0 }] },
@@ -501,9 +530,7 @@
     function showQuestion() {
         const box = document.getElementById('question-box');
         const q = questions[currentQ];
-        // Atualiza texto da etapa
         document.getElementById('stepText').innerText = `PERGUNTA ${currentQ + 1} DE ${questions.length}`;
-        
         let html = `<p class="quiz-question">${q.q}</p><div class="quiz-options">`;
         q.options.forEach((opt, idx) => {
             html += `<div class="quiz-btn" onclick="nextQ(${opt.s})"><div class="circle"></div> ${opt.t}</div>`;
