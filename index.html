@@ -26,7 +26,6 @@
             --gold-main: #C0A665; 
             --gold-light: #F4F1E8;
             --gold-gradient: linear-gradient(135deg, #C0A665 0%, #E3CD94 100%);
-            --dark-bg: #2C2C2C;
             
             /* Efeitos */
             --shadow-card: 0 15px 35px -5px rgba(0, 0, 0, 0.05);
@@ -70,19 +69,28 @@
             font-weight: 600; letter-spacing: -1px;
         }
 
-        /* ABAS / TABS COM ÍCONES */
+        /* ABAS / TABS COM ÍCONES - AJUSTADOS PARA MESMO TAMANHO E MAIOR DESTAQUE */
         .tab-container {
-            display: flex; justify-content: center; gap: 15px; margin: 20px 0 50px; flex-wrap: wrap;
+            display: flex; justify-content: center; gap: 20px; margin: 20px 0 60px; flex-wrap: wrap;
         }
         .tab-btn {
-            background: transparent; border: 2px solid var(--gold-main); color: var(--gold-main);
-            padding: 12px 30px; border-radius: 50px; font-weight: 600; cursor: pointer;
-            transition: all 0.3s; font-family: 'Manrope', sans-serif; font-size: 1.05rem;
-            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            background: var(--white); 
+            border: 2px solid var(--gold-main); 
+            color: var(--gold-main);
+            padding: 16px 20px; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            cursor: pointer;
+            transition: all 0.3s ease; 
+            font-family: 'Manrope', sans-serif; 
+            font-size: 1.1rem;
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            width: 100%; max-width: 320px; /* Garante que tenham exatamente a mesma largura */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .tab-btn .material-icons-round { font-size: 1.3rem; }
-        .tab-btn:hover { background: var(--gold-light); }
-        .tab-btn.active { background: var(--gold-main); color: var(--white); box-shadow: 0 5px 15px rgba(192, 166, 101, 0.4); }
+        .tab-btn .material-icons-round { font-size: 1.5rem; }
+        .tab-btn:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(192, 166, 101, 0.2); }
+        .tab-btn.active { background: var(--gold-main); color: var(--white); box-shadow: 0 8px 25px rgba(192, 166, 101, 0.4); border-color: var(--gold-main); transform: translateY(-3px); }
         .tab-content { display: none; animation: fadeIn 0.6s ease-out; }
         .tab-content.active { display: block; }
 
@@ -93,12 +101,19 @@
             border: 1px solid rgba(192, 166, 101, 0.1);
         }
         
-        .card-dark {
-            background: var(--dark-bg); color: #fff; padding: 50px 40px; border-radius: var(--border-radius);
-            box-shadow: var(--shadow-card); margin-bottom: 40px; text-align: center; border-top: 4px solid var(--gold-main);
+        /* CARD CORPORATIVO DESTAQUE (MUITO MAIS LEVE) */
+        .card-highlight {
+            background: linear-gradient(135deg, #FDFCF8 0%, #F4F1E8 100%);
+            color: var(--text-dark); 
+            padding: 50px 40px; 
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card); 
+            margin-bottom: 40px; 
+            text-align: center; 
+            border: 1px solid var(--gold-main);
         }
-        .card-dark h3 { color: var(--gold-main); font-size: 1.8rem; margin-top: 0; }
-        .card-dark p { color: #E0E0E0; font-size: 1.1rem; }
+        .card-highlight h3 { color: var(--text-dark); font-size: 1.8rem; margin-top: 0; line-height: 1.3; }
+        .card-highlight p { color: var(--text-gray); font-size: 1.1rem; }
 
         /* SOBRE */
         .about-section { text-align: center; margin-top: 20px; border-left: 4px solid var(--gold-main); }
@@ -239,7 +254,8 @@
             .steps-wrapper { padding-left: 0; }
             .spiritual-text { font-size: 1.4rem; }
             .whatsapp-tooltip { font-size: 0.8rem; padding: 6px 12px; }
-            .tab-btn { padding: 10px 20px; font-size: 0.9rem; }
+            /* Em telas menores, os botões ocupam 100% da largura, empilhando perfeitamente */
+            .tab-btn { width: 100%; max-width: 100%; font-size: 1rem; }
         }
     </style>
 </head>
@@ -265,7 +281,7 @@
 
     <div class="tab-container">
         <button class="tab-btn active" onclick="switchTab('mulheres', this)">
-            <span class="material-icons-round">face_3</span> Mentoria para Mulheres
+            <span class="material-icons-round">face_3</span> Mentoria Mulheres
         </button>
         <button class="tab-btn" onclick="switchTab('empresas', this)">
             <span class="material-icons-round">domain</span> Para Empresas
@@ -455,11 +471,11 @@
     </div>
     <div id="empresas" class="tab-content">
         
-        <div class="card-dark">
-            <span class="material-icons-round" style="font-size: 48px; color: var(--gold-main); margin-bottom: 15px;">trending_down</span>
-            <h3>O maior ralo de dinheiro da sua empresa não é a operação. É o comportamento.</h3>
+        <div class="card-highlight">
+            <span class="material-icons-round" style="font-size: 48px; color: var(--gold-main); margin-bottom: 15px;">insights</span>
+            <h3>O maior custo oculto da sua empresa não está na operação. Está no comportamento.</h3>
             <p>Afastamentos por Burnout, alta rotatividade (turnover), falhas crônicas de comunicação e líderes que não sabem gerir pessoas custam caro.</p>
-            <p style="font-style: italic; opacity: 0.8; margin-top: 20px;">Empresas são feitas de pessoas. Times adoecidos não entregam resultados consistentes.</p>
+            <p style="font-style: italic; color: var(--text-dark); margin-top: 20px; font-family: 'Playfair Display', serif;">Empresas são feitas de pessoas. E times adoecidos não entregam resultados consistentes.</p>
         </div>
 
         <h2>Desconstruindo a Cultura Tradicional</h2>
@@ -600,7 +616,7 @@
         document.getElementById(tabId).classList.add('active');
         btnElement.classList.add('active');
 
-        // NOVO: Força o Tally a recalcular a altura quando a aba abrir
+        // Força o Tally a recalcular a altura quando a aba abrir
         if (typeof Tally !== 'undefined') {
             Tally.loadEmbeds();
         }
