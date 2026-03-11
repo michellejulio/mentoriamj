@@ -70,15 +70,17 @@
             font-weight: 600; letter-spacing: -1px;
         }
 
-        /* ABAS / TABS */
+        /* ABAS / TABS COM ÍCONES */
         .tab-container {
             display: flex; justify-content: center; gap: 15px; margin: 20px 0 50px; flex-wrap: wrap;
         }
         .tab-btn {
             background: transparent; border: 2px solid var(--gold-main); color: var(--gold-main);
             padding: 12px 30px; border-radius: 50px; font-weight: 600; cursor: pointer;
-            transition: all 0.3s; font-family: 'Manrope', sans-serif; font-size: 1rem;
+            transition: all 0.3s; font-family: 'Manrope', sans-serif; font-size: 1.05rem;
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
         }
+        .tab-btn .material-icons-round { font-size: 1.3rem; }
         .tab-btn:hover { background: var(--gold-light); }
         .tab-btn.active { background: var(--gold-main); color: var(--white); box-shadow: 0 5px 15px rgba(192, 166, 101, 0.4); }
         .tab-content { display: none; animation: fadeIn 0.6s ease-out; }
@@ -256,14 +258,18 @@
         <img src="https://i.ibb.co/ZRMw67rv/michelle.png" alt="Michelle Julio" class="about-img">
         <h3 style="margin:0; font-size:1.5rem;">Michelle Julio</h3>
         <p style="font-size:0.8rem; text-transform:uppercase; letter-spacing:2px; color:var(--gold-main); margin-bottom:20px;">Psicanalista & Mentora Corporativa</p>
-        <p style="text-align:left;">Dedico minha vida a guiar jornadas de profunda transformação, tanto para indivíduos quanto para empresas. Minha abordagem integra a clareza da psicanálise com o desenvolvimento comportamental, ajudando mulheres a fortalecerem sua identidade e empresas a construírem lideranças maduras e equipes emocionalmente saudáveis.</p>
+        <p style="text-align:left;">A verdadeira transformação começa quando decidimos olhar para as nossas raízes. Dedico meu trabalho a guiar o desenvolvimento humano de forma integral: ajudo mulheres a curarem suas feridas e fortalecerem sua identidade, e apoio empresas na construção de culturas organizacionais saudáveis com lideranças maduras. Unindo a profundidade da psicanálise com o direcionamento prático, meu objetivo é transformar clareza emocional em vida e resultados reais.</p>
     </div>
 
     <p style="text-align:center; font-family:'Playfair Display', serif; font-size: 1.3rem; color: var(--text-dark); margin-top: 40px;">Escolha a sua jornada abaixo:</p>
 
     <div class="tab-container">
-        <button class="tab-btn active" onclick="switchTab('mulheres', this)">Mentoria para Mulheres</button>
-        <button class="tab-btn" onclick="switchTab('empresas', this)">Para Empresas</button>
+        <button class="tab-btn active" onclick="switchTab('mulheres', this)">
+            <span class="material-icons-round">face_3</span> Mentoria para Mulheres
+        </button>
+        <button class="tab-btn" onclick="switchTab('empresas', this)">
+            <span class="material-icons-round">domain</span> Para Empresas
+        </button>
     </div>
 
     <div id="mulheres" class="tab-content active">
