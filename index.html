@@ -449,6 +449,89 @@
         }
 
         /* ============================================================
+           HERO TRUST BADGES — credibilidade discreta
+           ============================================================ */
+        .hero-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+            margin-top: 36px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(184, 146, 78, 0.18);
+            align-items: center;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.66rem;
+            color: var(--slate);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            line-height: 1.2;
+        }
+
+        .trust-badge .material-symbols-rounded {
+            font-size: 16px;
+            color: var(--gold-deep);
+        }
+
+        /* ============================================================
+           READING PROGRESS — barra dourada no topo
+           ============================================================ */
+        .reading-progress {
+            position: fixed;
+            top: 0; left: 0;
+            height: 2px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--gold-deep), var(--gold-light), var(--gold));
+            box-shadow: 0 0 12px rgba(184, 146, 78, 0.5);
+            z-index: 60;
+            transition: width 0.1s ease-out;
+            pointer-events: none;
+        }
+
+        /* ============================================================
+           CREDENTIALS — selos profissionais no about
+           ============================================================ */
+        .credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+            padding: 20px 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .credential {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            background: rgba(184, 146, 78, 0.08);
+            border: 1px solid rgba(184, 146, 78, 0.2);
+            border-radius: var(--r-pill);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.66rem;
+            color: var(--gold-deep);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            transition: all var(--t-fast);
+        }
+
+        .credential:hover {
+            background: rgba(184, 146, 78, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .credential .material-symbols-rounded {
+            font-size: 18px;
+        }
+
+        /* ============================================================
            HERO SIGIL — logo como emblema sagrado
            ============================================================ */
         .hero-sigil {
@@ -508,38 +591,38 @@
         }
 
         .sigil-ring-outer {
-            inset: 4%;
-            border: 1px dashed rgba(184, 146, 78, 0.4);
+            inset: 2%;
+            border: 1px dashed rgba(184, 146, 78, 0.35);
             animation: sigil-spin 60s linear infinite;
         }
 
         .sigil-ring-mid {
-            inset: 12%;
-            border: 1px dotted rgba(184, 146, 78, 0.45);
+            inset: 9%;
+            border: 1px dotted rgba(184, 146, 78, 0.4);
             animation: sigil-spin 42s linear infinite reverse;
         }
 
         .sigil-ring-inner {
-            inset: 22%;
+            inset: 17%;
             border: 1px solid rgba(184, 146, 78, 0.55);
             box-shadow:
-                0 0 36px rgba(184, 146, 78, 0.25),
-                inset 0 0 36px rgba(184, 146, 78, 0.12);
+                0 0 48px rgba(184, 146, 78, 0.3),
+                inset 0 0 48px rgba(184, 146, 78, 0.15);
         }
 
-        /* Núcleo cremoso com a logo */
+        /* Núcleo cremoso com a logo — maior presença */
         .sigil-core {
             position: absolute;
-            inset: 30%;
+            inset: 22%;
             border-radius: 50%;
             background: radial-gradient(circle at 30% 30%, var(--paper) 0%, var(--cream) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow:
-                0 32px 80px -20px rgba(184, 146, 78, 0.5),
-                inset 0 2px 0 rgba(255, 255, 255, 0.8),
-                inset 0 -3px 16px rgba(184, 146, 78, 0.18);
+                0 40px 96px -20px rgba(184, 146, 78, 0.55),
+                inset 0 2px 0 rgba(255, 255, 255, 0.9),
+                inset 0 -4px 20px rgba(184, 146, 78, 0.22);
             z-index: 2;
             overflow: hidden;
             animation: sigil-float 7s ease-in-out infinite;
@@ -559,12 +642,12 @@
         }
 
         .sigil-core img {
-            width: 78%;
+            width: 88%;
             height: auto;
             object-fit: contain;
             position: relative;
             z-index: 1;
-            filter: drop-shadow(0 6px 16px rgba(184, 146, 78, 0.35));
+            filter: drop-shadow(0 8px 20px rgba(184, 146, 78, 0.4));
         }
 
         @keyframes sigil-float {
@@ -898,16 +981,85 @@
             pointer-events: none;
         }
 
-        .about-signature {
+        /* Caption editorial profissional sobre a foto */
+        .about-caption {
             position: absolute;
-            bottom: 24px;
-            right: 24px;
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.6rem;
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 16px;
+            align-items: center;
+            padding: 14px 18px;
+            background: rgba(15, 14, 12, 0.65);
+            backdrop-filter: blur(18px) saturate(180%);
+            -webkit-backdrop-filter: blur(18px) saturate(180%);
+            border: 1px solid rgba(184, 146, 78, 0.3);
+            border-radius: var(--r-md);
             color: var(--paper);
-            line-height: 1;
-            text-shadow: 0 4px 16px rgba(0,0,0,0.4);
-            transform: rotate(-4deg);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-caption-monogram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: var(--grad-gold);
+            color: var(--ink);
+            font-family: 'Fraunces', serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            font-variation-settings: 'opsz' 144;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            flex-shrink: 0;
+        }
+
+        .about-caption-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 0;
+        }
+
+        .about-caption-name {
+            font-family: 'Fraunces', serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--paper);
+            letter-spacing: -0.015em;
+            line-height: 1.1;
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .about-caption-role {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.62rem;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            line-height: 1.3;
+        }
+
+        .about-caption-locale {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.6rem;
+            color: rgba(245, 240, 230, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 600px) {
+            .about-caption-locale { display: none; }
+            .about-caption { padding: 12px 14px; gap: 12px; }
+            .about-caption-name { font-size: 0.95rem; }
         }
 
         .about-content {
@@ -2251,6 +2403,9 @@
 </head>
 <body>
 
+<!-- Reading progress bar -->
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
 <!-- ============================================================
      TOP NAV
      ============================================================ -->
@@ -2292,6 +2447,21 @@
                     <a href="#sobre" class="btn-ghost">
                         <span>Conhecer Michelle</span>
                     </a>
+                </div>
+
+                <div class="hero-trust">
+                    <span class="trust-badge">
+                        <span class="material-symbols-rounded">videocam</span>
+                        Atendimento online
+                    </span>
+                    <span class="trust-badge">
+                        <span class="material-symbols-rounded">lock</span>
+                        Sigilo profissional
+                    </span>
+                    <span class="trust-badge">
+                        <span class="material-symbols-rounded">workspace_premium</span>
+                        Método autoral
+                    </span>
                 </div>
             </div>
 
@@ -2355,7 +2525,14 @@
                 <div class="about-photo-frame-2"></div>
                 <div class="about-photo">
                     <img src="https://i.ibb.co/27t0X8dK/bio.jpg" alt="Michelle Julio">
-                    <div class="about-signature">Michelle</div>
+                    <div class="about-caption">
+                        <div class="about-caption-monogram">MJ</div>
+                        <div class="about-caption-meta">
+                            <span class="about-caption-name">Michelle Julio</span>
+                            <span class="about-caption-role">Psicanalista · Mentora</span>
+                        </div>
+                        <div class="about-caption-locale">Brasil · 2026</div>
+                    </div>
                 </div>
             </div>
 
@@ -2365,6 +2542,21 @@
                 <p class="about-bio">Dedico meu trabalho a guiar o desenvolvimento humano de forma integral: ajudo mulheres a curarem suas feridas e fortalecerem sua identidade, e apoio empresas na construção de culturas organizacionais saudáveis com lideranças maduras.</p>
 
                 <p class="about-bio">Unindo a profundidade da psicanálise com o direcionamento prático, meu objetivo é transformar clareza emocional em vida e resultados reais.</p>
+
+                <div class="credentials reveal-stagger">
+                    <span class="credential">
+                        <span class="material-symbols-rounded">school</span>
+                        Formação Psicanalítica
+                    </span>
+                    <span class="credential">
+                        <span class="material-symbols-rounded">groups</span>
+                        Mentora Corporativa
+                    </span>
+                    <span class="credential">
+                        <span class="material-symbols-rounded">verified_user</span>
+                        Sigilo Garantido
+                    </span>
+                </div>
 
                 <div class="about-stats reveal-stagger">
                     <div>
@@ -2947,12 +3139,19 @@
 
 <script>
     // ============================================================
-    // TOPNAV — sticky com efeito ao rolar
+    // TOPNAV + READING PROGRESS — sticky + barra dourada de leitura
     // ============================================================
     const topnav = document.getElementById('topnav');
+    const progressBar = document.getElementById('readingProgress');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 60) topnav.classList.add('scrolled');
         else topnav.classList.remove('scrolled');
+
+        if (progressBar) {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+            progressBar.style.width = Math.min(100, pct) + '%';
+        }
     }, { passive: true });
 
     // ============================================================
