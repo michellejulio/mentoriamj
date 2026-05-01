@@ -3,81 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#FAF9F6">
+    <meta name="theme-color" content="#0F0E0C">
     <title>Mentoria & Soluções Corporativas | Michelle Julio</title>
 
     <meta property="og:title" content="Michelle Julio | Psicanálise e Mentoria">
     <meta property="og:description" content="Um caminho de cura, identidade, propósito e performance para vidas e negócios.">
     <meta property="og:image" content="https://i.ibb.co/21HgfrMf/Logo-1.png">
 
+    <!-- Favicon (logo da mentoria) -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/21HgfrMf/Logo-1.png">
+    <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/21HgfrMf/Logo-1.png">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/21HgfrMf/Logo-1.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0" rel="stylesheet">
 
     <script async src="https://tally.so/widgets/embed.js"></script>
 
     <style>
-        /* ============================================
-           DESIGN TOKENS — Sistema modular HSL
-           ============================================ */
+        /* ============================================================
+           DESIGN TOKENS — Magazine editorial luxe
+           ============================================================ */
         :root {
-            /* Paleta */
-            --bg: hsl(45 33% 98%);
-            --bg-elev: hsl(0 0% 100%);
-            --bg-soft: hsl(45 30% 96%);
-            --bg-dark: hsl(220 15% 8%);
+            /* Cores base */
+            --ivory: #F5F0E6;
+            --cream: #EDE5D3;
+            --paper: #FAF6EC;
+            --ink: #1A1814;
+            --void: #0F0E0C;
+            --slate: #4A4640;
+            --slate-soft: #7C766B;
+            --line: #DDD5C4;
 
-            --ink: hsl(220 15% 12%);
-            --ink-soft: hsl(220 8% 38%);
-            --ink-mute: hsl(220 6% 55%);
-            --line: hsl(40 15% 90%);
-            --line-soft: hsl(40 15% 94%);
+            /* Ouro ritualístico */
+            --gold: #B8924E;
+            --gold-light: #D4B575;
+            --gold-deep: #8B6E33;
+            --gold-rose: #C9A66B;
+            --gold-soft: #F0E6D0;
 
-            --gold: hsl(42 38% 57%);
-            --gold-deep: hsl(38 42% 42%);
-            --gold-glow: hsl(42 65% 70%);
-            --gold-soft: hsl(42 50% 94%);
-            --gold-grad: linear-gradient(135deg, hsl(42 38% 57%) 0%, hsl(38 55% 70%) 50%, hsl(42 38% 57%) 100%);
-            --gold-grad-deep: linear-gradient(135deg, hsl(38 42% 42%) 0%, hsl(42 38% 57%) 100%);
+            /* Acentos */
+            --burgundy: #6B2E2E;
+            --rose-deep: #9C5252;
+            --wa: #25D366;
 
-            --wa: hsl(141 71% 48%);
-            --danger: hsl(0 55% 55%);
+            /* Gradientes */
+            --grad-gold: linear-gradient(135deg, #B8924E 0%, #D4B575 50%, #B8924E 100%);
+            --grad-gold-shimmer: linear-gradient(110deg, #8B6E33 0%, #B8924E 30%, #F0D89C 50%, #B8924E 70%, #8B6E33 100%);
+            --grad-noir: linear-gradient(180deg, #0F0E0C 0%, #1A1814 100%);
 
-            /* Sombras em camadas */
-            --shadow-sm: 0 1px 2px hsl(220 15% 12% / 0.04);
-            --shadow-md: 0 4px 16px -4px hsl(220 15% 12% / 0.06), 0 2px 6px -2px hsl(220 15% 12% / 0.04);
-            --shadow-lg: 0 24px 48px -12px hsl(220 15% 12% / 0.08), 0 8px 16px -8px hsl(220 15% 12% / 0.06);
-            --shadow-glow: 0 0 60px hsl(42 38% 57% / 0.18);
-            --shadow-inset: inset 0 1px 0 hsl(0 0% 100% / 0.6);
+            /* Sombras */
+            --sh-sm: 0 1px 2px rgba(26, 24, 20, 0.05);
+            --sh-md: 0 12px 32px -12px rgba(26, 24, 20, 0.12), 0 4px 8px -4px rgba(26, 24, 20, 0.06);
+            --sh-lg: 0 32px 64px -16px rgba(26, 24, 20, 0.18), 0 12px 24px -8px rgba(26, 24, 20, 0.08);
+            --sh-glow: 0 0 80px rgba(184, 146, 78, 0.25);
+            --sh-gold-ring: 0 0 0 1px rgba(184, 146, 78, 0.2), 0 24px 48px -12px rgba(184, 146, 78, 0.3);
 
-            /* Forma */
-            --r-xs: 8px;
-            --r-sm: 12px;
-            --r-md: 16px;
+            /* Curvas */
+            --r-xs: 4px;
+            --r-sm: 8px;
+            --r-md: 14px;
             --r-lg: 24px;
+            --r-xl: 36px;
             --r-pill: 999px;
 
-            /* Transições */
-            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+            /* Easings cinematográficos */
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out: cubic-bezier(0.83, 0, 0.17, 1);
             --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
-            --t-fast: 180ms var(--ease);
-            --t-med: 320ms var(--ease);
-            --t-slow: 600ms var(--ease);
+
+            --t-fast: 240ms var(--ease-out);
+            --t-med: 480ms var(--ease-out);
+            --t-slow: 800ms var(--ease-out);
         }
 
-        /* ============================================
-           RESET MODERNO
-           ============================================ */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+        /* ============================================================
+           RESET
+           ============================================================ */
+        *, *::before, *::after { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         html {
             scroll-behavior: smooth;
             -webkit-text-size-adjust: 100%;
-            text-size-adjust: 100%;
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -90,1836 +99,2653 @@
 
         body {
             margin: 0;
-            padding: 0 0 100px;
+            padding: 0 0 80px;
             min-height: 100vh;
-            background: var(--bg);
-            color: var(--ink-soft);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--paper);
+            color: var(--slate);
+            font-family: 'Inter Tight', system-ui, -apple-system, sans-serif;
             font-size: 16px;
-            line-height: 1.7;
-            font-feature-settings: 'cv11', 'ss01', 'ss03';
+            line-height: 1.65;
+            font-feature-settings: 'cv11', 'ss01';
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Aurora background ambiental — discreto e sofisticado */
+        /* Grain texture global */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
-            z-index: -2;
-            background:
-                radial-gradient(ellipse 80% 60% at 20% 0%, hsl(42 65% 88% / 0.5), transparent 60%),
-                radial-gradient(ellipse 70% 50% at 80% 30%, hsl(38 50% 92% / 0.4), transparent 65%),
-                radial-gradient(ellipse 60% 50% at 50% 100%, hsl(42 38% 90% / 0.3), transparent 70%);
+            z-index: 100;
+            opacity: 0.04;
             pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply;
         }
 
-        /* Grain sutil — adiciona profundidade premium */
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            opacity: 0.025;
-            pointer-events: none;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-        }
+        ::selection { background: var(--gold); color: var(--paper); }
 
-        ::selection {
-            background: var(--gold);
-            color: var(--bg-elev);
-        }
-
-        /* ============================================
-           TIPOGRAFIA FLUIDA
-           ============================================ */
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+        /* ============================================================
+           TIPOGRAFIA — Fraunces editorial + Inter Tight UI
+           ============================================================ */
+        h1, h2, h3, h4 {
+            font-family: 'Fraunces', serif;
             color: var(--ink);
-            font-weight: 500;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            margin: clamp(60px, 10vw, 100px) 0 clamp(36px, 6vw, 56px);
-            text-align: center;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 56px;
-            height: 1px;
-            background: var(--gold-grad);
-            margin: 22px auto 0;
-            position: relative;
-        }
-
-        h2::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -7px;
-            width: 6px;
-            height: 6px;
-            background: var(--gold);
-            border-radius: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 0 4px hsl(42 38% 57% / 0.12);
-        }
-
-        .container {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 0 clamp(16px, 4vw, 32px);
-        }
-
-        /* ============================================
-           HERO — aurora + logo + título com brilho
-           ============================================ */
-        .hero {
-            text-align: center;
-            padding: clamp(40px, 8vw, 80px) 20px clamp(20px, 4vw, 40px);
-            position: relative;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 7px 16px 7px 12px;
-            background: hsl(0 0% 100% / 0.6);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid hsl(42 38% 57% / 0.2);
-            border-radius: var(--r-pill);
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: var(--gold-deep);
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            margin-bottom: 28px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .hero-badge .dot {
-            width: 6px;
-            height: 6px;
-            background: var(--gold);
-            border-radius: 50%;
-            box-shadow: 0 0 0 3px hsl(42 38% 57% / 0.2);
-            animation: pulse-dot 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse-dot {
-            0%, 100% { box-shadow: 0 0 0 3px hsl(42 38% 57% / 0.2); }
-            50% { box-shadow: 0 0 0 6px hsl(42 38% 57% / 0); }
-        }
-
-        .hero-logo {
-            max-width: 340px;
-            width: 90%;
-            height: auto;
-            display: block;
-            margin: 0 auto 28px;
-            filter: drop-shadow(0 8px 24px hsl(42 38% 57% / 0.15));
-        }
-
-        .gold-divider {
-            width: 100%;
-            max-width: 600px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold) 50%, transparent);
-            margin: clamp(32px, 5vw, 48px) auto;
-            opacity: 0.5;
-        }
-
-        .hero-title {
-            display: inline-block;
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 5vw, 2.6rem);
-            margin-bottom: 12px;
-            background: var(--gold-grad-deep);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-tagline {
-            font-family: 'Instrument Serif', serif;
-            font-style: italic;
-            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
-            color: var(--ink-soft);
             font-weight: 400;
-            margin-top: 4px;
+            letter-spacing: -0.025em;
+            line-height: 1.05;
+            font-variation-settings: 'opsz' 144, 'SOFT' 50;
         }
 
-        /* ============================================
-           CARDS BASE — glassmorphism sutil
-           ============================================ */
-        .card-base {
-            background: hsl(0 0% 100% / 0.7);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            padding: clamp(28px, 5vw, 44px);
-            border-radius: var(--r-md);
-            box-shadow: var(--shadow-md), var(--shadow-inset);
-            margin-bottom: 36px;
-            border: 1px solid hsl(42 38% 57% / 0.12);
-            position: relative;
-            transition: transform var(--t-med), box-shadow var(--t-med);
-        }
-
-        .card-base:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg), var(--shadow-inset);
-        }
-
-        /* Sobre — refinado */
-        .about-section {
-            text-align: center;
-            margin-top: 24px;
-            border-left: 3px solid transparent;
-            background-image:
-                linear-gradient(hsl(0 0% 100% / 0.7), hsl(0 0% 100% / 0.7)),
-                linear-gradient(to bottom, var(--gold), var(--gold-glow));
-            background-clip: padding-box, border-box;
-            background-origin: padding-box, border-box;
-        }
-
-        .about-img {
-            width: 168px;
-            height: 168px;
-            border-radius: 50%;
-            object-fit: cover;
-            padding: 4px;
-            margin-bottom: 24px;
-            background: var(--gold-grad);
-            box-shadow: 0 12px 32px hsl(42 38% 57% / 0.25);
-        }
-
-        .about-section h3 {
-            margin: 0;
-            font-size: clamp(1.4rem, 3vw, 1.6rem);
-        }
-
-        .about-role {
-            font-size: 0.78rem;
+        .label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 0.18em;
             color: var(--gold-deep);
-            margin-bottom: 24px;
-            font-weight: 600;
+            font-weight: 500;
         }
 
-        .about-section p:last-child {
-            text-align: left;
-            color: var(--ink-soft);
+        .label-light {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--slate-soft);
+            font-weight: 400;
         }
 
-        /* Card highlight corporativo */
-        .card-highlight {
-            background: linear-gradient(135deg, hsl(45 50% 98%) 0%, hsl(42 50% 94%) 100%);
-            color: var(--ink);
-            padding: clamp(36px, 6vw, 56px) clamp(28px, 5vw, 44px);
-            border-radius: var(--r-md);
-            box-shadow: var(--shadow-md);
-            margin-bottom: 40px;
-            text-align: center;
-            border: 1px solid hsl(42 38% 57% / 0.3);
-            position: relative;
-            overflow: hidden;
+        /* ============================================================
+           CONTAINERS
+           ============================================================ */
+        .wrap {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 48px);
         }
 
-        .card-highlight::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 60%;
-            height: 200%;
-            background: radial-gradient(circle, hsl(42 65% 70% / 0.15), transparent 70%);
-            pointer-events: none;
+        .wrap-narrow {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 48px);
         }
 
-        .card-highlight h3 {
-            color: var(--ink);
-            font-size: clamp(1.4rem, 3.5vw, 1.85rem);
-            margin-top: 0;
-            line-height: 1.3;
-            position: relative;
-        }
-
-        .card-highlight p {
-            color: var(--ink-soft);
-            font-size: 1.05rem;
-            position: relative;
-        }
-
-        /* ============================================
-           TABS — pill switcher moderno com segmentos
-           ============================================ */
-        .tab-prompt {
-            text-align: center;
-            font-family: 'Instrument Serif', serif;
-            font-style: italic;
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            color: var(--ink);
-            margin-top: 48px;
-        }
-
-        .tab-container {
+        /* ============================================================
+           NAV TOP — minimal sticky
+           ============================================================ */
+        .topnav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 50;
+            padding: 18px clamp(20px, 4vw, 48px);
             display: flex;
-            justify-content: center;
-            gap: 14px;
-            margin: 24px 0 64px;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            background: hsl(0 0% 100% / 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid hsl(42 38% 57% / 0.35);
-            color: var(--gold-deep);
-            padding: 14px 24px;
-            border-radius: var(--r-pill);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all var(--t-med);
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            display: inline-flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            max-width: 320px;
-            box-shadow: var(--shadow-sm);
-            position: relative;
-            overflow: hidden;
-            letter-spacing: -0.01em;
+            transition: backdrop-filter var(--t-med), background var(--t-med), padding var(--t-med);
         }
 
-        .tab-btn::before {
+        .topnav.scrolled {
+            background: rgba(250, 246, 236, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 12px clamp(20px, 4vw, 48px);
+            border-bottom: 1px solid rgba(184, 146, 78, 0.12);
+        }
+
+        .topnav-mark {
+            font-family: 'Fraunces', serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--ink);
+            font-style: italic;
+            letter-spacing: -0.02em;
+        }
+
+        .topnav-mark span { color: var(--gold-deep); }
+
+        .topnav-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--slate-soft);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .topnav-meta { display: flex; gap: 24px; align-items: center; }
+            .topnav-meta .pulse {
+                width: 6px; height: 6px;
+                background: var(--gold);
+                border-radius: 50%;
+                box-shadow: 0 0 0 0 var(--gold);
+                animation: pulse-ring 2.4s var(--ease-out) infinite;
+                display: inline-block;
+                margin-right: 6px;
+            }
+        }
+
+        @keyframes pulse-ring {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(184, 146, 78, 0.5); }
+            50% { box-shadow: 0 0 0 6px rgba(184, 146, 78, 0); }
+        }
+
+        /* ============================================================
+           HERO — split editorial cinematográfico
+           ============================================================ */
+        .hero {
+            min-height: 100vh;
+            padding: 120px 0 80px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Aura ambient no hero */
+        .hero::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background: var(--gold-grad);
-            opacity: 0;
-            transition: opacity var(--t-med);
-            z-index: 0;
+            top: 10%; right: -10%;
+            width: 60%; height: 80%;
+            background: radial-gradient(circle, rgba(184, 146, 78, 0.18) 0%, transparent 60%);
+            pointer-events: none;
+            filter: blur(40px);
         }
 
-        .tab-btn > * {
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 10%; left: -10%;
+            width: 40%; height: 60%;
+            background: radial-gradient(circle, rgba(212, 181, 117, 0.12) 0%, transparent 65%);
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            align-items: center;
             position: relative;
             z-index: 1;
         }
 
-        .tab-btn .material-symbols-rounded {
-            font-size: 1.4rem;
+        @media (min-width: 980px) {
+            .hero-grid {
+                grid-template-columns: 1.1fr 1fr;
+                gap: 80px;
+            }
+        }
+
+        .hero-text { position: relative; }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 36px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(184, 146, 78, 0.3);
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .hero-eyebrow .num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--gold-deep);
+            letter-spacing: 0.15em;
+        }
+
+        .hero-eyebrow .divider {
+            flex: 1;
+            height: 1px;
+            background: rgba(184, 146, 78, 0.3);
+        }
+
+        .hero-eyebrow .tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--slate);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .hero-headline {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.045em;
+            color: var(--ink);
+            margin: 0 0 36px;
+            font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 400;
+        }
+
+        .hero-headline .em {
+            font-style: italic;
+            font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 300;
+            color: var(--gold-deep);
+        }
+
+        .hero-headline .underline {
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .hero-headline .underline::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0;
+            bottom: 0.06em;
+            height: 0.45em;
+            background: rgba(184, 146, 78, 0.22);
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero-sub {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+            line-height: 1.45;
+            color: var(--slate);
+            max-width: 460px;
+            margin: 0 0 44px;
+            font-weight: 400;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 28px 16px 32px;
+            background: var(--ink);
+            color: var(--paper);
+            border: none;
+            border-radius: var(--r-pill);
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: all var(--t-med);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--grad-gold-shimmer);
+            background-size: 200% 100%;
+            opacity: 0;
+            transition: opacity var(--t-med);
+            animation: shimmer 4s infinite linear;
+        }
+
+        @keyframes shimmer {
+            from { background-position: 200% 0; }
+            to { background-position: -200% 0; }
+        }
+
+        .btn-primary > * { position: relative; z-index: 1; }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 32px -8px rgba(184, 146, 78, 0.5);
+            color: var(--ink);
+        }
+
+        .btn-primary:hover::before { opacity: 1; }
+
+        .btn-primary .arrow {
+            display: inline-flex;
+            width: 24px; height: 24px;
+            border-radius: 50%;
+            background: var(--paper);
+            color: var(--ink);
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
             transition: transform var(--t-med);
         }
 
-        .tab-btn:hover {
-            transform: translateY(-2px);
-            border-color: var(--gold);
-            box-shadow: var(--shadow-md);
+        .btn-primary:hover .arrow { transform: translateX(4px) rotate(-45deg); background: var(--ink); color: var(--gold-light); }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 24px;
+            background: transparent;
+            color: var(--ink);
+            border: 1px solid rgba(26, 24, 20, 0.2);
+            border-radius: var(--r-pill);
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--t-med);
+            text-decoration: none;
         }
 
-        .tab-btn:hover .material-symbols-rounded {
-            transform: scale(1.1);
+        .btn-ghost:hover {
+            border-color: var(--gold);
+            color: var(--gold-deep);
+            background: rgba(184, 146, 78, 0.06);
         }
+
+        /* Hero portrait — foto da Michelle em destaque */
+        .hero-portrait {
+            position: relative;
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            box-shadow: var(--sh-lg);
+        }
+
+        .hero-portrait::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: var(--r-lg);
+            background: var(--grad-gold-shimmer);
+            background-size: 200% 100%;
+            z-index: -1;
+            animation: shimmer 6s infinite linear;
+        }
+
+        .hero-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 1.2s var(--ease-out);
+            filter: contrast(1.05) saturate(0.95);
+        }
+
+        .hero-portrait:hover img { transform: scale(1.04); }
+
+        .hero-portrait::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(15, 14, 12, 0.5) 100%);
+            pointer-events: none;
+        }
+
+        .hero-portrait-meta {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            right: 24px;
+            color: var(--paper);
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 16px;
+        }
+
+        .hero-portrait-name {
+            font-family: 'Fraunces', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-portrait-role {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gold-light);
+            margin-top: 6px;
+        }
+
+        .hero-portrait-logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(245, 240, 230, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+
+        .hero-portrait-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* ============================================================
+           MARQUEE DOURADA — texto rolando
+           ============================================================ */
+        .marquee {
+            background: var(--ink);
+            color: var(--gold-light);
+            padding: 22px 0;
+            margin: 0 0 100px;
+            overflow: hidden;
+            position: relative;
+            border-top: 1px solid rgba(184, 146, 78, 0.2);
+            border-bottom: 1px solid rgba(184, 146, 78, 0.2);
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 60px;
+            animation: marquee-scroll 32s linear infinite;
+            white-space: nowrap;
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            font-variation-settings: 'opsz' 144, 'SOFT' 100;
+        }
+
+        .marquee-track span { display: inline-flex; align-items: center; gap: 60px; }
+        .marquee-track .dot {
+            display: inline-block;
+            width: 8px; height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        @keyframes marquee-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ============================================================
+           SECTION HEADERS — estilo magazine editorial
+           ============================================================ */
+        .section {
+            padding: clamp(60px, 10vw, 120px) 0;
+            position: relative;
+        }
+
+        .section-head {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-bottom: clamp(48px, 8vw, 80px);
+            align-items: end;
+        }
+
+        @media (min-width: 768px) {
+            .section-head {
+                grid-template-columns: auto 1fr;
+                gap: 80px;
+            }
+        }
+
+        .section-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--gold-deep);
+            letter-spacing: 0.18em;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            white-space: nowrap;
+        }
+
+        .section-num::before {
+            content: '';
+            width: 32px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.2rem, 5.5vw, 4rem);
+            line-height: 0.95;
+            letter-spacing: -0.035em;
+            color: var(--ink);
+            margin: 0;
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+        }
+
+        .section-title .em {
+            font-style: italic;
+            color: var(--gold-deep);
+            font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 300;
+        }
+
+        /* ============================================================
+           ABOUT — magazine spread editorial
+           ============================================================ */
+        .about-spread {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        @media (min-width: 980px) {
+            .about-spread {
+                grid-template-columns: 5fr 7fr;
+                gap: 80px;
+            }
+        }
+
+        .about-photo-wrap {
+            position: relative;
+        }
+
+        .about-photo {
+            aspect-ratio: 3/4;
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            box-shadow: var(--sh-lg);
+            position: relative;
+        }
+
+        .about-photo img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s var(--ease-out);
+            filter: contrast(1.05);
+        }
+
+        .about-photo-wrap:hover .about-photo img { transform: scale(1.05); }
+
+        .about-photo-frame {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .about-photo-frame-2 {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 160px;
+            height: 160px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .about-signature {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.6rem;
+            color: var(--paper);
+            line-height: 1;
+            text-shadow: 0 4px 16px rgba(0,0,0,0.4);
+            transform: rotate(-4deg);
+        }
+
+        .about-content {
+            padding-top: 12px;
+        }
+
+        .about-pullquote {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+            line-height: 1.15;
+            color: var(--ink);
+            margin: 0 0 36px;
+            letter-spacing: -0.03em;
+            font-variation-settings: 'opsz' 144, 'SOFT' 80, 'wght' 400;
+            position: relative;
+        }
+
+        .about-pullquote::before {
+            content: '"';
+            font-style: italic;
+            color: var(--gold);
+            font-size: 1.2em;
+            line-height: 0;
+            position: relative;
+            top: 0.3em;
+        }
+
+        .about-pullquote .em {
+            font-style: italic;
+            color: var(--gold-deep);
+            font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 300;
+        }
+
+        .about-bio {
+            font-size: 1.02rem;
+            line-height: 1.75;
+            color: var(--slate);
+            margin: 0 0 32px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding-top: 32px;
+            border-top: 1px solid var(--line);
+        }
+
+        .stat-num {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--gold-deep);
+            line-height: 1;
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .stat-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.62rem;
+            color: var(--slate-soft);
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin-top: 8px;
+            line-height: 1.3;
+        }
+
+        /* ============================================================
+           TABS — segmented control editorial
+           ============================================================ */
+        .tabs-wrap {
+            text-align: center;
+            margin: clamp(60px, 8vw, 100px) 0;
+        }
+
+        .tabs-prompt {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+            color: var(--slate);
+            margin-bottom: 28px;
+        }
+
+        .tabs-segment {
+            display: inline-flex;
+            background: rgba(26, 24, 20, 0.06);
+            padding: 6px;
+            border-radius: var(--r-pill);
+            border: 1px solid var(--line);
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 14px 28px;
+            border-radius: var(--r-pill);
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--slate);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all var(--t-med);
+            position: relative;
+            letter-spacing: -0.01em;
+        }
+
+        .tab-btn .material-symbols-rounded { font-size: 1.1rem; }
+
+        .tab-btn:hover { color: var(--ink); }
 
         .tab-btn.active {
-            color: var(--bg-elev);
-            border-color: transparent;
-            box-shadow: 0 12px 32px hsl(42 38% 57% / 0.4);
-            transform: translateY(-2px);
-        }
-
-        .tab-btn.active::before {
-            opacity: 1;
+            background: var(--ink);
+            color: var(--paper);
+            box-shadow: 0 4px 16px rgba(26, 24, 20, 0.2);
         }
 
         .tab-content {
             display: none;
-            animation: fadeUp 0.6s var(--ease) backwards;
+            animation: fadeUp 0.7s var(--ease-out) backwards;
         }
 
-        .tab-content.active {
-            display: block;
-        }
+        .tab-content.active { display: block; }
 
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ============================================
-           SCROLL REVEAL
-           ============================================ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
-            will-change: opacity, transform;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ============================================
-           LISTA TARGET
-           ============================================ */
-        .target-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .target-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 18px;
-            margin-bottom: 22px;
-            border-bottom: 1px solid var(--line-soft);
-            padding-bottom: 22px;
-            transition: transform var(--t-fast);
-        }
-
-        .target-item:hover {
-            transform: translateX(4px);
-        }
-
-        .target-item:last-child {
-            border: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .target-icon {
-            color: var(--gold);
-            font-size: 28px !important;
-            margin-top: 2px;
-            background: var(--gold-soft);
-            border-radius: 50%;
-            padding: 6px;
-            flex-shrink: 0;
-        }
-
-        .target-text strong {
-            color: var(--ink);
-            display: block;
-            margin-bottom: 4px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        /* ============================================
-           OBJEÇÕES (Mito vs Verdade)
-           ============================================ */
-        .objection-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
-            margin-bottom: 56px;
-        }
-
-        .objection-card {
-            background: hsl(0 0% 100% / 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 28px;
-            border-radius: var(--r-sm);
-            border-left: 3px solid var(--danger);
-            box-shadow: var(--shadow-sm);
-            transition: transform var(--t-med);
-        }
-
-        .objection-card:hover {
-            transform: translateY(-3px);
-        }
-
-        .objection-card.reframed {
-            border-left: 3px solid var(--gold);
-            background: linear-gradient(135deg, hsl(42 50% 94%) 0%, hsl(45 50% 97%) 100%);
-        }
-
-        .objection-title {
-            font-weight: 700;
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* ============================================
-           TRANSFORMAÇÃO (Antes/Depois)
-           ============================================ */
-        .transformation-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-            align-items: center;
-            margin-bottom: 64px;
-        }
-
-        .trans-card {
-            background: hsl(0 0% 100% / 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 32px;
-            border-radius: var(--r-md);
-            box-shadow: var(--shadow-md);
-        }
-
-        .trans-arrow {
-            text-align: center;
-            color: var(--gold);
-        }
-
-        .trans-arrow .material-symbols-rounded {
-            font-size: 44px !important;
-            transform: rotate(90deg);
-            background: var(--gold-soft);
-            border-radius: 50%;
-            padding: 12px;
-            box-shadow: 0 4px 16px hsl(42 38% 57% / 0.25);
-        }
-
-        .trans-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            margin-bottom: 22px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid var(--line);
-            padding-bottom: 16px;
-        }
-
-        .trans-before {
-            opacity: 0.92;
+        /* ============================================================
+           CARDS GENERAL
+           ============================================================ */
+        .card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border: 1px solid var(--line);
+            border-radius: var(--r-md);
+            padding: clamp(28px, 4vw, 40px);
+            margin-bottom: 24px;
+            transition: all var(--t-med);
+            position: relative;
         }
 
-        .trans-after {
-            border: 1.5px solid hsl(42 38% 57% / 0.4);
-            box-shadow: var(--shadow-lg), 0 0 0 6px hsl(42 38% 57% / 0.06);
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--sh-md);
+            border-color: rgba(184, 146, 78, 0.3);
+        }
+
+        /* Whisper card — card de boas-vindas */
+        .whisper {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(245, 240, 230, 0.6) 0%, rgba(240, 230, 208, 0.5) 100%);
+            border: 1px solid rgba(184, 146, 78, 0.2);
+            padding: clamp(40px, 6vw, 64px);
+            border-radius: var(--r-lg);
+            margin: 40px 0 60px;
             position: relative;
             overflow: hidden;
         }
 
-        .trans-after::before {
+        .whisper::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 80%;
-            height: 200%;
-            background: radial-gradient(circle, hsl(42 65% 70% / 0.12), transparent 70%);
+            top: -50%; left: -10%;
+            width: 60%; height: 200%;
+            background: radial-gradient(ellipse, rgba(184, 146, 78, 0.15), transparent 60%);
             pointer-events: none;
         }
 
-        @media (min-width: 800px) {
-            .transformation-grid {
-                grid-template-columns: 1fr auto 1fr;
-            }
-            .trans-arrow .material-symbols-rounded {
-                transform: rotate(0deg);
-            }
+        .whisper-text {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1.4rem, 3.2vw, 2rem);
+            line-height: 1.25;
+            color: var(--ink);
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+            letter-spacing: -0.02em;
+            margin: 0 0 14px;
+            position: relative;
         }
 
-        /* ============================================
-           JOURNEY GRID (Como funciona)
-           ============================================ */
+        .whisper-text .em {
+            font-style: italic;
+            color: var(--gold-deep);
+            font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 300;
+        }
+
+        .whisper-sub {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--slate);
+            margin: 0;
+            position: relative;
+        }
+
+        /* Target list */
+        .target-list { list-style: none; padding: 0; margin: 0; }
+
+        .target-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 24px;
+            align-items: start;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--line);
+            transition: padding-left var(--t-fast);
+        }
+
+        .target-item:hover { padding-left: 8px; }
+        .target-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .target-item:first-child { padding-top: 0; }
+
+        .target-num {
+            font-family: 'Fraunces', serif;
+            font-size: 2.4rem;
+            color: var(--gold);
+            line-height: 1;
+            font-style: italic;
+            font-variation-settings: 'opsz' 144, 'wght' 400;
+            opacity: 0.7;
+        }
+
+        .target-text strong {
+            display: block;
+            font-family: 'Fraunces', serif;
+            font-size: 1.3rem;
+            color: var(--ink);
+            font-weight: 500;
+            margin-bottom: 6px;
+            letter-spacing: -0.02em;
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+        }
+
+        .target-text span { color: var(--slate); font-size: 0.96rem; }
+
+        /* ============================================================
+           JOURNEY CARDS — magazine editorial
+           ============================================================ */
         .journey-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
-            margin-bottom: 64px;
+            gap: 24px;
+            margin-bottom: 60px;
         }
 
         .journey-card {
-            background: hsl(0 0% 100% / 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 36px 28px;
+            background: var(--paper);
+            border: 1px solid var(--line);
             border-radius: var(--r-md);
-            box-shadow: var(--shadow-md);
+            padding: 36px 32px;
             position: relative;
             overflow: hidden;
-            transition: transform var(--t-med), box-shadow var(--t-med), border-color var(--t-med);
-            text-align: center;
-            border: 1px solid hsl(42 38% 57% / 0.08);
+            transition: all var(--t-med);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
         .journey-card::before {
             content: '';
             position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(135deg, transparent 30%, hsl(42 38% 57% / 0.4) 50%, transparent 70%);
-            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity var(--t-med);
+            top: 0; left: 0;
+            width: 0; height: 2px;
+            background: var(--grad-gold);
+            transition: width var(--t-slow);
         }
 
         .journey-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            box-shadow: var(--sh-md);
+            background: var(--bg-elev);
         }
 
-        .journey-card:hover::before {
-            opacity: 1;
+        .journey-card:hover::before { width: 100%; }
+
+        .journey-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
         }
 
-        .journey-number {
-            position: absolute;
-            top: -22px;
-            right: -10px;
-            font-family: 'Playfair Display', serif;
-            font-size: 6.5rem;
-            color: var(--gold);
-            opacity: 0.18;
-            font-weight: 700;
-            line-height: 1;
-            z-index: 0;
-            font-style: italic;
-        }
-
-        .journey-content {
-            position: relative;
-            z-index: 1;
+        .journey-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--gold-deep);
+            letter-spacing: 0.15em;
         }
 
         .journey-icon {
-            font-size: 32px;
-            color: var(--gold-deep);
-            margin-bottom: 18px;
-            background: linear-gradient(135deg, var(--gold-soft) 0%, var(--bg-soft) 100%);
-            width: 64px;
-            height: 64px;
-            line-height: 64px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            display: inline-flex;
+            background: rgba(184, 146, 78, 0.1);
+            display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: var(--shadow-sm), inset 0 1px 0 hsl(0 0% 100%);
-            border: 1px solid hsl(42 38% 57% / 0.15);
+            color: var(--gold-deep);
         }
 
+        .journey-icon .material-symbols-rounded { font-size: 22px; }
+
         .journey-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
             color: var(--ink);
-            margin-bottom: 10px;
-            display: block;
+            line-height: 1.15;
+            margin: 0;
+            letter-spacing: -0.025em;
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
             font-weight: 500;
         }
 
         .journey-card p {
-            font-size: 0.92rem;
-            color: var(--ink-soft);
-            line-height: 1.6;
+            font-size: 0.94rem;
+            line-height: 1.65;
+            color: var(--slate);
+            margin: 0;
         }
 
-        /* ============================================
-           CARROSSEL DE DEPOIMENTOS
-           ============================================ */
-        .carousel-container {
+        /* ============================================================
+           TRANSFORMATION — antes/depois
+           ============================================================ */
+        .transform-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        @media (min-width: 800px) {
+            .transform-grid {
+                grid-template-columns: 1fr auto 1fr;
+            }
+        }
+
+        .transform-card {
+            padding: 36px;
+            border-radius: var(--r-md);
+            border: 1px solid var(--line);
+            background: var(--paper);
+        }
+
+        .transform-card.before {
+            opacity: 0.85;
+        }
+
+        .transform-card.after {
+            border: 1px solid rgba(184, 146, 78, 0.3);
+            background: linear-gradient(135deg, var(--paper) 0%, var(--gold-soft) 100%);
+            box-shadow: var(--sh-md), var(--sh-glow);
+        }
+
+        .transform-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Fraunces', serif;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line);
+            color: var(--ink);
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+            font-weight: 500;
+        }
+
+        .transform-card.after .transform-head { color: var(--gold-deep); }
+
+        .transform-arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--gold);
+        }
+
+        .transform-arrow .material-symbols-rounded {
+            font-size: 32px;
+            background: var(--paper);
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            padding: 12px;
+            transform: rotate(90deg);
+        }
+
+        @media (min-width: 800px) {
+            .transform-arrow .material-symbols-rounded { transform: rotate(0); }
+        }
+
+        .check-row {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+            font-size: 0.96rem;
+            color: var(--slate);
+            line-height: 1.55;
+        }
+
+        .check-row .material-symbols-rounded {
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .check-row.minus .material-symbols-rounded { color: var(--slate-soft); }
+        .check-row.plus .material-symbols-rounded { color: var(--gold); }
+
+        /* ============================================================
+           MANIFESTO / CÓDIGO DE HONRA — vertical editorial
+           ============================================================ */
+        .manifesto {
+            background: var(--ink);
+            color: var(--paper);
+            border-radius: var(--r-lg);
+            padding: clamp(48px, 8vw, 80px) clamp(32px, 5vw, 56px);
+            margin-bottom: 80px;
             position: relative;
-            max-width: 820px;
-            margin: 0 auto 64px;
             overflow: hidden;
         }
 
-        .carousel-track {
-            display: flex;
-            transition: transform 0.6s var(--ease);
+        .manifesto::before {
+            content: '';
+            position: absolute;
+            top: -10%; right: -10%;
+            width: 50%; height: 60%;
+            background: radial-gradient(circle, rgba(184, 146, 78, 0.18), transparent 60%);
+            pointer-events: none;
         }
 
-        .testimonial-slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            padding: 12px;
+        .manifesto-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--gold-light);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            position: relative;
+        }
+
+        .manifesto-eyebrow::before {
+            content: '';
+            width: 32px; height: 1px;
+            background: var(--gold);
+        }
+
+        .manifesto-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            line-height: 1.05;
+            color: var(--paper);
+            margin: 0 0 48px;
+            letter-spacing: -0.035em;
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+            position: relative;
+        }
+
+        .manifesto-title .em {
+            font-style: italic;
+            color: var(--gold-light);
+            font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 300;
+        }
+
+        .manifesto-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 4px;
+            position: relative;
+        }
+
+        .manifesto-item {
+            padding: 28px 0;
+            border-top: 1px solid rgba(245, 240, 230, 0.12);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: padding-left var(--t-fast);
+        }
+
+        .manifesto-item:hover { padding-left: 8px; }
+
+        .manifesto-item-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--gold-light);
+            letter-spacing: 0.15em;
+        }
+
+        .manifesto-item-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            color: var(--paper);
+            margin: 0;
+            font-style: italic;
+            font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 400;
+        }
+
+        /* ============================================================
+           COMPARISON — receberá / não
+           ============================================================ */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        @media (min-width: 768px) {
+            .compare-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .compare-col {
+            padding: 40px;
+            border-radius: var(--r-md);
+            background: var(--paper);
+            border: 1px solid var(--line);
+            transition: all var(--t-med);
+        }
+
+        .compare-col:hover { transform: translateY(-3px); box-shadow: var(--sh-md); }
+
+        .compare-col.featured {
+            background: linear-gradient(135deg, var(--paper) 0%, var(--gold-soft) 100%);
+            border: 1px solid rgba(184, 146, 78, 0.4);
+            box-shadow: var(--sh-md);
+        }
+
+        .compare-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Fraunces', serif;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line);
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+            font-weight: 500;
+        }
+
+        .compare-head.bad { color: var(--rose-deep); }
+        .compare-head.good { color: var(--gold-deep); }
+
+        /* ============================================================
+           STEPS — passos verticais editorial
+           ============================================================ */
+        .steps {
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .step-row {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 32px;
+            padding: 28px 0;
+            border-top: 1px solid var(--line);
+            align-items: center;
+            transition: padding-left var(--t-fast);
+        }
+
+        .step-row:last-child { border-bottom: 1px solid var(--line); }
+        .step-row:hover { padding-left: 8px; }
+
+        .step-num {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            color: var(--gold);
+            line-height: 1;
+            font-style: italic;
+            font-variation-settings: 'opsz' 144, 'wght' 300;
+            opacity: 0.85;
+        }
+
+        .step-content strong {
+            display: block;
+            font-family: 'Fraunces', serif;
+            font-size: 1.3rem;
+            color: var(--ink);
+            margin-bottom: 4px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+        }
+
+        .step-content span { color: var(--slate); }
+
+        /* ============================================================
+           TESTIMONIALS — quote wall editorial
+           ============================================================ */
+        .testimonials {
+            position: relative;
+            margin-bottom: 80px;
         }
 
         .testimonial-card {
-            background: hsl(0 0% 100% / 0.85);
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 48px 36px;
-            border-radius: var(--r-md);
-            box-shadow: var(--shadow-lg);
-            border-top: 3px solid var(--gold);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            padding: clamp(40px, 6vw, 64px);
             text-align: center;
             position: relative;
         }
 
-        .quote-icon {
-            font-size: 48px !important;
-            color: var(--gold);
-            opacity: 0.25;
-            display: block;
-            margin: 0 auto 16px;
+        .testimonial-quote {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            line-height: 1.35;
+            color: var(--ink);
+            margin: 0 0 32px;
+            letter-spacing: -0.02em;
+            font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 400;
+            position: relative;
         }
 
-        .testimonial-text {
-            font-family: 'Instrument Serif', serif;
-            font-style: italic;
-            color: var(--ink);
-            margin-bottom: 24px;
-            font-size: 1.2rem;
-            line-height: 1.6;
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--gold);
+            line-height: 0;
+            position: relative;
+            top: 0.3em;
+            margin-right: 0.05em;
         }
 
         .testimonial-author {
-            font-weight: 600;
-            color: var(--gold-deep);
-            font-size: 0.82rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.2em;
+            color: var(--gold-deep);
         }
 
-        .carousel-dots {
+        .testimonial-dots {
             display: flex;
             justify-content: center;
-            margin-top: 24px;
-            gap: 10px;
+            gap: 8px;
+            margin-top: 32px;
         }
 
         .dot {
-            width: 8px;
-            height: 8px;
-            background-color: hsl(42 38% 57% / 0.3);
+            width: 8px; height: 8px;
+            background: rgba(184, 146, 78, 0.3);
             border-radius: 50%;
             cursor: pointer;
             transition: all var(--t-med);
         }
 
         .dot.active {
-            background-color: var(--gold);
-            width: 24px;
+            background: var(--gold);
+            width: 28px;
             border-radius: var(--r-pill);
         }
 
-        /* ============================================
-           CÓDIGO DE HONRA / MANIFESTO
-           ============================================ */
-        .manifesto-container {
-            background: hsl(0 0% 100% / 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: var(--r-md);
-            box-shadow: var(--shadow-md);
-            padding: clamp(28px, 5vw, 44px);
-            margin-bottom: 64px;
-            border-top: 3px solid var(--gold);
-            position: relative;
-            overflow: hidden;
-        }
+        .carousel-container { overflow: hidden; }
+        .carousel-track { display: flex; transition: transform 0.6s var(--ease-out); }
+        .testimonial-slide { min-width: 100%; padding: 12px; }
 
-        .manifesto-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, hsl(42 65% 70% / 0.1), transparent 70%);
-            pointer-events: none;
-        }
-
-        .manifesto-item {
-            display: flex;
-            align-items: center;
-            padding: 22px 0;
-            border-bottom: 1px solid var(--line-soft);
-            position: relative;
-            transition: transform var(--t-fast), padding-left var(--t-fast);
-        }
-
-        .manifesto-item:hover {
-            transform: translateX(4px);
-        }
-
-        .manifesto-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .manifesto-item:first-child {
-            padding-top: 0;
-        }
-
-        .manifesto-icon {
-            color: var(--gold-deep);
-            margin-right: 22px;
-            font-size: 22px !important;
-            background: var(--gold-soft);
-            padding: 12px;
-            border-radius: 50%;
-            box-shadow: inset 0 1px 0 hsl(0 0% 100%);
-        }
-
-        .manifesto-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            color: var(--ink);
-            font-weight: 500;
-        }
-
-        /* ============================================
-           COMPARISON GRID (Receberá / Não receberá)
-           ============================================ */
-        .comparison-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            margin-bottom: 64px;
-        }
-
-        .comp-col {
-            flex: 1;
-            min-width: 300px;
-            padding: 36px;
-            border-radius: var(--r-md);
-            background: hsl(0 0% 100% / 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--line);
-            transition: transform var(--t-med);
-        }
-
-        .comp-col:hover {
-            transform: translateY(-3px);
-        }
-
-        .comp-col.featured {
-            border: 1.5px solid hsl(42 38% 57% / 0.4);
-            box-shadow: var(--shadow-lg), 0 0 0 6px hsl(42 38% 57% / 0.06);
-            background: linear-gradient(135deg, hsl(45 50% 98%) 0%, hsl(42 50% 96%) 100%);
-        }
-
-        .comp-title {
-            font-size: 1.2rem;
-            margin: 0 0 24px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Playfair Display', serif;
-            font-weight: 500;
-        }
-
-        .comp-bad { color: hsl(0 35% 50%); }
-        .comp-good { color: var(--gold-deep); }
-
-        .check-item {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 14px;
-            font-size: 0.95rem;
-            align-items: center;
-            color: var(--ink-soft);
-        }
-
-        .check-icon {
-            font-size: 20px !important;
-            opacity: 0.8;
-            flex-shrink: 0;
-        }
-
-        /* ============================================
-           STEPS / PASSOS
-           ============================================ */
-        .steps-wrapper {
-            position: relative;
-            padding-left: 24px;
-            margin-bottom: 64px;
-        }
-
-        .steps-wrapper::before {
-            content: '';
-            position: absolute;
-            left: 38px;
-            top: 24px;
-            bottom: 24px;
-            width: 2px;
-            background: linear-gradient(to bottom, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
-            z-index: 0;
-        }
-
-        .step-row {
-            display: flex;
-            align-items: center;
-            background: hsl(0 0% 100% / 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 24px 28px;
-            border-radius: var(--r-md);
-            margin-bottom: 18px;
-            box-shadow: var(--shadow-md);
-            position: relative;
-            z-index: 1;
-            border: 1px solid var(--line-soft);
-            transition: transform var(--t-fast), box-shadow var(--t-fast);
-        }
-
-        .step-row:hover {
-            transform: translateX(4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .step-circle {
-            background: var(--gold-grad);
-            color: var(--bg-elev);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            margin-right: 22px;
-            flex-shrink: 0;
-            font-size: 14px;
-            box-shadow: 0 4px 12px hsl(42 38% 57% / 0.35), inset 0 1px 0 hsl(0 0% 100% / 0.3);
-            font-family: 'Inter', sans-serif;
-        }
-
-        .step-row > div:last-child strong {
-            color: var(--ink);
-        }
-
-        /* ============================================
-           FAQ — details modernizado
-           ============================================ */
+        /* ============================================================
+           FAQ — accordion editorial
+           ============================================================ */
         details {
-            background: hsl(0 0% 100% / 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            margin-bottom: 14px;
-            border-radius: var(--r-sm);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--line-soft);
+            border-top: 1px solid var(--line);
             transition: all var(--t-med);
-            overflow: hidden;
         }
 
-        details[open] {
-            border-color: hsl(42 38% 57% / 0.3);
-            box-shadow: var(--shadow-md);
-            background: linear-gradient(135deg, hsl(0 0% 100% / 0.9) 0%, hsl(45 30% 98% / 0.9) 100%);
-        }
+        details:last-of-type { border-bottom: 1px solid var(--line); }
+
+        details[open] summary { color: var(--gold-deep); }
 
         summary {
-            padding: 22px 24px;
+            padding: 28px 0;
             cursor: pointer;
-            font-weight: 500;
-            color: var(--ink);
             list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.08rem;
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+            color: var(--ink);
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+            font-weight: 500;
+            letter-spacing: -0.02em;
             transition: color var(--t-fast);
         }
 
         summary:hover { color: var(--gold-deep); }
-
         summary::-webkit-details-marker { display: none; }
 
         summary::after {
-            content: '';
-            width: 14px;
-            height: 14px;
-            background:
-                linear-gradient(var(--gold), var(--gold)) center / 14px 1.5px no-repeat,
-                linear-gradient(var(--gold), var(--gold)) center / 1.5px 14px no-repeat;
+            content: '+';
+            font-family: 'Fraunces', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
             transition: transform var(--t-med);
+            font-weight: 300;
         }
 
         details[open] summary::after {
-            transform: rotate(45deg);
-            background:
-                linear-gradient(var(--gold), var(--gold)) center / 14px 1.5px no-repeat;
+            content: '–';
         }
 
         .faq-content {
-            padding: 0 24px 22px;
-            color: var(--ink-soft);
-            font-size: 0.96rem;
-            line-height: 1.7;
-            animation: fadeUp 0.4s var(--ease);
+            padding: 0 0 28px;
+            color: var(--slate);
+            font-size: 1rem;
+            line-height: 1.75;
+            max-width: 720px;
+            animation: fadeUp 0.4s var(--ease-out);
         }
 
-        /* ============================================
-           GUARANTEE BOX
-           ============================================ */
-        .guarantee-box {
-            background: linear-gradient(135deg, hsl(45 50% 99%) 0%, hsl(42 50% 96%) 100%);
-            border: 1.5px dashed hsl(42 38% 57% / 0.5);
+        /* ============================================================
+           QUIZ — modernizado editorial
+           ============================================================ */
+        .quiz {
+            background: var(--ink);
+            color: var(--paper);
             border-radius: var(--r-lg);
-            padding: clamp(32px, 5vw, 48px);
-            text-align: center;
-            margin: 64px 0;
+            padding: clamp(40px, 6vw, 64px);
+            margin: 60px 0;
             position: relative;
             overflow: hidden;
         }
 
-        .guarantee-box::before {
+        .quiz::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 60%;
-            height: 200%;
-            background: radial-gradient(circle, hsl(42 65% 70% / 0.15), transparent 70%);
+            top: -30%; right: -10%;
+            width: 50%; height: 100%;
+            background: radial-gradient(circle, rgba(184, 146, 78, 0.2), transparent 60%);
             pointer-events: none;
         }
 
-        .guarantee-icon {
-            font-size: 56px !important;
-            color: var(--gold);
-            margin-bottom: 18px;
-            background: var(--gold-soft);
-            border-radius: 50%;
-            padding: 16px;
-            box-shadow: 0 8px 24px hsl(42 38% 57% / 0.25);
-            position: relative;
-        }
-
-        .guarantee-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.3rem, 3vw, 1.6rem);
-            color: var(--ink);
-            margin-bottom: 12px;
-            position: relative;
-        }
-
-        .guarantee-box p {
-            color: var(--ink-soft);
-            position: relative;
-        }
-
-        /* ============================================
-           SPIRITUAL CARD — destaque emocional
-           ============================================ */
-        .spiritual-card {
+        .quiz-intro {
             text-align: center;
-            padding: clamp(56px, 10vw, 88px) clamp(28px, 5vw, 48px);
-            background: radial-gradient(circle at 50% 30%, hsl(42 50% 98%) 0%, hsl(45 30% 96%) 100%);
-            border: 1px solid hsl(42 38% 57% / 0.3);
-            border-radius: var(--r-lg);
-            margin-bottom: 64px;
-            box-shadow: var(--shadow-glow), var(--shadow-lg);
             position: relative;
-            overflow: hidden;
         }
 
-        .spiritual-card::before {
-            content: '"';
-            font-family: 'Playfair Display', serif;
-            font-size: 12rem;
-            color: var(--gold);
-            opacity: 0.08;
-            position: absolute;
-            top: -30px;
-            left: 24px;
-            line-height: 1;
-            font-style: italic;
+        .quiz-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            background: rgba(184, 146, 78, 0.18);
+            border: 1px solid rgba(184, 146, 78, 0.4);
+            color: var(--gold-light);
+            margin-bottom: 20px;
         }
 
-        .spiritual-text {
-            font-family: 'Instrument Serif', serif;
-            font-style: italic;
-            font-size: clamp(1.4rem, 4vw, 2rem);
-            line-height: 1.5;
-            color: var(--ink);
-            position: relative;
-            z-index: 2;
+        .quiz-icon-wrap .material-symbols-rounded { font-size: 28px; }
+
+        .quiz-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            line-height: 1.05;
+            color: var(--paper);
+            margin: 0 0 14px;
+            letter-spacing: -0.03em;
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
             font-weight: 400;
         }
 
-        .spiritual-icon {
-            color: var(--gold);
-            font-size: 40px !important;
-            margin-bottom: 24px;
-            display: inline-block;
-            background: var(--gold-soft);
-            padding: 14px;
-            border-radius: 50%;
-            box-shadow: 0 4px 16px hsl(42 38% 57% / 0.3);
+        .quiz-title .em {
+            font-style: italic;
+            color: var(--gold-light);
+            font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 300;
         }
 
-        /* ============================================
-           TALLY BOX
-           ============================================ */
-        .tally-box {
-            margin-top: 36px;
-            background: hsl(0 0% 100% / 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: var(--r-md);
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            border-top: 3px solid var(--gold);
+        .quiz-sub {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: rgba(245, 240, 230, 0.8);
+            margin: 0 0 32px;
         }
 
-        /* ============================================
-           QUIZ — modernizado
-           ============================================ */
-        .quiz-container {
-            background: hsl(0 0% 100% / 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: var(--r-lg);
-            box-shadow: var(--shadow-lg);
-            border-top: 3px solid var(--gold);
-            padding: clamp(32px, 5vw, 48px);
-            text-align: center;
-            margin-bottom: 40px;
+        .quiz-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: var(--paper);
+            color: var(--ink);
+            border: none;
+            border-radius: var(--r-pill);
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 500;
+            cursor: pointer;
             transition: all var(--t-med);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(184, 146, 78, 0.3);
         }
 
-        .quiz-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -10%;
-            width: 50%;
-            height: 100%;
-            background: radial-gradient(circle, hsl(42 65% 70% / 0.08), transparent 70%);
-            pointer-events: none;
+        .quiz-cta:hover {
+            transform: translateY(-2px);
+            background: var(--gold-light);
+            box-shadow: 0 12px 32px rgba(184, 146, 78, 0.5);
         }
 
-        .quiz-header {
-            margin-bottom: 28px;
-            text-align: left;
-            position: relative;
-        }
+        .quiz-questions { display: none; position: relative; }
 
-        .quiz-step-text {
-            font-size: 0.78rem;
-            color: var(--gold-deep);
-            font-weight: 700;
+        .quiz-progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--gold-light);
             text-transform: uppercase;
-            margin-bottom: 10px;
-            letter-spacing: 0.14em;
+            letter-spacing: 0.15em;
         }
 
         .progress-track {
             width: 100%;
-            height: 6px;
-            background-color: hsl(42 38% 57% / 0.12);
-            border-radius: var(--r-pill);
-            overflow: hidden;
+            height: 2px;
+            background: rgba(245, 240, 230, 0.15);
+            margin-bottom: 32px;
+            position: relative;
         }
 
         .progress-fill {
             height: 100%;
-            background: var(--gold-grad);
+            background: var(--gold-light);
             width: 0%;
-            transition: width 0.5s var(--ease);
-            box-shadow: 0 0 12px hsl(42 38% 57% / 0.5);
-            border-radius: var(--r-pill);
+            transition: width 0.6s var(--ease-out);
+            box-shadow: 0 0 12px var(--gold-light);
         }
 
-        .quiz-question {
-            font-size: clamp(1.15rem, 3vw, 1.4rem);
-            font-weight: 500;
-            color: var(--ink);
-            margin-bottom: 32px;
-            font-family: 'Playfair Display', serif;
-            line-height: 1.4;
-            position: relative;
+        .quiz-question-text {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            color: var(--paper);
+            margin: 0 0 32px;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+            font-weight: 400;
         }
 
         .quiz-options {
             display: flex;
             flex-direction: column;
-            gap: 14px;
-            position: relative;
+            gap: 12px;
         }
 
-        .quiz-cta-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: var(--gold-grad);
-            color: var(--bg-elev);
-            padding: 16px 36px;
-            border-radius: var(--r-pill);
-            text-decoration: none;
-            font-weight: 700;
-            transition: all var(--t-med);
-            border: none;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            box-shadow: 0 8px 24px hsl(42 38% 57% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quiz-cta-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.4), transparent);
-            transition: left 0.6s var(--ease);
-        }
-
-        .quiz-cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px hsl(42 38% 57% / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.3);
-        }
-
-        .quiz-cta-btn:hover::before {
-            left: 100%;
-        }
-
-        .quiz-btn {
-            background: hsl(0 0% 100% / 0.6);
-            border: 1.5px solid var(--line);
-            padding: 16px 22px;
+        .quiz-option-btn {
+            background: rgba(245, 240, 230, 0.05);
+            border: 1px solid rgba(245, 240, 230, 0.2);
+            color: var(--paper);
+            padding: 18px 24px;
             border-radius: var(--r-md);
             cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.98rem;
-            color: var(--ink-soft);
-            transition: all var(--t-med);
             text-align: left;
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 1rem;
+            transition: all var(--t-med);
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 16px;
         }
 
-        .quiz-btn:hover {
-            background: var(--gold-soft);
-            border-color: var(--gold);
-            color: var(--ink);
-            transform: translateX(6px);
-            box-shadow: var(--shadow-md);
+        .quiz-option-btn:hover {
+            background: rgba(184, 146, 78, 0.15);
+            border-color: var(--gold-light);
+            transform: translateX(4px);
         }
 
-        .quiz-btn .circle {
-            width: 22px;
-            height: 22px;
+        .quiz-option-circle {
+            width: 22px; height: 22px;
+            border: 1.5px solid rgba(245, 240, 230, 0.4);
             border-radius: 50%;
-            border: 2px solid hsl(42 38% 57% / 0.3);
             flex-shrink: 0;
             transition: all var(--t-fast);
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        .quiz-btn:hover .circle {
-            border-color: var(--gold);
-            background: var(--gold-grad);
-            box-shadow: 0 0 0 4px hsl(42 38% 57% / 0.15);
+        .quiz-option-btn:hover .quiz-option-circle {
+            border-color: var(--gold-light);
+            background: var(--gold-light);
+            box-shadow: 0 0 0 4px rgba(184, 146, 78, 0.2);
         }
 
-        .quiz-result {
-            display: none;
-            animation: fadeUp 0.6s var(--ease);
-            background: linear-gradient(135deg, hsl(45 50% 96%) 0%, hsl(42 50% 92%) 100%);
-            padding: 36px;
-            border-radius: var(--r-md);
-            margin-top: 24px;
-            border: 1px solid hsl(42 38% 57% / 0.25);
+        .quiz-result { display: none; }
+
+        .quiz-result-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            color: var(--gold-light);
+            margin: 0 0 14px;
+            font-style: italic;
+            font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 400;
+            letter-spacing: -0.02em;
         }
 
-        .result-title {
-            color: var(--gold-deep);
-            font-size: clamp(1.4rem, 3.5vw, 1.7rem);
-            margin-bottom: 12px;
-            font-weight: 600;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .result-desc {
+        .quiz-result-desc {
             font-size: 1.05rem;
-            color: var(--ink);
-            margin-bottom: 22px;
+            color: rgba(245, 240, 230, 0.85);
             line-height: 1.7;
+            margin: 0 0 24px;
         }
 
         .arrow-down {
-            font-size: 36px !important;
-            color: var(--gold);
+            font-size: 32px !important;
+            color: var(--gold-light);
             animation: bounce 2s ease-in-out infinite;
             display: block;
             margin: 0 auto;
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-12px); }
-            60% { transform: translateY(-6px); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
         }
 
-        /* ============================================
-           FOOTER
-           ============================================ */
-        .footer {
+        /* ============================================================
+           HIGHLIGHT (corp)
+           ============================================================ */
+        .corp-hero {
+            background: var(--ink);
+            color: var(--paper);
+            border-radius: var(--r-lg);
+            padding: clamp(48px, 8vw, 80px) clamp(32px, 5vw, 56px);
             text-align: center;
-            padding-top: 56px;
-            border-top: 1px solid var(--line);
-            margin-top: 80px;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .footer p {
+        .corp-hero::before {
+            content: '';
+            position: absolute;
+            top: -20%; right: -10%;
+            width: 50%; height: 80%;
+            background: radial-gradient(circle, rgba(184, 146, 78, 0.2), transparent 60%);
+            pointer-events: none;
+        }
+
+        .corp-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            background: rgba(184, 146, 78, 0.15);
+            border: 1px solid rgba(184, 146, 78, 0.35);
+            color: var(--gold-light);
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .corp-icon-wrap .material-symbols-rounded { font-size: 32px; }
+
+        .corp-headline {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+            line-height: 1.1;
+            color: var(--paper);
+            margin: 0 0 24px;
+            letter-spacing: -0.035em;
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+            font-weight: 400;
+            position: relative;
+        }
+
+        .corp-headline .em {
+            font-style: italic;
+            color: var(--gold-light);
+            font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 300;
+        }
+
+        .corp-hero p {
+            color: rgba(245, 240, 230, 0.85);
+            font-size: 1.05rem;
+            max-width: 640px;
+            margin: 0 auto 14px;
+            position: relative;
+        }
+
+        .corp-hero p.italic {
             font-family: 'Instrument Serif', serif;
             font-style: italic;
-            font-size: 1.15rem;
-            color: var(--ink-soft);
+            font-size: 1.2rem;
+            color: var(--paper);
+            margin-top: 24px;
         }
 
-        .signature {
+        /* Objection grid */
+        .obj-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .obj-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .obj-card {
+            padding: 32px;
+            border-radius: var(--r-md);
+            border: 1px solid var(--line);
+            background: var(--paper);
+            transition: all var(--t-med);
+        }
+
+        .obj-card:hover { transform: translateY(-3px); }
+
+        .obj-card.myth {
+            border-left: 3px solid var(--rose-deep);
+        }
+
+        .obj-card.truth {
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--paper) 0%, var(--gold-soft) 100%);
+        }
+
+        .obj-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .obj-card.myth .obj-eyebrow { color: var(--rose-deep); }
+        .obj-card.truth .obj-eyebrow { color: var(--gold-deep); }
+
+        .obj-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--slate);
+            margin: 0;
+        }
+
+        /* ============================================================
+           GUARANTEE
+           ============================================================ */
+        .guarantee {
+            background: linear-gradient(135deg, var(--paper) 0%, var(--gold-soft) 100%);
+            border: 1px dashed rgba(184, 146, 78, 0.5);
+            border-radius: var(--r-lg);
+            padding: clamp(40px, 6vw, 56px);
+            text-align: center;
+            margin: 60px 0;
+            position: relative;
+        }
+
+        .guarantee-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            background: rgba(184, 146, 78, 0.15);
+            color: var(--gold-deep);
+            margin-bottom: 20px;
+        }
+
+        .guarantee-icon-wrap .material-symbols-rounded { font-size: 32px; }
+
+        .guarantee-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            color: var(--ink);
+            margin: 0 0 12px;
+            letter-spacing: -0.025em;
+            font-variation-settings: 'opsz' 144, 'SOFT' 80;
+            font-weight: 500;
+        }
+
+        .guarantee p {
+            color: var(--slate);
+            margin: 0;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* ============================================================
+           SPIRITUAL — dark cinematográfico
+           ============================================================ */
+        .spiritual {
+            background: var(--ink);
+            color: var(--paper);
+            text-align: center;
+            padding: clamp(80px, 12vw, 140px) clamp(24px, 5vw, 56px);
+            border-radius: var(--r-lg);
+            margin: 100px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spiritual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 20%, rgba(184, 146, 78, 0.15), transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(212, 181, 117, 0.1), transparent 50%);
+            pointer-events: none;
+        }
+
+        .spiritual::after {
+            content: '"';
+            position: absolute;
+            top: 20px; left: 40px;
+            font-family: 'Fraunces', serif;
+            font-size: 16rem;
+            color: var(--gold);
+            opacity: 0.08;
+            line-height: 0.8;
+            font-style: italic;
+            font-variation-settings: 'opsz' 144;
+        }
+
+        .spiritual-icon {
+            display: inline-flex;
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: rgba(184, 146, 78, 0.15);
+            border: 1px solid rgba(184, 146, 78, 0.4);
+            color: var(--gold-light);
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .spiritual-icon .material-symbols-rounded { font-size: 28px; }
+
+        .spiritual-text {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+            font-style: italic;
+            line-height: 1.3;
+            color: var(--paper);
+            margin: 0;
+            letter-spacing: -0.025em;
+            font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 300;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .spiritual-text .em { color: var(--gold-light); }
+
+        .spiritual-attribution {
+            display: block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-style: normal;
+            color: var(--gold-light);
+            margin-top: 32px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        /* ============================================================
+           TALLY EMBED
+           ============================================================ */
+        .tally-wrap {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            box-shadow: var(--sh-md);
+            margin-top: 40px;
+        }
+
+        .tally-wrap iframe { display: block; }
+
+        /* ============================================================
+           FOOTER cinematográfico
+           ============================================================ */
+        .footer {
+            text-align: center;
+            padding: 100px 0 40px;
+            margin-top: 60px;
+            border-top: 1px solid var(--line);
+            position: relative;
+        }
+
+        .footer-tagline {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--slate);
+            margin: 0;
+        }
+
+        .footer-signature {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.2rem;
-            background: var(--gold-grad-deep);
+            font-size: clamp(3.5rem, 8vw, 5rem);
+            background: var(--grad-gold-shimmer);
+            background-size: 200% 100%;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin: 20px 0;
-            font-weight: 400;
+            margin: 24px 0 36px;
+            line-height: 1.1;
+            animation: shimmer 6s linear infinite;
+        }
+
+        .footer-mark {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--slate-soft);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-top: 40px;
         }
 
         .social-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold);
-            text-decoration: none;
-            margin-top: 12px;
-            transition: transform var(--t-med);
-            background: var(--gold-soft);
-            padding: 12px;
+            width: 48px; height: 48px;
             border-radius: 50%;
-            border: 1px solid hsl(42 38% 57% / 0.2);
+            background: var(--paper);
+            border: 1px solid var(--line);
+            color: var(--gold-deep);
+            text-decoration: none;
+            transition: all var(--t-med);
         }
 
         .social-link:hover {
-            transform: scale(1.1) rotate(-6deg);
-            color: var(--gold-deep);
+            transform: translateY(-3px) rotate(-6deg);
+            border-color: var(--gold);
+            box-shadow: var(--sh-md);
         }
 
-        .social-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
-            display: block;
+        .social-link svg { width: 22px; height: 22px; fill: currentColor; }
+
+        /* ============================================================
+           SCROLL REVEAL
+           ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+            will-change: opacity, transform;
         }
 
-        /* ============================================
-           WHATSAPP FAB — refinado
-           ============================================ */
-        .whatsapp-container {
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+        }
+
+        .reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+        .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+        .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.15s; }
+        .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.25s; }
+        .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.35s; }
+        .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.45s; }
+        .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.55s; }
+
+        /* ============================================================
+           WHATSAPP FAB
+           ============================================================ */
+        .wa-fab {
             position: fixed;
             bottom: 24px;
             right: 24px;
-            z-index: 9999;
+            z-index: 200;
             display: flex;
             align-items: center;
             gap: 14px;
         }
 
-        .whatsapp-tooltip {
-            background-color: hsl(0 0% 100% / 0.9);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+        .wa-tooltip {
+            background: var(--paper);
             color: var(--ink);
-            padding: 9px 18px;
+            padding: 10px 18px;
             border-radius: var(--r-pill);
+            font-family: 'Inter Tight', sans-serif;
             font-size: 0.88rem;
-            font-weight: 600;
-            box-shadow: var(--shadow-lg);
+            font-weight: 500;
+            box-shadow: var(--sh-md);
             border: 1px solid var(--line);
-            animation: slideIn 1s var(--ease-back);
             white-space: nowrap;
         }
 
-        .whatsapp-btn {
-            background: linear-gradient(135deg, hsl(141 71% 48%) 0%, hsl(141 71% 42%) 100%);
+        .wa-btn {
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, #25D366 0%, #1CB85A 100%);
             color: white;
-            width: 60px;
-            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 24px hsl(141 71% 48% / 0.45), inset 0 1px 0 hsl(0 0% 100% / 0.25);
-            transition: transform var(--t-med);
-            animation: pulseWA 3s infinite;
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45);
             text-decoration: none;
+            transition: transform var(--t-med);
+            animation: wa-pulse 3s ease-in-out infinite;
         }
 
-        .whatsapp-btn:hover {
-            transform: scale(1.08) rotate(-4deg);
+        .wa-btn:hover { transform: scale(1.08) rotate(-4deg); }
+
+        .wa-btn svg { width: 30px; height: 30px; fill: white; }
+
+        @keyframes wa-pulse {
+            0%, 100% { box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45), 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            50% { box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45), 0 0 0 18px rgba(37, 211, 102, 0); }
         }
 
-        .whatsapp-btn svg {
-            width: 32px;
-            height: 32px;
-            fill: white;
-        }
-
-        @keyframes pulseWA {
-            0% { box-shadow: 0 8px 24px hsl(141 71% 48% / 0.45), 0 0 0 0 hsl(141 71% 48% / 0.6); }
-            70% { box-shadow: 0 8px 24px hsl(141 71% 48% / 0.45), 0 0 0 22px hsl(141 71% 48% / 0); }
-            100% { box-shadow: 0 8px 24px hsl(141 71% 48% / 0.45), 0 0 0 0 hsl(141 71% 48% / 0); }
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        /* ============================================
+        /* ============================================================
            MOBILE
-           ============================================ */
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .hero-logo { max-width: 260px; }
-            .steps-wrapper::before { display: none; }
-            .steps-wrapper { padding-left: 0; }
-            .whatsapp-tooltip { display: none; }
-            .tab-btn { width: 100%; max-width: 100%; font-size: 0.95rem; padding: 14px 18px; }
-            .signature { font-size: 2.6rem; }
-            .journey-number { font-size: 5rem; }
-            .testimonial-card { padding: 36px 24px; }
-            .whatsapp-container { bottom: 18px; right: 18px; }
+           ============================================================ */
+        @media (max-width: 768px) {
+            .hero { min-height: auto; padding: 100px 0 60px; }
+            .hero-portrait { max-width: 320px; }
+            .wa-tooltip { display: none; }
+            .topnav-mark { font-size: 0.95rem; }
+            .about-photo-frame, .about-photo-frame-2 { display: none; }
+            .marquee { margin-bottom: 60px; }
         }
 
-        /* ============================================
-           PRINT
-           ============================================ */
         @media print {
-            .whatsapp-container, .tab-container, .quiz-container { display: none; }
+            .topnav, .wa-fab, .quiz, .marquee { display: none; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<!-- ============================================================
+     TOP NAV
+     ============================================================ -->
+<nav class="topnav" id="topnav">
+    <div class="topnav-mark">Michelle <span>Julio</span></div>
+    <div class="topnav-meta">
+        <span><span class="pulse"></span>Mentoria 2026</span>
+        <span>Psicanálise · Mentoria</span>
+    </div>
+</nav>
 
-    <!-- HERO -->
-    <header class="hero reveal">
-        <div class="hero-badge">
-            <span class="dot"></span>
-            <span>Mentoria 2026 · Vagas abertas</span>
+<!-- ============================================================
+     HERO — split editorial
+     ============================================================ -->
+<section class="hero">
+    <div class="wrap">
+        <div class="hero-grid">
+
+            <div class="hero-text reveal">
+                <div class="hero-eyebrow">
+                    <span class="num">N° 01</span>
+                    <span class="divider"></span>
+                    <span class="tag">Psicanálise · Mentoria</span>
+                </div>
+
+                <h1 class="hero-headline">
+                    Cura,<br>
+                    <span class="em">identidade</span> &amp;<br>
+                    <span class="underline">propósito</span>.
+                </h1>
+
+                <p class="hero-sub">Um caminho de transformação para vidas e negócios — onde profundidade emocional encontra direção prática.</p>
+
+                <div class="hero-cta-row">
+                    <a href="#aplicar" class="btn-primary">
+                        <span>Iniciar minha jornada</span>
+                        <span class="arrow material-symbols-rounded">arrow_forward</span>
+                    </a>
+                    <a href="#sobre" class="btn-ghost">
+                        <span>Conhecer Michelle</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-portrait reveal">
+                <div class="hero-portrait-logo">
+                    <img src="https://i.ibb.co/21HgfrMf/Logo-1.png" alt="Logo Michelle Julio">
+                </div>
+                <img src="https://i.ibb.co/27t0X8dK/bio.jpg" alt="Michelle Julio">
+                <div class="hero-portrait-meta">
+                    <div>
+                        <div class="hero-portrait-name">Michelle Julio</div>
+                        <div class="hero-portrait-role">Psicanalista · Mentora</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <img src="https://i.ibb.co/21HgfrMf/Logo-1.png" alt="Michelle Julio" class="hero-logo">
-        <div class="gold-divider"></div>
-        <span class="hero-title">Psicanálise &amp; Desenvolvimento</span>
-        <p class="hero-tagline">Um caminho de cura, identidade e performance.</p>
-    </header>
+    </div>
+</section>
 
-    <!-- SOBRE -->
-    <section class="card-base about-section reveal">
-        <img src="https://i.ibb.co/27t0X8dK/bio.jpg" alt="Michelle Julio" class="about-img">
-        <h3>Michelle Julio</h3>
-        <p class="about-role">Psicanalista &amp; Mentora Corporativa</p>
-        <p>A verdadeira transformação começa quando decidimos olhar para as nossas raízes. Dedico meu trabalho a guiar o desenvolvimento humano de forma integral: ajudo mulheres a curarem suas feridas e fortalecerem sua identidade, e apoio empresas na construção de culturas organizacionais saudáveis com lideranças maduras. Unindo a profundidade da psicanálise com o direcionamento prático, meu objetivo é transformar clareza emocional em vida e resultados reais.</p>
-    </section>
+<!-- ============================================================
+     MARQUEE DOURADA
+     ============================================================ -->
+<div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+        <span>Cura emocional <span class="dot"></span> Identidade <span class="dot"></span> Propósito <span class="dot"></span> Performance <span class="dot"></span> Maturidade espiritual <span class="dot"></span> Liderança consciente <span class="dot"></span></span>
+        <span>Cura emocional <span class="dot"></span> Identidade <span class="dot"></span> Propósito <span class="dot"></span> Performance <span class="dot"></span> Maturidade espiritual <span class="dot"></span> Liderança consciente <span class="dot"></span></span>
+    </div>
+</div>
 
-    <p class="tab-prompt reveal">Escolha a sua jornada abaixo</p>
+<!-- ============================================================
+     ABOUT — magazine spread
+     ============================================================ -->
+<section class="section" id="sobre">
+    <div class="wrap">
+        <div class="section-head reveal">
+            <div class="section-num">02 · Sobre</div>
+            <h2 class="section-title">Conheça <span class="em">Michelle</span></h2>
+        </div>
 
-    <div class="tab-container reveal">
-        <button class="tab-btn active" onclick="switchTab('mulheres', this)">
-            <span class="material-symbols-rounded">face_3</span>
-            <span>Mentoria Mulheres</span>
-        </button>
-        <button class="tab-btn" onclick="switchTab('empresas', this)">
-            <span class="material-symbols-rounded">domain</span>
-            <span>Para Empresas</span>
-        </button>
+        <div class="about-spread reveal">
+            <div class="about-photo-wrap">
+                <div class="about-photo-frame"></div>
+                <div class="about-photo-frame-2"></div>
+                <div class="about-photo">
+                    <img src="https://i.ibb.co/27t0X8dK/bio.jpg" alt="Michelle Julio">
+                    <div class="about-signature">Michelle</div>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <p class="about-pullquote">A verdadeira transformação começa quando decidimos olhar para as nossas <span class="em">raízes</span>.</p>
+
+                <p class="about-bio">Dedico meu trabalho a guiar o desenvolvimento humano de forma integral: ajudo mulheres a curarem suas feridas e fortalecerem sua identidade, e apoio empresas na construção de culturas organizacionais saudáveis com lideranças maduras.</p>
+
+                <p class="about-bio">Unindo a profundidade da psicanálise com o direcionamento prático, meu objetivo é transformar clareza emocional em vida e resultados reais.</p>
+
+                <div class="about-stats reveal-stagger">
+                    <div>
+                        <div class="stat-num">10+</div>
+                        <div class="stat-label">Anos de prática clínica</div>
+                    </div>
+                    <div>
+                        <div class="stat-num">300+</div>
+                        <div class="stat-label">Mulheres acompanhadas</div>
+                    </div>
+                    <div>
+                        <div class="stat-num">∞</div>
+                        <div class="stat-label">Profundidade no método</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     TABS SELECTOR
+     ============================================================ -->
+<div class="wrap">
+    <div class="tabs-wrap reveal">
+        <p class="tabs-prompt">Escolha a sua jornada</p>
+        <div class="tabs-segment">
+            <button class="tab-btn active" onclick="switchTab('mulheres', this)">
+                <span class="material-symbols-rounded">face_3</span>
+                <span>Mulheres</span>
+            </button>
+            <button class="tab-btn" onclick="switchTab('empresas', this)">
+                <span class="material-symbols-rounded">domain</span>
+                <span>Empresas</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================
+     TAB CONTENT: MULHERES
+     ============================================================ -->
+<div id="mulheres" class="tab-content active">
+
+    <div class="wrap-narrow">
+
+        <div class="whisper reveal">
+            <p class="whisper-text">Você chegou até aqui porque decidiu se olhar com <span class="em">verdade</span>.</p>
+            <p class="whisper-sub">Este é um espaço seguro de crescimento, maturidade e transformação.</p>
+        </div>
+
     </div>
 
-    <!-- ============================================
-         TAB: MULHERES
-         ============================================ -->
-    <div id="mulheres" class="tab-content active">
+    <section class="section">
+        <div class="wrap-narrow">
+            <div class="section-head reveal">
+                <div class="section-num">03 · Para quem</div>
+                <h2 class="section-title">Para quem é <span class="em">a mentoria</span></h2>
+            </div>
 
-        <div class="card-base about-section reveal">
-            <p style="font-size:clamp(1.1rem, 2.5vw, 1.3rem); font-family:'Instrument Serif', serif; font-style:italic; color:var(--ink); margin-bottom:10px;">
-                Você chegou até aqui porque decidiu se olhar com verdade.
-            </p>
-            <p style="margin:0">Este é um espaço seguro de crescimento, maturidade e transformação.</p>
-        </div>
-
-        <h2 class="reveal">Para quem é a Mentoria</h2>
-        <div class="card-base reveal">
-            <ul class="target-list">
+            <ul class="target-list reveal">
                 <li class="target-item">
-                    <span class="material-symbols-rounded target-icon">check_circle</span>
-                    <div class="target-text"><strong>Mulheres em busca de profundidade</strong>Que desejam ir além da superfície e entender as raízes de suas emoções.</div>
+                    <div class="target-num">01</div>
+                    <div class="target-text">
+                        <strong>Mulheres em busca de profundidade</strong>
+                        <span>Que desejam ir além da superfície e entender as raízes de suas emoções.</span>
+                    </div>
                 </li>
                 <li class="target-item">
-                    <span class="material-symbols-rounded target-icon">check_circle</span>
-                    <div class="target-text"><strong>Quem quer aliar Fé e Razão</strong>Para quem busca maturidade espiritual sem abrir mão da inteligência emocional.</div>
+                    <div class="target-num">02</div>
+                    <div class="target-text">
+                        <strong>Quem quer aliar Fé e Razão</strong>
+                        <span>Para quem busca maturidade espiritual sem abrir mão da inteligência emocional.</span>
+                    </div>
                 </li>
                 <li class="target-item">
-                    <span class="material-symbols-rounded target-icon">check_circle</span>
-                    <div class="target-text"><strong>Comprometidas com a mudança</strong>Mulheres dispostas a se responsabilizar pelo próprio processo de cura.</div>
+                    <div class="target-num">03</div>
+                    <div class="target-text">
+                        <strong>Comprometidas com a mudança</strong>
+                        <span>Mulheres dispostas a se responsabilizar pelo próprio processo de cura.</span>
+                    </div>
                 </li>
             </ul>
         </div>
+    </section>
 
-        <h2 class="reveal">Como Funciona a Mentoria</h2>
-        <div class="journey-grid">
-            <div class="journey-card reveal">
-                <span class="journey-number">01</span>
-                <div class="journey-content">
-                    <div class="journey-icon"><span class="material-symbols-rounded">groups</span></div>
-                    <span class="journey-title">Encontros Guiados</span>
-                    <p>Sessões estruturadas para trazer direção, clareza e acolhimento. Teremos 2 encontros/aulas mensais e 1 encontro mensal (Café em Betel).</p>
-                </div>
+    <section class="section">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="section-num">04 · Método</div>
+                <h2 class="section-title">Como <span class="em">funciona</span></h2>
             </div>
-            <div class="journey-card reveal">
-                <span class="journey-number">02</span>
-                <div class="journey-content">
-                    <div class="journey-icon"><span class="material-symbols-rounded">edit_note</span></div>
-                    <span class="journey-title">Prática Real</span>
-                    <p>Escrita terapêutica e exercícios para fixar a mudança. Linguagem emocional e persuasiva (desejos, dores, motivações) e Estrutura SMART.</p>
-                </div>
-            </div>
-            <div class="journey-card reveal">
-                <span class="journey-number">03</span>
-                <div class="journey-content">
-                    <div class="journey-icon"><span class="material-symbols-rounded">psychology</span></div>
-                    <span class="journey-title">Direção Emocional</span>
-                    <p>Leitura profunda das emoções e das raízes emocionais para destravar sua identidade.</p>
-                </div>
-            </div>
-            <div class="journey-card reveal">
-                <span class="journey-number">04</span>
-                <div class="journey-content">
-                    <div class="journey-icon"><span class="material-symbols-rounded">church</span></div>
-                    <span class="journey-title">Fé &amp; Vida</span>
-                    <p>Espiritualidade aplicada à vida real. Restaurar fé, emoções e propósito para viver guiada por Deus.</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="gold-divider"></div>
-
-        <div style="margin-bottom: 80px;">
-            <h2 class="reveal">Sua Jornada de Transformação</h2>
-            <div class="transformation-grid">
-                <div class="trans-card trans-before reveal">
-                    <div class="trans-title" style="color: var(--ink-mute);">
-                        <span class="material-symbols-rounded" style="color: var(--ink-mute);">history</span> Como você chega
+            <div class="journey-grid reveal-stagger">
+                <article class="journey-card">
+                    <div class="journey-meta">
+                        <span class="journey-num">N° 01</span>
+                        <div class="journey-icon"><span class="material-symbols-rounded">groups</span></div>
                     </div>
-                    <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--ink-mute)">remove</span> Sentindo-se estagnada e sem direção clara.</div>
-                    <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--ink-mute)">remove</span> Com a fé desconectada das emoções reais.</div>
-                    <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--ink-mute)">remove</span> Repetindo ciclos e padrões familiares (crenças).</div>
-                </div>
-                <div class="trans-arrow reveal">
-                    <span class="material-symbols-rounded">arrow_forward</span>
-                </div>
-                <div class="trans-card trans-after reveal">
-                    <div class="trans-title" style="color: var(--gold-deep);">
-                        <span class="material-symbols-rounded">auto_awesome</span> Como você sai
+                    <h3 class="journey-title">Encontros Guiados</h3>
+                    <p>Sessões estruturadas para trazer direção, clareza e acolhimento. 2 encontros mensais e 1 Café em Betel.</p>
+                </article>
+
+                <article class="journey-card">
+                    <div class="journey-meta">
+                        <span class="journey-num">N° 02</span>
+                        <div class="journey-icon"><span class="material-symbols-rounded">edit_note</span></div>
                     </div>
-                    <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--gold)">check</span> Com identidade fortalecida e limites claros.</div>
-                    <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--gold)">check</span> Vivendo uma espiritualidade madura e leve.</div>
-                    <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--gold)">check</span> Rompendo ciclos com ferramentas práticas.</div>
+                    <h3 class="journey-title">Prática Real</h3>
+                    <p>Escrita terapêutica e exercícios para fixar a mudança. Linguagem emocional persuasiva e estrutura SMART.</p>
+                </article>
+
+                <article class="journey-card">
+                    <div class="journey-meta">
+                        <span class="journey-num">N° 03</span>
+                        <div class="journey-icon"><span class="material-symbols-rounded">psychology</span></div>
+                    </div>
+                    <h3 class="journey-title">Direção Emocional</h3>
+                    <p>Leitura profunda das emoções e das raízes para destravar sua identidade.</p>
+                </article>
+
+                <article class="journey-card">
+                    <div class="journey-meta">
+                        <span class="journey-num">N° 04</span>
+                        <div class="journey-icon"><span class="material-symbols-rounded">church</span></div>
+                    </div>
+                    <h3 class="journey-title">Fé &amp; Vida</h3>
+                    <p>Espiritualidade aplicada à vida real. Restaurar fé, emoções e propósito guiada por Deus.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="section-num">05 · Jornada</div>
+                <h2 class="section-title">Sua <span class="em">transformação</span></h2>
+            </div>
+
+            <div class="transform-grid reveal">
+                <div class="transform-card before">
+                    <div class="transform-head">
+                        <span class="material-symbols-rounded">history</span>
+                        <span>Como você chega</span>
+                    </div>
+                    <div class="check-row minus"><span class="material-symbols-rounded">remove</span><span>Sentindo-se estagnada e sem direção clara.</span></div>
+                    <div class="check-row minus"><span class="material-symbols-rounded">remove</span><span>Com a fé desconectada das emoções reais.</span></div>
+                    <div class="check-row minus"><span class="material-symbols-rounded">remove</span><span>Repetindo ciclos e padrões familiares.</span></div>
+                </div>
+                <div class="transform-arrow"><span class="material-symbols-rounded">arrow_forward</span></div>
+                <div class="transform-card after">
+                    <div class="transform-head">
+                        <span class="material-symbols-rounded">auto_awesome</span>
+                        <span>Como você sai</span>
+                    </div>
+                    <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Com identidade fortalecida e limites claros.</span></div>
+                    <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Vivendo uma espiritualidade madura e leve.</span></div>
+                    <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Rompendo ciclos com ferramentas práticas.</span></div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <h2 class="reveal">Código de Honra da Mentoria</h2>
-        <div class="manifesto-container reveal">
-            <div class="manifesto-item"><span class="material-symbols-rounded manifesto-icon">verified</span><span class="manifesto-text">Responsabilidade</span></div>
-            <div class="manifesto-item"><span class="material-symbols-rounded manifesto-icon">schedule</span><span class="manifesto-text">Pontualidade</span></div>
-            <div class="manifesto-item"><span class="material-symbols-rounded manifesto-icon">lock</span><span class="manifesto-text">Sigilo Absoluto</span></div>
-            <div class="manifesto-item"><span class="material-symbols-rounded manifesto-icon">favorite</span><span class="manifesto-text">Respeito Mútuo</span></div>
-            <div class="manifesto-item"><span class="material-symbols-rounded manifesto-icon">self_improvement</span><span class="manifesto-text">Presença Emocional</span></div>
-        </div>
-
-        <h2 class="reveal">O que esperar da Mentoria</h2>
-        <div class="comparison-grid">
-            <div class="comp-col reveal">
-                <div class="comp-title comp-bad"><span class="material-symbols-rounded">block</span> Você NÃO receberá</div>
-                <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:hsl(0 35% 50%)">close</span> Fórmulas mágicas prontas</div>
-                <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:hsl(0 35% 50%)">close</span> Passividade</div>
-                <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:hsl(0 35% 50%)">close</span> Reforço de vitimismo</div>
+    <section class="section">
+        <div class="wrap">
+            <div class="manifesto reveal">
+                <div class="manifesto-eyebrow">06 · Princípios</div>
+                <h2 class="manifesto-title">Código de <span class="em">honra</span> da mentoria.</h2>
+                <div class="manifesto-list reveal-stagger">
+                    <div class="manifesto-item">
+                        <span class="manifesto-item-num">— I</span>
+                        <h4 class="manifesto-item-title">Responsabilidade</h4>
+                    </div>
+                    <div class="manifesto-item">
+                        <span class="manifesto-item-num">— II</span>
+                        <h4 class="manifesto-item-title">Pontualidade</h4>
+                    </div>
+                    <div class="manifesto-item">
+                        <span class="manifesto-item-num">— III</span>
+                        <h4 class="manifesto-item-title">Sigilo absoluto</h4>
+                    </div>
+                    <div class="manifesto-item">
+                        <span class="manifesto-item-num">— IV</span>
+                        <h4 class="manifesto-item-title">Respeito mútuo</h4>
+                    </div>
+                    <div class="manifesto-item">
+                        <span class="manifesto-item-num">— V</span>
+                        <h4 class="manifesto-item-title">Presença emocional</h4>
+                    </div>
+                </div>
             </div>
-            <div class="comp-col featured reveal">
-                <div class="comp-title comp-good"><span class="material-symbols-rounded">check_circle</span> Você RECEBERÁ</div>
-                <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--gold)">check</span> Direção clara</div>
-                <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--gold)">check</span> Clareza emocional</div>
-                <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--gold)">check</span> Ferramentas práticas</div>
-            </div>
         </div>
+    </section>
 
-        <h2 class="reveal">Primeiros Passos</h2>
-        <div class="steps-wrapper">
-            <div class="step-row reveal"><div class="step-circle">1</div><div><strong>Caderno:</strong> Tenha um lugar físico para seus registros.</div></div>
-            <div class="step-row reveal"><div class="step-circle">2</div><div><strong>Agenda:</strong> Bloqueie seu horário. Ter seu tempo é sagrado.</div></div>
-            <div class="step-row reveal"><div class="step-circle">3</div><div><strong>Ambiente:</strong> De preferência esteja sozinha e em silêncio (no secreto).</div></div>
-        </div>
-
-        <h2 class="reveal">Histórias de Transformação</h2>
-        <div class="carousel-container reveal">
-            <div class="carousel-track" id="track">
-                <div class="testimonial-slide"><div class="testimonial-card"><span class="material-symbols-rounded quote-icon">format_quote</span><p class="testimonial-text">"A mentoria foi um divisor de águas. Eu cheguei perdida e saí com uma clareza que nunca tive antes. A Michelle conduz com uma sabedoria e leveza incríveis."</p><span class="testimonial-author">— Ana P., Aluna</span></div></div>
-                <div class="testimonial-slide"><div class="testimonial-card"><span class="material-symbols-rounded quote-icon">format_quote</span><p class="testimonial-text">"Pela primeira vez consegui unir minha fé com minha saúde emocional. Parei de brigar comigo mesma e entendi meu propósito de forma clara."</p><span class="testimonial-author">— Carla M., Aluna</span></div></div>
-                <div class="testimonial-slide"><div class="testimonial-card"><span class="material-symbols-rounded quote-icon">format_quote</span><p class="testimonial-text">"Nunca pensei que pudesse me olhar com tanto amor. As ferramentas práticas mudaram minha rotina e minha visão de mim mesma."</p><span class="testimonial-author">— Fernanda S., Aluna</span></div></div>
-            </div>
-            <div class="carousel-dots" id="dots"></div>
-        </div>
-
-        <h2 class="reveal">Dúvidas Frequentes</h2>
-        <div style="margin-bottom: 64px;" class="reveal">
-            <details><summary>A mentoria é online ou presencial?</summary><div class="faq-content">A mentoria é 100% online, realizada através de videochamadas em plataforma segura.</div></details>
-            <details><summary>Qual a duração do processo?</summary><div class="faq-content">O ciclo tem duração definida para garantir início, meio e fim, focando em resultados. 2026 será incrível!</div></details>
-            <details><summary>É terapia ou acompanhamento espiritual?</summary><div class="faq-content">A abordagem terá união dos dois: ferramentas da psicanálise com princípios espirituais.</div></details>
-        </div>
-
-        <div class="gold-divider"></div>
-
-        <div class="quiz-container reveal" id="quizContainer">
-            <div id="quiz-intro">
-                <span class="material-symbols-rounded" style="font-size:48px !important; color:var(--gold); margin-bottom:14px; background:var(--gold-soft); padding:14px; border-radius:50%; box-shadow:0 4px 16px hsl(42 38% 57% / 0.25);">psychology_alt</span>
-                <h2 style="margin:14px 0 18px; font-size:clamp(1.5rem, 4vw, 1.9rem);">Termômetro da Alma</h2>
-                <p style="margin-bottom:32px; color:var(--ink-soft); font-size:1.05rem;">Descubra o que está travando sua vida hoje. Faça o teste rápido:</p>
-                <button class="quiz-cta-btn" onclick="startQuiz()">
-                    <span class="material-symbols-rounded">play_arrow</span>
-                    Começar Diagnóstico
-                </button>
+    <section class="section">
+        <div class="wrap-narrow">
+            <div class="section-head reveal">
+                <div class="section-num">07 · Expectativa</div>
+                <h2 class="section-title">O que <span class="em">esperar</span></h2>
             </div>
 
-            <div id="quiz-questions" style="display:none;">
-                <div class="quiz-header">
-                    <div class="quiz-step-text" id="stepText">Pergunta 1 de 7</div>
+            <div class="compare-grid reveal">
+                <div class="compare-col">
+                    <div class="compare-head bad">
+                        <span class="material-symbols-rounded">block</span>
+                        <span>Você NÃO receberá</span>
+                    </div>
+                    <div class="check-row minus"><span class="material-symbols-rounded" style="color:var(--rose-deep)">close</span><span>Fórmulas mágicas prontas</span></div>
+                    <div class="check-row minus"><span class="material-symbols-rounded" style="color:var(--rose-deep)">close</span><span>Passividade</span></div>
+                    <div class="check-row minus"><span class="material-symbols-rounded" style="color:var(--rose-deep)">close</span><span>Reforço de vitimismo</span></div>
+                </div>
+                <div class="compare-col featured">
+                    <div class="compare-head good">
+                        <span class="material-symbols-rounded">check_circle</span>
+                        <span>Você RECEBERÁ</span>
+                    </div>
+                    <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Direção clara</span></div>
+                    <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Clareza emocional</span></div>
+                    <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Ferramentas práticas</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap-narrow">
+            <div class="section-head reveal">
+                <div class="section-num">08 · Preparação</div>
+                <h2 class="section-title">Primeiros <span class="em">passos</span></h2>
+            </div>
+
+            <div class="steps reveal">
+                <div class="step-row">
+                    <div class="step-num">i</div>
+                    <div class="step-content">
+                        <strong>Caderno</strong>
+                        <span>Tenha um lugar físico para seus registros.</span>
+                    </div>
+                </div>
+                <div class="step-row">
+                    <div class="step-num">ii</div>
+                    <div class="step-content">
+                        <strong>Agenda</strong>
+                        <span>Bloqueie seu horário. Ter seu tempo é sagrado.</span>
+                    </div>
+                </div>
+                <div class="step-row">
+                    <div class="step-num">iii</div>
+                    <div class="step-content">
+                        <strong>Ambiente</strong>
+                        <span>Esteja sozinha e em silêncio (no secreto).</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap-narrow">
+            <div class="section-head reveal">
+                <div class="section-num">09 · Histórias</div>
+                <h2 class="section-title">Vozes da <span class="em">transformação</span></h2>
+            </div>
+
+            <div class="testimonials reveal">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="track">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-quote">A mentoria foi um divisor de águas. Eu cheguei perdida e saí com uma clareza que nunca tive antes. A Michelle conduz com sabedoria e leveza incríveis.</p>
+                                <span class="testimonial-author">— Ana P. · Aluna</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-quote">Pela primeira vez consegui unir minha fé com minha saúde emocional. Parei de brigar comigo mesma e entendi meu propósito de forma clara.</p>
+                                <span class="testimonial-author">— Carla M. · Aluna</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-quote">Nunca pensei que pudesse me olhar com tanto amor. As ferramentas práticas mudaram minha rotina e minha visão de mim mesma.</p>
+                                <span class="testimonial-author">— Fernanda S. · Aluna</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-dots" id="dots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap-narrow">
+            <div class="section-head reveal">
+                <div class="section-num">10 · Dúvidas</div>
+                <h2 class="section-title">Perguntas <span class="em">frequentes</span></h2>
+            </div>
+
+            <div class="reveal">
+                <details>
+                    <summary>A mentoria é online ou presencial?</summary>
+                    <div class="faq-content">A mentoria é 100% online, realizada através de videochamadas em plataforma segura.</div>
+                </details>
+                <details>
+                    <summary>Qual a duração do processo?</summary>
+                    <div class="faq-content">O ciclo tem duração definida para garantir início, meio e fim, focando em resultados. 2026 será incrível!</div>
+                </details>
+                <details>
+                    <summary>É terapia ou acompanhamento espiritual?</summary>
+                    <div class="faq-content">A abordagem une os dois: ferramentas da psicanálise com princípios espirituais.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="quiz-section">
+        <div class="wrap-narrow">
+            <div class="quiz reveal" id="quizContainer">
+                <div id="quiz-intro" class="quiz-intro">
+                    <div class="quiz-icon-wrap"><span class="material-symbols-rounded">psychology_alt</span></div>
+                    <h2 class="quiz-title">Termômetro <span class="em">da alma</span></h2>
+                    <p class="quiz-sub">Descubra o que está travando sua vida hoje. Teste rápido — 7 perguntas.</p>
+                    <button class="quiz-cta" onclick="startQuiz()">
+                        <span class="material-symbols-rounded">play_arrow</span>
+                        <span>Começar diagnóstico</span>
+                    </button>
+                </div>
+
+                <div id="quiz-questions" class="quiz-questions">
+                    <div class="quiz-progress">
+                        <span id="stepText">Pergunta 01 / 07</span>
+                        <span id="stepCount">14%</span>
+                    </div>
                     <div class="progress-track"><div class="progress-fill" id="progressBar"></div></div>
+                    <div id="question-box"></div>
                 </div>
-                <div id="question-box"></div>
-            </div>
 
-            <div id="quiz-result" class="quiz-result">
-                <h3 id="result-title" class="result-title"></h3>
-                <p id="result-desc" class="result-desc"></p>
-                <span class="arrow-down material-symbols-rounded">arrow_downward</span>
-                <p style="color:var(--ink); font-weight:600; margin-top:12px;">Preencha a aplicação abaixo:</p>
-            </div>
-        </div>
-
-        <div id="form-section" style="text-align:center; margin-bottom:24px;" class="reveal">
-            <h2 style="margin:24px 0;">Aplique Agora</h2>
-            <p>Preencha o formulário abaixo para iniciarmos:</p>
-        </div>
-
-        <div class="tally-box reveal">
-            <iframe data-tally-src="https://tally.so/embed/RGxe49?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Aplicação Mentoria"></iframe>
-        </div>
-
-        <div class="guarantee-box reveal">
-            <span class="material-symbols-rounded guarantee-icon">verified_user</span>
-            <div class="guarantee-title">Garantia de Satisfação</div>
-            <p style="font-size:0.98rem;">Se formos aprovadas para caminhar juntas, você terá 7 dias de garantia incondicional após o início da mentoria.</p>
-        </div>
-
-    </div>
-
-    <!-- ============================================
-         TAB: EMPRESAS
-         ============================================ -->
-    <div id="empresas" class="tab-content">
-
-        <div class="card-highlight reveal">
-            <span class="material-symbols-rounded" style="font-size: 52px !important; color: var(--gold-deep); margin-bottom: 18px; background:var(--gold-soft); padding:14px; border-radius:50%; box-shadow:0 4px 16px hsl(42 38% 57% / 0.25); position:relative;">insights</span>
-            <h3>O maior custo oculto da sua empresa não está na operação. Está no comportamento.</h3>
-            <p>Afastamentos por Burnout, alta rotatividade (turnover), falhas crônicas de comunicação e líderes que não sabem gerir pessoas custam caro.</p>
-            <p style="font-style: italic; color: var(--ink); margin-top: 22px; font-family: 'Instrument Serif', serif; font-size:1.2rem;">Empresas são feitas de pessoas. E times adoecidos não entregam resultados consistentes.</p>
-        </div>
-
-        <h2 class="reveal">Desconstruindo a Cultura Tradicional</h2>
-        <div class="objection-grid">
-            <div class="objection-card reveal">
-                <div class="objection-title" style="color: hsl(0 35% 50%);"><span class="material-symbols-rounded">close</span> O Mito</div>
-                <p style="font-size: 0.95rem;">"Treinamento comportamental é só uma palestra motivacional que o time esquece em dois dias."</p>
-            </div>
-            <div class="objection-card reframed reveal">
-                <div class="objection-title" style="color: var(--ink);"><span class="material-symbols-rounded" style="color: var(--gold);">check</span> A Verdade</div>
-                <p style="font-size: 0.95rem;">A abordagem psicanalítica vai na raiz do problema. Não é motivação vazia, é <strong>mudança estrutural de comportamento e cultura</strong>.</p>
-            </div>
-            <div class="objection-card reveal">
-                <div class="objection-title" style="color: hsl(0 35% 50%);"><span class="material-symbols-rounded">close</span> O Mito</div>
-                <p style="font-size: 0.95rem;">"Se o funcionário está estressado, o problema é pessoal dele."</p>
-            </div>
-            <div class="objection-card reframed reveal">
-                <div class="objection-title" style="color: var(--ink);"><span class="material-symbols-rounded" style="color: var(--gold);">check</span> A Verdade</div>
-                <p style="font-size: 0.95rem;">O clima organizacional afeta o indivíduo, e o indivíduo afeta os resultados da equipe. <strong>Liderar exige responsabilidade emocional.</strong></p>
-            </div>
-        </div>
-
-        <div class="gold-divider"></div>
-
-        <h2 class="reveal">Soluções In-Company</h2>
-        <div class="journey-grid">
-            <div class="journey-card reveal">
-                <span class="journey-number">01</span>
-                <div class="journey-content">
-                    <div class="journey-icon"><span class="material-symbols-rounded">record_voice_over</span></div>
-                    <span class="journey-title">Palestras e Workshops</span>
-                    <p>Intervenções impactantes sobre saúde mental, prevenção à Síndrome de Burnout, comunicação assertiva e inteligência emocional na rotina corporativa.</p>
-                </div>
-            </div>
-            <div class="journey-card reveal">
-                <span class="journey-number">02</span>
-                <div class="journey-content">
-                    <div class="journey-icon"><span class="material-symbols-rounded">model_training</span></div>
-                    <span class="journey-title">Treinamento de Lideranças</span>
-                    <p>Capacitação para que líderes saibam gerir conflitos, desenvolver escuta ativa e criar ambientes de <strong>segurança psicológica</strong> para alta performance.</p>
-                </div>
-            </div>
-            <div class="journey-card reveal">
-                <span class="journey-number">03</span>
-                <div class="journey-content">
-                    <div class="journey-icon"><span class="material-symbols-rounded">forum</span></div>
-                    <span class="journey-title">Plantão Psicanalítico</span>
-                    <p>Espaço de escuta qualificada e sigilosa oferecido pela empresa para acolher colaboradores em crise, reduzindo drasticamente o absenteísmo.</p>
+                <div id="quiz-result" class="quiz-result">
+                    <div class="quiz-icon-wrap"><span class="material-symbols-rounded">spa</span></div>
+                    <h3 id="result-title" class="quiz-result-title"></h3>
+                    <p id="result-desc" class="quiz-result-desc"></p>
+                    <span class="arrow-down material-symbols-rounded">arrow_downward</span>
+                    <p style="color:var(--gold-light); font-family:'JetBrains Mono', monospace; font-size:0.78rem; letter-spacing:0.18em; margin-top:14px; text-transform:uppercase;">Preencha sua aplicação</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <h2 class="reveal">A Metodologia Aplicada</h2>
-        <div class="steps-wrapper">
-            <div class="step-row reveal">
-                <div class="step-circle">1</div>
-                <div><strong>Mapeamento Institucional:</strong> Entendemos a cultura atual, as dores do RH e as dinâmicas de poder e conflito das equipes.</div>
+    <section class="section" id="aplicar">
+        <div class="wrap-narrow">
+            <div class="section-head reveal">
+                <div class="section-num">11 · Aplicação</div>
+                <h2 class="section-title">Aplique <span class="em">agora</span></h2>
             </div>
-            <div class="step-row reveal">
-                <div class="step-circle">2</div>
-                <div><strong>Intervenção Estratégica:</strong> Desenhamos o formato ideal (palestra, mentoria de líderes ou plantão) focado em resolver a dor identificada.</div>
-            </div>
-            <div class="step-row reveal">
-                <div class="step-circle">3</div>
-                <div><strong>Instrumentalização:</strong> Não apenas diagnosticamos, mas entregamos ferramentas práticas para que a liderança mantenha a mudança ativa.</div>
-            </div>
-        </div>
 
-        <div style="margin-bottom: 80px;">
-            <h2 class="reveal">A Transformação no seu Time</h2>
-            <div class="transformation-grid">
-                <div class="trans-card trans-before reveal">
-                    <div class="trans-title" style="color: var(--ink-mute);">
-                        <span class="material-symbols-rounded" style="color: var(--ink-mute);">warning</span> Como está hoje
-                    </div>
-                    <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--ink-mute)">remove</span> Lideranças exaustas, centralizadoras e sobrecarregadas.</div>
-                    <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--ink-mute)">remove</span> Falhas de comunicação, "rádio peão" (fofocas) desmotivando o time.</div>
-                    <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--ink-mute)">remove</span> Talentos pedindo demissão por falta de suporte emocional.</div>
-                </div>
-                <div class="trans-arrow reveal">
-                    <span class="material-symbols-rounded">arrow_forward</span>
-                </div>
-                <div class="trans-card trans-after reveal">
-                    <div class="trans-title" style="color: var(--gold-deep);">
-                        <span class="material-symbols-rounded">business_center</span> O Resultado
-                    </div>
-                    <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--gold)">check</span> Clima organizacional maduro, focado e leve.</div>
-                    <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--gold)">check</span> Líderes com escuta ativa que inspiram invés de apenas cobrar.</div>
-                    <div class="check-item"><span class="material-symbols-rounded check-icon" style="color:var(--gold)">check</span> Retenção de talentos e aumento de produtividade real.</div>
-                </div>
+            <div class="tally-wrap reveal">
+                <iframe data-tally-src="https://tally.so/embed/RGxe49?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Aplicação Mentoria"></iframe>
+            </div>
+
+            <div class="guarantee reveal">
+                <div class="guarantee-icon-wrap"><span class="material-symbols-rounded">verified_user</span></div>
+                <div class="guarantee-title">Garantia de Satisfação</div>
+                <p>Se formos aprovadas para caminhar juntas, você terá 7 dias de garantia incondicional após o início da mentoria.</p>
             </div>
         </div>
-
-        <div id="form-section-corp" style="text-align:center; margin-bottom:24px; margin-top: 64px;" class="reveal">
-            <h2 style="margin:24px 0;">Solicite uma Proposta</h2>
-            <p>Preencha os dados da sua empresa para conversarmos sobre um projeto personalizado para o seu time.</p>
-        </div>
-
-        <div class="tally-box reveal">
-            <iframe data-tally-src="https://tally.so/embed/LZGoLy?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Aplicação Mentoria Corporativa"></iframe>
-        </div>
-
-    </div>
-
-    <!-- SPIRITUAL CARD -->
-    <div class="spiritual-card reveal">
-        <span class="material-symbols-rounded spiritual-icon">auto_awesome</span>
-        <div class="spiritual-text">"Eu escolho me responsabilizar pela minha transformação."</div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="footer reveal">
-        <p>Caminhe com coragem.</p>
-        <div class="signature">Michelle Julio</div>
-        <a href="https://www.instagram.com/michellejulio.psicanalista/" target="_blank" class="social-link" title="Siga no Instagram" rel="noopener">
-            <div class="social-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
-        </a>
-    </footer>
+    </section>
 
 </div>
 
-<!-- WHATSAPP FAB -->
-<div class="whatsapp-container">
-    <div class="whatsapp-tooltip">Dúvidas?</div>
-    <a href="https://wa.me/5519993407070?text=Oi%20Michelle%2C%20estava%20vendo%20o%20seu%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="whatsapp-btn" target="_blank" title="Fale no WhatsApp" rel="noopener">
+<!-- ============================================================
+     TAB CONTENT: EMPRESAS
+     ============================================================ -->
+<div id="empresas" class="tab-content">
+
+    <div class="wrap">
+        <div class="corp-hero reveal">
+            <div class="corp-icon-wrap"><span class="material-symbols-rounded">insights</span></div>
+            <h2 class="corp-headline">O maior custo oculto da sua empresa não está na operação. Está no <span class="em">comportamento</span>.</h2>
+            <p>Afastamentos por Burnout, alta rotatividade, falhas crônicas de comunicação e líderes que não sabem gerir pessoas custam caro.</p>
+            <p class="italic">Empresas são feitas de pessoas. E times adoecidos não entregam resultados consistentes.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="wrap-narrow">
+            <div class="section-head reveal">
+                <div class="section-num">03 · Mitos</div>
+                <h2 class="section-title">Desconstruindo <span class="em">a cultura</span></h2>
+            </div>
+
+            <div class="obj-grid reveal-stagger">
+                <div class="obj-card myth">
+                    <div class="obj-eyebrow"><span class="material-symbols-rounded" style="font-size:14px">close</span> O Mito</div>
+                    <p>"Treinamento comportamental é só uma palestra motivacional que o time esquece em dois dias."</p>
+                </div>
+                <div class="obj-card truth">
+                    <div class="obj-eyebrow"><span class="material-symbols-rounded" style="font-size:14px">check</span> A Verdade</div>
+                    <p>A abordagem psicanalítica vai na raiz do problema. Não é motivação vazia, é <strong>mudança estrutural de comportamento e cultura</strong>.</p>
+                </div>
+                <div class="obj-card myth">
+                    <div class="obj-eyebrow"><span class="material-symbols-rounded" style="font-size:14px">close</span> O Mito</div>
+                    <p>"Se o funcionário está estressado, o problema é pessoal dele."</p>
+                </div>
+                <div class="obj-card truth">
+                    <div class="obj-eyebrow"><span class="material-symbols-rounded" style="font-size:14px">check</span> A Verdade</div>
+                    <p>O clima organizacional afeta o indivíduo, e o indivíduo afeta os resultados. <strong>Liderar exige responsabilidade emocional.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="section-num">04 · Soluções</div>
+                <h2 class="section-title">Soluções <span class="em">in-company</span></h2>
+            </div>
+
+            <div class="journey-grid reveal-stagger">
+                <article class="journey-card">
+                    <div class="journey-meta">
+                        <span class="journey-num">N° 01</span>
+                        <div class="journey-icon"><span class="material-symbols-rounded">record_voice_over</span></div>
+                    </div>
+                    <h3 class="journey-title">Palestras &amp; Workshops</h3>
+                    <p>Intervenções sobre saúde mental, prevenção a Burnout, comunicação assertiva e inteligência emocional.</p>
+                </article>
+                <article class="journey-card">
+                    <div class="journey-meta">
+                        <span class="journey-num">N° 02</span>
+                        <div class="journey-icon"><span class="material-symbols-rounded">model_training</span></div>
+                    </div>
+                    <h3 class="journey-title">Treinamento de Lideranças</h3>
+                    <p>Capacitação para gerir conflitos, escuta ativa e criar ambientes de <strong>segurança psicológica</strong>.</p>
+                </article>
+                <article class="journey-card">
+                    <div class="journey-meta">
+                        <span class="journey-num">N° 03</span>
+                        <div class="journey-icon"><span class="material-symbols-rounded">forum</span></div>
+                    </div>
+                    <h3 class="journey-title">Plantão Psicanalítico</h3>
+                    <p>Espaço de escuta qualificada e sigilosa para acolher colaboradores em crise, reduzindo absenteísmo.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap-narrow">
+            <div class="section-head reveal">
+                <div class="section-num">05 · Metodologia</div>
+                <h2 class="section-title">A metodologia <span class="em">aplicada</span></h2>
+            </div>
+
+            <div class="steps reveal">
+                <div class="step-row">
+                    <div class="step-num">i</div>
+                    <div class="step-content">
+                        <strong>Mapeamento Institucional</strong>
+                        <span>Entendemos a cultura atual, dores do RH e dinâmicas de poder das equipes.</span>
+                    </div>
+                </div>
+                <div class="step-row">
+                    <div class="step-num">ii</div>
+                    <div class="step-content">
+                        <strong>Intervenção Estratégica</strong>
+                        <span>Desenhamos o formato ideal (palestra, mentoria de líderes ou plantão) focado na dor identificada.</span>
+                    </div>
+                </div>
+                <div class="step-row">
+                    <div class="step-num">iii</div>
+                    <div class="step-content">
+                        <strong>Instrumentalização</strong>
+                        <span>Entregamos ferramentas práticas para a liderança manter a mudança ativa.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="section-num">06 · Resultado</div>
+                <h2 class="section-title">A transformação <span class="em">no time</span></h2>
+            </div>
+
+            <div class="transform-grid reveal">
+                <div class="transform-card before">
+                    <div class="transform-head">
+                        <span class="material-symbols-rounded">warning</span>
+                        <span>Como está hoje</span>
+                    </div>
+                    <div class="check-row minus"><span class="material-symbols-rounded">remove</span><span>Lideranças exaustas, centralizadoras e sobrecarregadas.</span></div>
+                    <div class="check-row minus"><span class="material-symbols-rounded">remove</span><span>Falhas de comunicação e fofocas desmotivando o time.</span></div>
+                    <div class="check-row minus"><span class="material-symbols-rounded">remove</span><span>Talentos pedindo demissão por falta de suporte emocional.</span></div>
+                </div>
+                <div class="transform-arrow"><span class="material-symbols-rounded">arrow_forward</span></div>
+                <div class="transform-card after">
+                    <div class="transform-head">
+                        <span class="material-symbols-rounded">business_center</span>
+                        <span>O Resultado</span>
+                    </div>
+                    <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Clima organizacional maduro, focado e leve.</span></div>
+                    <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Líderes com escuta ativa que inspiram em vez de cobrar.</span></div>
+                    <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Retenção de talentos e produtividade real.</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap-narrow">
+            <div class="section-head reveal">
+                <div class="section-num">07 · Proposta</div>
+                <h2 class="section-title">Solicite uma <span class="em">proposta</span></h2>
+            </div>
+            <p style="text-align:center; max-width:560px; margin: 0 auto 32px; color:var(--slate);" class="reveal">Preencha os dados da sua empresa para conversarmos sobre um projeto personalizado para o seu time.</p>
+
+            <div class="tally-wrap reveal">
+                <iframe data-tally-src="https://tally.so/embed/LZGoLy?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Aplicação Mentoria Corporativa"></iframe>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- ============================================================
+     SPIRITUAL CARD — dark cinemático
+     ============================================================ -->
+<div class="wrap">
+    <div class="spiritual reveal">
+        <div class="spiritual-icon"><span class="material-symbols-rounded">auto_awesome</span></div>
+        <p class="spiritual-text">Eu escolho me responsabilizar pela minha <span class="em">transformação</span>.</p>
+        <span class="spiritual-attribution">Manifesto · 2026</span>
+    </div>
+</div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+    <div class="wrap-narrow">
+        <p class="footer-tagline">Caminhe com coragem.</p>
+        <div class="footer-signature">Michelle Julio</div>
+        <a href="https://www.instagram.com/michellejulio.psicanalista/" target="_blank" class="social-link" title="Siga no Instagram" rel="noopener">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <div class="footer-mark">© 2026 · Michelle Julio · Psicanálise &amp; Mentoria</div>
+    </div>
+</footer>
+
+<!-- ============================================================
+     WHATSAPP FAB
+     ============================================================ -->
+<div class="wa-fab">
+    <div class="wa-tooltip">Dúvidas?</div>
+    <a href="https://wa.me/5519993407070?text=Oi%20Michelle%2C%20estava%20vendo%20o%20seu%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="wa-btn" target="_blank" title="Fale no WhatsApp" rel="noopener">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
     </a>
 </div>
 
 <script>
-    // ============================================
+    // ============================================================
+    // TOPNAV — sticky com efeito ao rolar
+    // ============================================================
+    const topnav = document.getElementById('topnav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) topnav.classList.add('scrolled');
+        else topnav.classList.remove('scrolled');
+    }, { passive: true });
+
+    // ============================================================
     // TABS
-    // ============================================
+    // ============================================================
     function switchTab(tabId, btnElement) {
         document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.getElementById(tabId).classList.add('active');
         btnElement.classList.add('active');
 
-        // Reativa scroll reveal nos elementos da nova aba
-        document.querySelectorAll('#' + tabId + ' .reveal').forEach(el => {
+        document.querySelectorAll('#' + tabId + ' .reveal, #' + tabId + ' .reveal-stagger').forEach(el => {
             el.classList.add('visible');
         });
 
-        if (typeof Tally !== 'undefined') {
-            Tally.loadEmbeds();
-        }
+        if (typeof Tally !== 'undefined') Tally.loadEmbeds();
     }
 
-    // ============================================
-    // SCROLL REVEAL — IntersectionObserver
-    // ============================================
-    document.addEventListener('DOMContentLoaded', function() {
+    // ============================================================
+    // SCROLL REVEAL
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1927,29 +2753,29 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
     });
 
-    // ============================================
-    // CARROSSEL
-    // ============================================
-    document.addEventListener('DOMContentLoaded', function() {
+    // ============================================================
+    // CARROSSEL DE DEPOIMENTOS
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', () => {
         const track = document.getElementById('track');
         if (!track) return;
 
         const slides = document.querySelectorAll('.testimonial-slide');
         const dotsContainer = document.getElementById('dots');
         let currentIndex = 0;
-        const totalSlides = slides.length;
+        const total = slides.length;
         let autoplay;
 
         slides.forEach((_, idx) => {
             const dot = document.createElement('div');
             dot.classList.add('dot');
             if (idx === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => { goToSlide(idx); resetAutoplay(); });
+            dot.addEventListener('click', () => { goTo(idx); resetAuto(); });
             dotsContainer.appendChild(dot);
         });
 
@@ -1959,30 +2785,21 @@
             dots.forEach(d => d.classList.remove('active'));
             dots[currentIndex].classList.add('active');
         }
-
-        function goToSlide(index) {
-            currentIndex = index;
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        function goTo(i) {
+            currentIndex = i;
+            track.style.transform = `translateX(-${i * 100}%)`;
             updateDots();
         }
+        function nextSlide() { currentIndex = (currentIndex + 1) % total; goTo(currentIndex); }
+        function resetAuto() { clearInterval(autoplay); autoplay = setInterval(nextSlide, 7000); }
 
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            goToSlide(currentIndex);
-        }
-
-        function resetAutoplay() {
-            clearInterval(autoplay);
-            autoplay = setInterval(nextSlide, 6000);
-        }
-
-        autoplay = setInterval(nextSlide, 6000);
-        window.addEventListener('resize', () => goToSlide(currentIndex));
+        autoplay = setInterval(nextSlide, 7000);
+        window.addEventListener('resize', () => goTo(currentIndex));
     });
 
-    // ============================================
+    // ============================================================
     // QUIZ
-    // ============================================
+    // ============================================================
     const questions = [
         { q: "Quando algo dá errado, qual sua primeira reação?", options: [{ t: "Acho que Deus esqueceu de mim", s: 3 }, { t: "Me culpo excessivamente", s: 2 }, { t: "Busco uma solução prática", s: 0 }] },
         { q: "Como você se vê hoje?", options: [{ t: "Sem valor ou propósito", s: 3 }, { t: "Incapaz de mudar sozinha e cansada", s: 2 }, { t: "Em processo de evolução", s: 0 }] },
@@ -1992,7 +2809,6 @@
         { q: "Você consegue dizer 'não' sem culpa?", options: [{ t: "Nunca, sinto que sou egoísta", s: 3 }, { t: "Tenho dificuldade", s: 2 }, { t: "Sim, entendo meus limites", s: 0 }] },
         { q: "O que faz com emoções negativas?", options: [{ t: "Guardo até explodir", s: 3 }, { t: "Reprimo porque acho errado", s: 2 }, { t: "Acolho e entendo o sinal", s: 0 }] }
     ];
-
     let currentQ = 0;
     let score = 0;
 
@@ -2003,53 +2819,53 @@
         document.getElementById('quiz-result').style.display = 'none';
         document.getElementById('quiz-questions').style.display = 'block';
         showQuestion();
-        updateProgressBar();
+        updateProgress();
     }
 
     function showQuestion() {
         const box = document.getElementById('question-box');
         const q = questions[currentQ];
-        document.getElementById('stepText').innerText = `PERGUNTA ${currentQ + 1} DE ${questions.length}`;
-        let html = `<p class="quiz-question">${q.q}</p><div class="quiz-options">`;
+        document.getElementById('stepText').innerText = `Pergunta ${String(currentQ + 1).padStart(2, '0')} / ${String(questions.length).padStart(2, '0')}`;
+        let html = `<p class="quiz-question-text">${q.q}</p><div class="quiz-options">`;
         q.options.forEach((opt) => {
-            html += `<button class="quiz-btn" onclick="answerQuestion(${opt.s})"><span class="circle"></span><span>${opt.t}</span></button>`;
+            html += `<button class="quiz-option-btn" onclick="answerQ(${opt.s})"><span class="quiz-option-circle"></span><span>${opt.t}</span></button>`;
         });
         html += `</div>`;
         box.innerHTML = html;
     }
 
-    function answerQuestion(s) {
+    function answerQ(s) {
         score += s;
         currentQ++;
         if (currentQ < questions.length) {
-            updateProgressBar();
+            updateProgress();
             showQuestion();
         } else {
             showResult();
         }
     }
 
-    function updateProgressBar() {
+    function updateProgress() {
         const pct = (currentQ / questions.length) * 100;
         document.getElementById('progressBar').style.width = pct + '%';
+        document.getElementById('stepCount').innerText = Math.round(pct) + '%';
     }
 
     function showResult() {
         document.getElementById('quiz-questions').style.display = 'none';
         document.getElementById('progressBar').style.width = '100%';
-
         const titleEl = document.getElementById('result-title');
         const descEl = document.getElementById('result-desc');
 
         if (score >= 15) {
             titleEl.innerText = 'Sua alma está pedindo socorro';
-            descEl.innerText = 'Você está carregando dores profundas que precisam de cuidado urgente. A boa notícia é que existe um caminho de cura — e ele começa quando você decide se olhar com verdade. A mentoria foi feita para você.';
+            descEl.innerText = 'Você está carregando dores profundas que precisam de cuidado urgente. Existe um caminho de cura — e ele começa quando você decide se olhar com verdade. A mentoria foi feita para você.';
         } else if (score >= 8) {
-            titleEl.innerText = 'Você está em um momento de transição';
-            descEl.innerText = 'Existem feridas não resolvidas e padrões que se repetem. Você sente que precisa de direção, mas ainda não encontrou as ferramentas certas. A mentoria pode ser exatamente o que falta para você dar o próximo passo.';
+            titleEl.innerText = 'Você está em transição';
+            descEl.innerText = 'Existem feridas não resolvidas e padrões que se repetem. Você sente que precisa de direção, mas ainda não encontrou as ferramentas certas. A mentoria pode ser o que falta.';
         } else {
             titleEl.innerText = 'Você está caminhando bem';
-            descEl.innerText = 'Você já desenvolveu maturidade emocional e espiritual. Mas crescer é contínuo — e a mentoria pode te levar para o próximo nível, com ainda mais profundidade, propósito e clareza.';
+            descEl.innerText = 'Você já desenvolveu maturidade emocional e espiritual. Mas crescer é contínuo — e a mentoria pode te levar para o próximo nível com ainda mais profundidade.';
         }
 
         document.getElementById('quiz-result').style.display = 'block';
