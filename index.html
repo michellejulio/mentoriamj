@@ -448,99 +448,178 @@
             background: rgba(184, 146, 78, 0.06);
         }
 
-        /* Hero portrait — foto da Michelle em destaque */
-        .hero-portrait {
+        /* ============================================================
+           HERO SIGIL — logo como emblema sagrado
+           ============================================================ */
+        .hero-sigil {
             position: relative;
-            aspect-ratio: 4/5;
-            max-width: 480px;
+            aspect-ratio: 1;
+            max-width: 540px;
             margin: 0 auto;
-            border-radius: var(--r-lg);
-            overflow: hidden;
-            box-shadow: var(--sh-lg);
-        }
-
-        .hero-portrait::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: var(--r-lg);
-            background: var(--grad-gold-shimmer);
-            background-size: 200% 100%;
-            z-index: -1;
-            animation: shimmer 6s infinite linear;
-        }
-
-        .hero-portrait img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 1.2s var(--ease-out);
-            filter: contrast(1.05) saturate(0.95);
+            isolation: isolate;
         }
 
-        .hero-portrait:hover img { transform: scale(1.04); }
-
-        .hero-portrait::after {
-            content: '';
+        /* Aura cônica — energia girando atrás */
+        .sigil-aura {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 60%, rgba(15, 14, 12, 0.5) 100%);
+            inset: -10%;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg,
+                transparent 0%,
+                rgba(184, 146, 78, 0.22) 18%,
+                transparent 33%,
+                rgba(212, 181, 117, 0.28) 52%,
+                transparent 68%,
+                rgba(184, 146, 78, 0.18) 84%,
+                transparent 100%
+            );
+            animation: sigil-spin 32s linear infinite;
+            filter: blur(28px);
+            z-index: -2;
+        }
+
+        /* Glow central pulsante */
+        .sigil-glow {
+            position: absolute;
+            inset: 18%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 181, 117, 0.45) 0%, transparent 60%);
+            filter: blur(32px);
+            animation: sigil-pulse 4.5s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes sigil-spin {
+            from { transform: rotate(0); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes sigil-pulse {
+            0%, 100% { opacity: 0.55; transform: scale(0.96); }
+            50% { opacity: 0.95; transform: scale(1.06); }
+        }
+
+        /* Anéis decorativos */
+        .sigil-ring {
+            position: absolute;
+            border-radius: 50%;
             pointer-events: none;
         }
 
-        .hero-portrait-meta {
+        .sigil-ring-outer {
+            inset: 4%;
+            border: 1px dashed rgba(184, 146, 78, 0.4);
+            animation: sigil-spin 60s linear infinite;
+        }
+
+        .sigil-ring-mid {
+            inset: 12%;
+            border: 1px dotted rgba(184, 146, 78, 0.45);
+            animation: sigil-spin 42s linear infinite reverse;
+        }
+
+        .sigil-ring-inner {
+            inset: 22%;
+            border: 1px solid rgba(184, 146, 78, 0.55);
+            box-shadow:
+                0 0 36px rgba(184, 146, 78, 0.25),
+                inset 0 0 36px rgba(184, 146, 78, 0.12);
+        }
+
+        /* Núcleo cremoso com a logo */
+        .sigil-core {
             position: absolute;
-            bottom: 24px;
-            left: 24px;
-            right: 24px;
-            color: var(--paper);
-            z-index: 2;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 16px;
-        }
-
-        .hero-portrait-name {
-            font-family: 'Fraunces', serif;
-            font-size: 1.6rem;
-            font-style: italic;
-            font-weight: 400;
-            line-height: 1;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-portrait-role {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--gold-light);
-            margin-top: 6px;
-        }
-
-        .hero-portrait-logo {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 64px;
-            height: 64px;
+            inset: 30%;
             border-radius: 50%;
-            background: rgba(245, 240, 230, 0.95);
-            backdrop-filter: blur(10px);
+            background: radial-gradient(circle at 30% 30%, var(--paper) 0%, var(--cream) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            box-shadow:
+                0 32px 80px -20px rgba(184, 146, 78, 0.5),
+                inset 0 2px 0 rgba(255, 255, 255, 0.8),
+                inset 0 -3px 16px rgba(184, 146, 78, 0.18);
             z-index: 2;
+            overflow: hidden;
+            animation: sigil-float 7s ease-in-out infinite;
         }
 
-        .hero-portrait-logo img {
-            width: 100%;
-            height: 100%;
+        .sigil-core::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: conic-gradient(from 0deg,
+                rgba(184, 146, 78, 0.18),
+                transparent 25%,
+                transparent 75%,
+                rgba(184, 146, 78, 0.18)
+            );
+            animation: sigil-spin 14s linear infinite;
+        }
+
+        .sigil-core img {
+            width: 78%;
+            height: auto;
             object-fit: contain;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 6px 16px rgba(184, 146, 78, 0.35));
+        }
+
+        @keyframes sigil-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Dots orbitando */
+        .sigil-orbit {
+            position: absolute;
+            inset: 4%;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sigil-spin 22s linear infinite;
+        }
+
+        .sigil-orbit span {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 18px var(--gold-light), 0 0 4px var(--paper);
+        }
+
+        .sigil-orbit span:nth-child(1) { top: -5px; left: 50%; transform: translateX(-50%); }
+        .sigil-orbit span:nth-child(2) { right: -5px; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; }
+        .sigil-orbit span:nth-child(3) { bottom: -5px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; }
+        .sigil-orbit span:nth-child(4) { left: -5px; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; }
+
+        /* Editorial corner labels */
+        .sigil-corner {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            line-height: 1.3;
+            z-index: 3;
+        }
+
+        .sigil-corner .ck-label { color: var(--slate-soft); }
+        .sigil-corner .ck-value { color: var(--gold-deep); font-weight: 500; }
+
+        .sigil-corner.top-left { top: 0; left: 0; text-align: left; }
+        .sigil-corner.top-right { top: 0; right: 0; text-align: right; }
+        .sigil-corner.bottom-left { bottom: 0; left: 0; text-align: left; }
+        .sigil-corner.bottom-right { bottom: 0; right: 0; text-align: right; }
+
+        @media (max-width: 768px) {
+            .hero-sigil { max-width: 380px; }
+            .sigil-corner { font-size: 0.55rem; letter-spacing: 0.14em; }
         }
 
         /* ============================================================
@@ -589,6 +668,123 @@
         .section {
             padding: clamp(60px, 10vw, 120px) 0;
             position: relative;
+        }
+
+        /* Variantes de fundo para contraste cinematográfico */
+        .section--dark {
+            background: var(--ink);
+            color: rgba(245, 240, 230, 0.85);
+            position: relative;
+        }
+
+        .section--dark::before,
+        .section--cream::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: clamp(120px, 30vw, 280px);
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.5;
+        }
+
+        .section--dark .section-title { color: var(--paper); }
+        .section--dark .section-title .em { color: var(--gold-light); }
+        .section--dark .section-num { color: var(--gold-light); }
+        .section--dark .section-num::before { background: var(--gold-light); }
+
+        .section--dark .journey-card {
+            background: rgba(245, 240, 230, 0.04);
+            border: 1px solid rgba(245, 240, 230, 0.12);
+            color: rgba(245, 240, 230, 0.85);
+        }
+        .section--dark .journey-card:hover {
+            background: rgba(245, 240, 230, 0.08);
+            border-color: rgba(184, 146, 78, 0.4);
+        }
+        .section--dark .journey-title { color: var(--paper); }
+        .section--dark .journey-card p { color: rgba(245, 240, 230, 0.7); }
+        .section--dark .journey-num { color: var(--gold-light); }
+        .section--dark .journey-icon {
+            background: rgba(184, 146, 78, 0.15);
+            color: var(--gold-light);
+        }
+
+        .section--dark .step-row {
+            border-color: rgba(245, 240, 230, 0.12);
+        }
+        .section--dark .step-row:last-child { border-color: rgba(245, 240, 230, 0.12); }
+        .section--dark .step-content strong { color: var(--paper); }
+        .section--dark .step-content span { color: rgba(245, 240, 230, 0.7); }
+        .section--dark .step-num { color: var(--gold-light); opacity: 0.95; }
+
+        .section--cream {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--gold-soft) 100%);
+            position: relative;
+        }
+
+        /* ============================================================
+           LAYOUT ASSIMÉTRICO — desktop 4/8 split
+           ============================================================ */
+        .section-split {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 980px) {
+            .section-split {
+                grid-template-columns: 4fr 8fr;
+                gap: clamp(48px, 6vw, 96px);
+                align-items: start;
+            }
+
+            .section-split.right-heavy {
+                grid-template-columns: 8fr 4fr;
+            }
+
+            .section-split .section-head {
+                margin-bottom: 0;
+                position: sticky;
+                top: 110px;
+                grid-template-columns: 1fr;
+                gap: 18px;
+                align-items: start;
+            }
+
+            .section-split .section-head .section-title {
+                font-size: clamp(2rem, 3.6vw, 3rem);
+            }
+        }
+
+        /* Section head em modo "esquerda" (não centralizado) */
+        .section--left .section-head {
+            text-align: left;
+            grid-template-columns: auto 1fr;
+        }
+
+        /* Bandeira lateral — eyebrow vertical */
+        .side-flag {
+            display: none;
+        }
+
+        @media (min-width: 1100px) {
+            .side-flag {
+                display: block;
+                position: absolute;
+                left: 32px;
+                top: 50%;
+                transform: rotate(-90deg);
+                transform-origin: 0 0;
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 0.68rem;
+                color: var(--slate-soft);
+                letter-spacing: 0.3em;
+                text-transform: uppercase;
+                white-space: nowrap;
+                opacity: 0.7;
+            }
         }
 
         .section-head {
@@ -2099,16 +2295,33 @@
                 </div>
             </div>
 
-            <div class="hero-portrait reveal">
-                <div class="hero-portrait-logo">
-                    <img src="https://i.ibb.co/21HgfrMf/Logo-1.png" alt="Logo Michelle Julio">
+            <div class="hero-sigil reveal">
+                <div class="sigil-aura"></div>
+                <div class="sigil-glow"></div>
+                <div class="sigil-ring sigil-ring-outer"></div>
+                <div class="sigil-ring sigil-ring-mid"></div>
+                <div class="sigil-ring sigil-ring-inner"></div>
+                <div class="sigil-orbit">
+                    <span></span><span></span><span></span><span></span>
                 </div>
-                <img src="https://i.ibb.co/27t0X8dK/bio.jpg" alt="Michelle Julio">
-                <div class="hero-portrait-meta">
-                    <div>
-                        <div class="hero-portrait-name">Michelle Julio</div>
-                        <div class="hero-portrait-role">Psicanalista · Mentora</div>
-                    </div>
+                <div class="sigil-core">
+                    <img src="https://i.ibb.co/21HgfrMf/Logo-1.png" alt="Michelle Julio · Logo">
+                </div>
+                <div class="sigil-corner top-left">
+                    <span class="ck-label">Método</span>
+                    <span class="ck-value">Psicanálise</span>
+                </div>
+                <div class="sigil-corner top-right">
+                    <span class="ck-label">Edição</span>
+                    <span class="ck-value">N° 01 · 2026</span>
+                </div>
+                <div class="sigil-corner bottom-left">
+                    <span class="ck-label">Estabelecida</span>
+                    <span class="ck-value">— Brasil</span>
+                </div>
+                <div class="sigil-corner bottom-right">
+                    <span class="ck-label">Vocação</span>
+                    <span class="ck-value">Cura · Propósito</span>
                 </div>
             </div>
 
@@ -2206,46 +2419,49 @@
     </div>
 
     <section class="section">
-        <div class="wrap-narrow">
-            <div class="section-head reveal">
-                <div class="section-num">03 · Para quem</div>
-                <h2 class="section-title">Para quem é <span class="em">a mentoria</span></h2>
-            </div>
+        <div class="wrap">
+            <div class="section-split">
+                <div class="section-head reveal">
+                    <div class="section-num">03 · Para quem</div>
+                    <h2 class="section-title">Para quem é <span class="em">a mentoria</span></h2>
+                </div>
 
-            <ul class="target-list reveal">
-                <li class="target-item">
-                    <div class="target-num">01</div>
-                    <div class="target-text">
-                        <strong>Mulheres em busca de profundidade</strong>
-                        <span>Que desejam ir além da superfície e entender as raízes de suas emoções.</span>
-                    </div>
-                </li>
-                <li class="target-item">
-                    <div class="target-num">02</div>
-                    <div class="target-text">
-                        <strong>Quem quer aliar Fé e Razão</strong>
-                        <span>Para quem busca maturidade espiritual sem abrir mão da inteligência emocional.</span>
-                    </div>
-                </li>
-                <li class="target-item">
-                    <div class="target-num">03</div>
-                    <div class="target-text">
-                        <strong>Comprometidas com a mudança</strong>
-                        <span>Mulheres dispostas a se responsabilizar pelo próprio processo de cura.</span>
-                    </div>
-                </li>
-            </ul>
+                <ul class="target-list reveal">
+                    <li class="target-item">
+                        <div class="target-num">01</div>
+                        <div class="target-text">
+                            <strong>Mulheres em busca de profundidade</strong>
+                            <span>Que desejam ir além da superfície e entender as raízes de suas emoções.</span>
+                        </div>
+                    </li>
+                    <li class="target-item">
+                        <div class="target-num">02</div>
+                        <div class="target-text">
+                            <strong>Quem quer aliar Fé e Razão</strong>
+                            <span>Para quem busca maturidade espiritual sem abrir mão da inteligência emocional.</span>
+                        </div>
+                    </li>
+                    <li class="target-item">
+                        <div class="target-num">03</div>
+                        <div class="target-text">
+                            <strong>Comprometidas com a mudança</strong>
+                            <span>Mulheres dispostas a se responsabilizar pelo próprio processo de cura.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section class="section">
+    <section class="section section--dark">
         <div class="wrap">
-            <div class="section-head reveal">
-                <div class="section-num">04 · Método</div>
-                <h2 class="section-title">Como <span class="em">funciona</span></h2>
-            </div>
+            <div class="section-split">
+                <div class="section-head reveal">
+                    <div class="section-num">04 · Método</div>
+                    <h2 class="section-title">Como <span class="em">funciona</span></h2>
+                </div>
 
-            <div class="journey-grid reveal-stagger">
+                <div class="journey-grid reveal-stagger">
                 <article class="journey-card">
                     <div class="journey-meta">
                         <span class="journey-num">N° 01</span>
@@ -2281,14 +2497,16 @@
                     <h3 class="journey-title">Fé &amp; Vida</h3>
                     <p>Espiritualidade aplicada à vida real. Restaurar fé, emoções e propósito guiada por Deus.</p>
                 </article>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="section">
         <div class="wrap">
-            <div class="section-head reveal">
-                <div class="section-num">05 · Jornada</div>
+            <div class="section-split">
+                <div class="section-head reveal">
+                    <div class="section-num">05 · Jornada</div>
                 <h2 class="section-title">Sua <span class="em">transformação</span></h2>
             </div>
 
@@ -2312,6 +2530,7 @@
                     <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Vivendo uma espiritualidade madura e leve.</span></div>
                     <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Rompendo ciclos com ferramentas práticas.</span></div>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -2347,8 +2566,8 @@
         </div>
     </section>
 
-    <section class="section">
-        <div class="wrap-narrow">
+    <section class="section section--cream">
+        <div class="wrap">
             <div class="section-head reveal">
                 <div class="section-num">07 · Expectativa</div>
                 <h2 class="section-title">O que <span class="em">esperar</span></h2>
@@ -2378,32 +2597,34 @@
     </section>
 
     <section class="section">
-        <div class="wrap-narrow">
-            <div class="section-head reveal">
-                <div class="section-num">08 · Preparação</div>
-                <h2 class="section-title">Primeiros <span class="em">passos</span></h2>
-            </div>
+        <div class="wrap">
+            <div class="section-split">
+                <div class="section-head reveal">
+                    <div class="section-num">08 · Preparação</div>
+                    <h2 class="section-title">Primeiros <span class="em">passos</span></h2>
+                </div>
 
-            <div class="steps reveal">
-                <div class="step-row">
-                    <div class="step-num">i</div>
-                    <div class="step-content">
-                        <strong>Caderno</strong>
-                        <span>Tenha um lugar físico para seus registros.</span>
+                <div class="steps reveal">
+                    <div class="step-row">
+                        <div class="step-num">i</div>
+                        <div class="step-content">
+                            <strong>Caderno</strong>
+                            <span>Tenha um lugar físico para seus registros.</span>
+                        </div>
                     </div>
-                </div>
-                <div class="step-row">
-                    <div class="step-num">ii</div>
-                    <div class="step-content">
-                        <strong>Agenda</strong>
-                        <span>Bloqueie seu horário. Ter seu tempo é sagrado.</span>
+                    <div class="step-row">
+                        <div class="step-num">ii</div>
+                        <div class="step-content">
+                            <strong>Agenda</strong>
+                            <span>Bloqueie seu horário. Ter seu tempo é sagrado.</span>
+                        </div>
                     </div>
-                </div>
-                <div class="step-row">
-                    <div class="step-num">iii</div>
-                    <div class="step-content">
-                        <strong>Ambiente</strong>
-                        <span>Esteja sozinha e em silêncio (no secreto).</span>
+                    <div class="step-row">
+                        <div class="step-num">iii</div>
+                        <div class="step-content">
+                            <strong>Ambiente</strong>
+                            <span>Esteja sozinha e em silêncio (no secreto).</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2446,25 +2667,27 @@
     </section>
 
     <section class="section">
-        <div class="wrap-narrow">
-            <div class="section-head reveal">
-                <div class="section-num">10 · Dúvidas</div>
-                <h2 class="section-title">Perguntas <span class="em">frequentes</span></h2>
-            </div>
+        <div class="wrap">
+            <div class="section-split">
+                <div class="section-head reveal">
+                    <div class="section-num">10 · Dúvidas</div>
+                    <h2 class="section-title">Perguntas <span class="em">frequentes</span></h2>
+                </div>
 
-            <div class="reveal">
-                <details>
-                    <summary>A mentoria é online ou presencial?</summary>
-                    <div class="faq-content">A mentoria é 100% online, realizada através de videochamadas em plataforma segura.</div>
-                </details>
-                <details>
-                    <summary>Qual a duração do processo?</summary>
-                    <div class="faq-content">O ciclo tem duração definida para garantir início, meio e fim, focando em resultados. 2026 será incrível!</div>
-                </details>
-                <details>
-                    <summary>É terapia ou acompanhamento espiritual?</summary>
-                    <div class="faq-content">A abordagem une os dois: ferramentas da psicanálise com princípios espirituais.</div>
-                </details>
+                <div class="reveal">
+                    <details>
+                        <summary>A mentoria é online ou presencial?</summary>
+                        <div class="faq-content">A mentoria é 100% online, realizada através de videochamadas em plataforma segura.</div>
+                    </details>
+                    <details>
+                        <summary>Qual a duração do processo?</summary>
+                        <div class="faq-content">O ciclo tem duração definida para garantir início, meio e fim, focando em resultados. 2026 será incrível!</div>
+                    </details>
+                    <details>
+                        <summary>É terapia ou acompanhamento espiritual?</summary>
+                        <div class="faq-content">A abordagem une os dois: ferramentas da psicanálise com princípios espirituais.</div>
+                    </details>
+                </div>
             </div>
         </div>
     </section>
@@ -2565,70 +2788,39 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section section--cream">
         <div class="wrap">
-            <div class="section-head reveal">
-                <div class="section-num">04 · Soluções</div>
-                <h2 class="section-title">Soluções <span class="em">in-company</span></h2>
-            </div>
-
-            <div class="journey-grid reveal-stagger">
-                <article class="journey-card">
-                    <div class="journey-meta">
-                        <span class="journey-num">N° 01</span>
-                        <div class="journey-icon"><span class="material-symbols-rounded">record_voice_over</span></div>
-                    </div>
-                    <h3 class="journey-title">Palestras &amp; Workshops</h3>
-                    <p>Intervenções sobre saúde mental, prevenção a Burnout, comunicação assertiva e inteligência emocional.</p>
-                </article>
-                <article class="journey-card">
-                    <div class="journey-meta">
-                        <span class="journey-num">N° 02</span>
-                        <div class="journey-icon"><span class="material-symbols-rounded">model_training</span></div>
-                    </div>
-                    <h3 class="journey-title">Treinamento de Lideranças</h3>
-                    <p>Capacitação para gerir conflitos, escuta ativa e criar ambientes de <strong>segurança psicológica</strong>.</p>
-                </article>
-                <article class="journey-card">
-                    <div class="journey-meta">
-                        <span class="journey-num">N° 03</span>
-                        <div class="journey-icon"><span class="material-symbols-rounded">forum</span></div>
-                    </div>
-                    <h3 class="journey-title">Plantão Psicanalítico</h3>
-                    <p>Espaço de escuta qualificada e sigilosa para acolher colaboradores em crise, reduzindo absenteísmo.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="wrap-narrow">
-            <div class="section-head reveal">
-                <div class="section-num">05 · Metodologia</div>
-                <h2 class="section-title">A metodologia <span class="em">aplicada</span></h2>
-            </div>
-
-            <div class="steps reveal">
-                <div class="step-row">
-                    <div class="step-num">i</div>
-                    <div class="step-content">
-                        <strong>Mapeamento Institucional</strong>
-                        <span>Entendemos a cultura atual, dores do RH e dinâmicas de poder das equipes.</span>
-                    </div>
+            <div class="section-split">
+                <div class="section-head reveal">
+                    <div class="section-num">04 · Soluções</div>
+                    <h2 class="section-title">Soluções <span class="em">in-company</span></h2>
                 </div>
-                <div class="step-row">
-                    <div class="step-num">ii</div>
-                    <div class="step-content">
-                        <strong>Intervenção Estratégica</strong>
-                        <span>Desenhamos o formato ideal (palestra, mentoria de líderes ou plantão) focado na dor identificada.</span>
-                    </div>
-                </div>
-                <div class="step-row">
-                    <div class="step-num">iii</div>
-                    <div class="step-content">
-                        <strong>Instrumentalização</strong>
-                        <span>Entregamos ferramentas práticas para a liderança manter a mudança ativa.</span>
-                    </div>
+
+                <div class="journey-grid reveal-stagger">
+                    <article class="journey-card">
+                        <div class="journey-meta">
+                            <span class="journey-num">N° 01</span>
+                            <div class="journey-icon"><span class="material-symbols-rounded">record_voice_over</span></div>
+                        </div>
+                        <h3 class="journey-title">Palestras &amp; Workshops</h3>
+                        <p>Intervenções sobre saúde mental, prevenção a Burnout, comunicação assertiva e inteligência emocional.</p>
+                    </article>
+                    <article class="journey-card">
+                        <div class="journey-meta">
+                            <span class="journey-num">N° 02</span>
+                            <div class="journey-icon"><span class="material-symbols-rounded">model_training</span></div>
+                        </div>
+                        <h3 class="journey-title">Treinamento de Lideranças</h3>
+                        <p>Capacitação para gerir conflitos, escuta ativa e criar ambientes de <strong>segurança psicológica</strong>.</p>
+                    </article>
+                    <article class="journey-card">
+                        <div class="journey-meta">
+                            <span class="journey-num">N° 03</span>
+                            <div class="journey-icon"><span class="material-symbols-rounded">forum</span></div>
+                        </div>
+                        <h3 class="journey-title">Plantão Psicanalítico</h3>
+                        <p>Espaço de escuta qualificada e sigilosa para acolher colaboradores em crise, reduzindo absenteísmo.</p>
+                    </article>
                 </div>
             </div>
         </div>
@@ -2636,12 +2828,48 @@
 
     <section class="section">
         <div class="wrap">
-            <div class="section-head reveal">
-                <div class="section-num">06 · Resultado</div>
-                <h2 class="section-title">A transformação <span class="em">no time</span></h2>
-            </div>
+            <div class="section-split">
+                <div class="section-head reveal">
+                    <div class="section-num">05 · Metodologia</div>
+                    <h2 class="section-title">A metodologia <span class="em">aplicada</span></h2>
+                </div>
 
-            <div class="transform-grid reveal">
+                <div class="steps reveal">
+                    <div class="step-row">
+                        <div class="step-num">i</div>
+                        <div class="step-content">
+                            <strong>Mapeamento Institucional</strong>
+                            <span>Entendemos a cultura atual, dores do RH e dinâmicas de poder das equipes.</span>
+                        </div>
+                    </div>
+                    <div class="step-row">
+                        <div class="step-num">ii</div>
+                        <div class="step-content">
+                            <strong>Intervenção Estratégica</strong>
+                            <span>Desenhamos o formato ideal (palestra, mentoria de líderes ou plantão) focado na dor identificada.</span>
+                        </div>
+                    </div>
+                    <div class="step-row">
+                        <div class="step-num">iii</div>
+                        <div class="step-content">
+                            <strong>Instrumentalização</strong>
+                            <span>Entregamos ferramentas práticas para a liderança manter a mudança ativa.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--dark">
+        <div class="wrap">
+            <div class="section-split">
+                <div class="section-head reveal">
+                    <div class="section-num">06 · Resultado</div>
+                    <h2 class="section-title">A transformação <span class="em">no time</span></h2>
+                </div>
+
+                <div class="transform-grid reveal">
                 <div class="transform-card before">
                     <div class="transform-head">
                         <span class="material-symbols-rounded">warning</span>
@@ -2660,6 +2888,7 @@
                     <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Clima organizacional maduro, focado e leve.</span></div>
                     <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Líderes com escuta ativa que inspiram em vez de cobrar.</span></div>
                     <div class="check-row plus"><span class="material-symbols-rounded">check</span><span>Retenção de talentos e produtividade real.</span></div>
+                </div>
                 </div>
             </div>
         </div>
